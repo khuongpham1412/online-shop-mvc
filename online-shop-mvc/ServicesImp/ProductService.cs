@@ -1,4 +1,5 @@
-﻿using Model.Entities;
+﻿using Microsoft.AspNetCore.Mvc.RazorPages;
+using Model.Entities;
 using online_shop_mvc.Services;
 using Repository.Repo;
 
@@ -6,12 +7,7 @@ namespace online_shop_mvc.ServicesImp
 {
     public class ProductService : IProductService
     {
-        private readonly ProductRepo _productRepo;
-        public ProductService(ProductRepo productRepo)
-        {
-            _productRepo = productRepo;
-        }
-
+        private readonly ProductRepo _productRepo = new ProductRepo();
         public Task<Product> Add(Product product)
         {
             try
@@ -24,6 +20,7 @@ namespace online_shop_mvc.ServicesImp
             }
             catch (Exception ex)
             {
+                Console.WriteLine(ex.Message);
                 return null;
             }
             return null;
@@ -34,11 +31,11 @@ namespace online_shop_mvc.ServicesImp
             throw new NotImplementedException();
         }
 
-        public async Task<IList<Product>> GetAllProductPaging(int page, int quantity)
+        public async Task<IList<Product>> GetAllProductsPaging(int page, int quantity)
         {
             try
             {
-                IList<Product> products = await _productRepo.GetAllCategoryPaging(page, quantity);
+                IList<Product> products = await _productRepo.GetAllProductsPaging(page, quantity);
 
                 if (products != null)
                 {
@@ -47,12 +44,32 @@ namespace online_shop_mvc.ServicesImp
             }
             catch (Exception ex)
             {
+                Console.WriteLine(ex.Message);
                 return null;
             }
             return null;
         }
 
-        public Task<Product> Update(Product product)
+        public async Task<int> GetCountProduct()
+        {
+            try
+            {
+                int count = await _productRepo.GetCountProduct();
+
+                if (count != -1)
+                {
+                    return count;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                return -1;
+            }
+            return -1;
+        }
+
+        public async Task<Product> Update(Product product)
         {
             throw new NotImplementedException();
         }

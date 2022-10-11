@@ -11,11 +11,7 @@ namespace Repository.Repo
 {
     public class ProductRepo
     {
-        private readonly OnlineShopDbContext _onlineShopDbContext;
-        public ProductRepo(OnlineShopDbContext onlineShopDbContext)
-        {
-            _onlineShopDbContext = onlineShopDbContext;
-        }
+        private readonly OnlineShopDbContext _onlineShopDbContext = new OnlineShopDbContext();
         public async Task<Product> Add(Product product)
         {
             try
@@ -31,8 +27,36 @@ namespace Repository.Repo
             }
             return null;
         }
+        public async Task<Product> Update(Product product)
+        {
+            try
+            {
+                _onlineShopDbContext.Products.Add(product);
+                await _onlineShopDbContext.SaveChangesAsync();
+                return product;
+            }
+            catch (Exception ex)
+            {
 
-        public async Task<IList<Product>> GetAllCategoryPaging(int page, int quantity)
+            }
+            return null;
+        }
+
+        public async Task<bool> Delete(Product product)
+        {
+            try
+            {
+                _onlineShopDbContext.Products.Remove(product);
+                await _onlineShopDbContext.SaveChangesAsync();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+            return false;
+        }
+        public async Task<IList<Product>> GetAllProductsPaging(int page, int quantity)
         {
             try
             {
@@ -43,6 +67,19 @@ namespace Repository.Repo
                 return null;
             }
             return null;
+        }
+
+        public async Task<int> GetCountProduct()
+        {
+            try
+            {
+                return await _onlineShopDbContext.Products.CountAsync();
+            }
+            catch (Exception ex)
+            {
+                return -1;
+            }
+            return -1;
         }
     }
 }
