@@ -77,9 +77,34 @@ namespace Repository.Repo
             }
             catch (Exception ex)
             {
-                return -1;
+                Console.WriteLine(ex.Message);
             }
             return -1;
+        }
+
+        public async Task<Product> GetProductById(int id)
+        {
+            try
+            {
+                return await _onlineShopDbContext.Products.Where(p => p.Id == id).FirstOrDefaultAsync();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            return null;
+        } 
+
+        public async Task<IList<Product>> GetAllProductByCategoryId(int categoryID)
+        {
+            try
+            {
+                return await _onlineShopDbContext.Products.Where(p => p.CategoryID == categoryID).ToListAsync();
+            }catch(Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            return null;
         }
     }
 }

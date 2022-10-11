@@ -17,12 +17,14 @@ namespace Model.Entities
         public DateTime CreatedDate { get; set; }
 
         public int? EmployeeID { get; set; }
-
-        [ForeignKey("EmployeeID")]
-        public Employee Employee { get; set; }
+        //[ForeignKey("EmployeeID")]
+        //public virtual Employee Employee { get; set; }
 
         public int? CustomerID { get; set; }
-        [ForeignKey("CustomerID")]
-        public Customer Customer { get; set; }
+        //[ForeignKey("CustomerID")]
+        //public virtual Customer Customer { get; set; }
+
+        [Column(TypeName = "decimal(18,4)")]
+        public decimal Total { get; set; }
     }
 }

@@ -9,5 +9,6 @@ namespace online_shop_mvc.Services
         public Task<bool> Delete(int ProductID);
         public Task<IList<Product>> GetAllProductsPaging(int page, int quantity);
         public Task<int> GetCountProduct();
+        public Task<Product> GetProductById(int id);
     }
 }

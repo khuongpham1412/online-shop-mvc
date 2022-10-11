@@ -2,6 +2,7 @@
   "ExpandedNodes": [
     "",
     "\\online-shop-mvc",
+    "\\online-shop-mvc\\Controllers",
     "\\online-shop-mvc\\Views",
     "\\online-shop-mvc\\Views\\Product",
     "\\online-shop-mvc\\Views\\Shared"

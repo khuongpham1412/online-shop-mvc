@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Model.Entities
 {
-    public class ProductSize
+    public class ProductSizeColor
     {
         [Key]
         public int Id { get; set; }
@@ -19,6 +19,10 @@ namespace Model.Entities
         public int? SizeID { get; set; }
         [ForeignKey("SizeID")]
         public Size Size { get; set; }
+
+        public int? ColorID { get; set; }
+        [ForeignKey("ColorID")]
+        public Color Color { get; set; }
 
         public int Quantity { get; set; }
     }

@@ -67,6 +67,24 @@ namespace Model.Migrations
                     b.ToTable("Categories");
                 });
 
+            modelBuilder.Entity("Model.Entities.Color", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(20)
+                        .HasColumnType("nvarchar(20)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Colors");
+                });
+
             modelBuilder.Entity("Model.Entities.Customer", b =>
                 {
                     b.Property<int>("Id")
@@ -156,16 +174,39 @@ namespace Model.Migrations
                         .HasColumnType("int");
 
                     b.Property<int?>("EmployeeID")
-                        .IsRequired()
                         .HasColumnType("int");
+
+                    b.Property<decimal>("Total")
+                        .HasColumnType("decimal(18,4)");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("CustomerID");
+                    b.ToTable("Orders");
+                });
 
-                    b.HasIndex("EmployeeID");
+            modelBuilder.Entity("Model.Entities.OrderDetail", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
 
-                    b.ToTable("Order");
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<int?>("ProductID")
+                        .IsRequired()
+                        .HasColumnType("int");
+
+                    b.Property<int>("Quantity")
+                        .HasColumnType("int");
+
+                    b.Property<decimal>("UnitPrice")
+                        .HasColumnType("decimal(18,4)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ProductID");
+
+                    b.ToTable("OrderDetails");
                 });
 
             modelBuilder.Entity("Model.Entities.Product", b =>
@@ -204,13 +245,17 @@ namespace Model.Migrations
                     b.ToTable("Products");
                 });
 
-            modelBuilder.Entity("Model.Entities.ProductSize", b =>
+            modelBuilder.Entity("Model.Entities.ProductSizeColor", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<int?>("ColorID")
+                        .IsRequired()
+                        .HasColumnType("int");
 
                     b.Property<int?>("ProductID")
                         .IsRequired()
@@ -225,11 +270,13 @@ namespace Model.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("ColorID");
+
                     b.HasIndex("ProductID");
 
                     b.HasIndex("SizeID");
 
-                    b.ToTable("ProductSizes");
+                    b.ToTable("ProductSizeColors");
                 });
 
             modelBuilder.Entity("Model.Entities.Size", b =>
@@ -271,27 +318,21 @@ namespace Model.Migrations
                     b.Navigation("Account");
                 });
 
-            modelBuilder.Entity("Model.Entities.Order", b =>
+            modelBuilder.Entity("Model.Entities.OrderDetail", b =>
                 {
-                    b.HasOne("Model.Entities.Customer", "Customer")
-                        .WithMany("Orders")
-                        .HasForeignKey("CustomerID");
-
-                    b.HasOne("Model.Entities.Employee", "Employee")
-                        .WithMany("Orders")
-                        .HasForeignKey("EmployeeID")
+                    b.HasOne("Model.Entities.Product", "Product")
+                        .WithMany()
+                        .HasForeignKey("ProductID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Customer");
-
-                    b.Navigation("Employee");
+                    b.Navigation("Product");
                 });
 
             modelBuilder.Entity("Model.Entities.Product", b =>
                 {
                     b.HasOne("Model.Entities.Category", "Category")
-                        .WithMany("products")
+                        .WithMany()
                         .HasForeignKey("CategoryID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -299,8 +340,14 @@ namespace Model.Migrations
                     b.Navigation("Category");
                 });
 
-            modelBuilder.Entity("Model.Entities.ProductSize", b =>
+            modelBuilder.Entity("Model.Entities.ProductSizeColor", b =>
                 {
+                    b.HasOne("Model.Entities.Color", "Color")
+                        .WithMany()
+                        .HasForeignKey("ColorID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.HasOne("Model.Entities.Product", "Product")
                         .WithMany()
                         .HasForeignKey("ProductID")
@@ -313,24 +360,11 @@ namespace Model.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.Navigation("Color");
+
                     b.Navigation("Product");
 
                     b.Navigation("Size");
-                });
-
-            modelBuilder.Entity("Model.Entities.Category", b =>
-                {
-                    b.Navigation("products");
-                });
-
-            modelBuilder.Entity("Model.Entities.Customer", b =>
-                {
-                    b.Navigation("Orders");
-                });
-
-            modelBuilder.Entity("Model.Entities.Employee", b =>
-                {
-                    b.Navigation("Orders");
                 });
 #pragma warning restore 612, 618
         }

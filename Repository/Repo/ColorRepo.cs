@@ -9,16 +9,16 @@ using System.Threading.Tasks;
 
 namespace Repository.Repo
 {
-    public class CustomerRepo
+    public class ColorRepo
     {
         private readonly OnlineShopDbContext _onlineShopDbContext = new OnlineShopDbContext();
-        public async Task<Customer> Add(Customer customer)
+        public async Task<Color> Add(Color color)
         {
             try
             {
-                _onlineShopDbContext.Customers.Add(customer);
+                _onlineShopDbContext.Colors.Add(color);
                 await _onlineShopDbContext.SaveChangesAsync();
-                return customer;
+                return color;
             }
             catch (Exception ex)
             {
@@ -27,13 +27,13 @@ namespace Repository.Repo
             return null;
         }
 
-        public async Task<Customer> Update(Customer customer)
+        public async Task<Color> Update(Color color)
         {
             try
             {
-                _onlineShopDbContext.Customers.Add(customer);
+                _onlineShopDbContext.Colors.Add(color);
                 await _onlineShopDbContext.SaveChangesAsync();
-                return customer;
+                return color;
             }
             catch (Exception ex)
             {
@@ -42,11 +42,11 @@ namespace Repository.Repo
             return null;
         }
 
-        public async Task<bool> Delete(Customer customer)
+        public async Task<bool> Delete(Color color)
         {
             try
             {
-                _onlineShopDbContext.Customers.Remove(customer);
+                _onlineShopDbContext.Colors.Remove(color);
                 await _onlineShopDbContext.SaveChangesAsync();
                 return true;
             }
@@ -57,11 +57,11 @@ namespace Repository.Repo
             return false;
         }
 
-        public async Task<IList<Customer>> GetAllCustomer()
+        public async Task<IList<Color>> GetAllColor()
         {
             try
             {
-                return await _onlineShopDbContext.Customers.ToListAsync();
+                return await _onlineShopDbContext.Colors.ToListAsync();
             }
             catch (Exception ex)
             {
@@ -70,5 +70,17 @@ namespace Repository.Repo
             return null;
         }
 
+        public async Task<Color> GetColorById(int id)
+        {
+            try
+            {
+                return await _onlineShopDbContext.Colors.Where(s => s.Id == id).FirstOrDefaultAsync();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            return null;
+        }
     }
 }

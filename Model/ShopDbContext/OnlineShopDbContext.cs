@@ -15,13 +15,14 @@ public class OnlineShopDbContext : DbContext
         optionsBuilder.UseSqlServer(@"Server=LAPTOP-0N9NUIQQ\SQLEXPRESS;Database=OnlineShopMVC;Trusted_Connection=True;");
     }
 
-    public DbSet<Account> Accounts { get; set; }
+    public virtual DbSet<Account> Accounts { get; set; }
     public virtual DbSet<Customer> Customers { get; set; }
     public virtual DbSet<Employee> Employees { get; set; }
     public virtual DbSet<Product> Products { get; set; }
     public virtual DbSet<Category> Categories { get; set; }
-    public virtual DbSet<ProductSize> ProductSizes { get; set; }
+    public virtual DbSet<ProductSizeColor> ProductSizeColors { get; set; }
     public virtual DbSet<Size> Sizes { get; set; }
-    //public virtual DbSet<Order> Orders { get; set; }
-    //public virtual DbSet<OrderDetail> OrderDetails { get; set; }
+    public virtual DbSet<Color> Colors { get; set; }
+    public virtual DbSet<Order> Orders { get; set; }
+    public virtual DbSet<OrderDetail> OrderDetails { get; set; }
 }

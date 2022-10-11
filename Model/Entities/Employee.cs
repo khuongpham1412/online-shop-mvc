@@ -27,7 +27,5 @@ namespace Model.Entities
 
         [ForeignKey("AccountID")]
         public Account Account { get; set; }
-
-        public ICollection<Order> Orders { get; set; }
     }
 }

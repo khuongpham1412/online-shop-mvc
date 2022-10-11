@@ -7,14 +7,12 @@ using System.Threading.Tasks;
 
 namespace Model.Entities
 {
-    public class Category
+    public class Color
     {
         [Key]
         public int Id { get; set; }
-
+        [StringLength(20)]
         [Required]
-        [StringLength(50)]
         public string Name { get; set; }
-
     }
 }

@@ -11,6 +11,8 @@ builder.Services.AddControllersWithViews();
 
 builder.Services.AddScoped<IProductService, ProductService>();
 builder.Services.AddScoped<ICategoryService, CategoryService>();
+builder.Services.AddScoped<ISizeService, SizeService>();
+builder.Services.AddScoped<IColorService, ColorService>();
 
 //builder.Services.AddDbContext<OnlineShopDbContext>(
 //        options => options.UseSqlServer(IConfiguration.GetConnectionString("DefaultConnection"))
@@ -32,6 +34,12 @@ app.UseStaticFiles();
 app.UseRouting();
 
 app.UseAuthorization();
+
+app.MapControllerRoute(
+    name:"product",
+    pattern:"product/{id}",
+    defaults: new { controller = "Product", action = "Index" }
+    );
 
 app.MapControllerRoute(
     name: "default",

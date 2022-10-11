@@ -21,7 +21,6 @@ namespace online_shop_mvc.ServicesImp
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
-                return null;
             }
             return null;
         }
@@ -45,7 +44,6 @@ namespace online_shop_mvc.ServicesImp
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
-                return null;
             }
             return null;
         }
@@ -64,9 +62,26 @@ namespace online_shop_mvc.ServicesImp
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
-                return -1;
             }
             return -1;
+        }
+
+        public async Task<Product> GetProductById(int id)
+        {
+            try
+            {
+                var product = await _productRepo.GetProductById(id);
+
+                if (product != null)
+                {
+                    return product;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            return null;
         }
 
         public async Task<Product> Update(Product product)
