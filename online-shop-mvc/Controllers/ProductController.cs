@@ -1,14 +1,15 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using online_shop_mvc.Services;
 using online_shop_mvc.ServicesImp;
 
 namespace online_shop_mvc.Controllers
 {
     public class ProductController : Controller
     {
-        private readonly ProductService _productServiceImp;
-        public ProductController(ProductService productServiceImp)
+        private readonly ICategoryService _categoryService;
+        public ProductController(ICategoryService categoryService)
         {
-            _productServiceImp = productServiceImp;
+            _categoryService = categoryService;
         }
         public IActionResult Index()
         {

@@ -11,11 +11,11 @@ namespace Repository.Repo
 {
     public class CategoryRepo
     {
-        private readonly OnlineShopDbContext _onlineShopDbContext;
-        public CategoryRepo(OnlineShopDbContext onlineShopDbContext)
+        private readonly OnlineShopDbContext _onlineShopDbContext = new OnlineShopDbContext();
+       /* public CategoryRepo(OnlineShopDbContext onlineShopDbContext)
         {
             _onlineShopDbContext = onlineShopDbContext;
-        }
+        }*/
         public async Task<Category> Add(Category category)
         {
             try
@@ -69,6 +69,7 @@ namespace Repository.Repo
             }
             catch(Exception ex)
             {
+                Console.WriteLine(ex.Message);
                 return null;
             }
             return null;

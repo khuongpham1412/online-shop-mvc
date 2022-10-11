@@ -6,11 +6,11 @@ namespace online_shop_mvc.ServicesImp
 {
     public class CategoryService : ICategoryService
     {
-        private readonly CategoryRepo _categoryRepo;
-        public CategoryService(CategoryRepo categoryRepo)
+        private readonly CategoryRepo _categoryRepo = new CategoryRepo();
+        /*public CategoryService(CategoryRepo categoryRepo)
         {
             _categoryRepo = categoryRepo;
-        }
+        }*/
         public Task<Category> Add(Category category)
         {
             return _categoryRepo.Add(category);
@@ -33,6 +33,7 @@ namespace online_shop_mvc.ServicesImp
             }
             catch(Exception ex)
             {
+                Console.WriteLine(ex.Message);
                 return null;
             }
             return null;
