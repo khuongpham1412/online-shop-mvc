@@ -1,0 +1,15 @@
+D:\SGU\MVC\online-shop-mvc\Repository\bin\Debug\net6.0\Repository.deps.json
+D:\SGU\MVC\online-shop-mvc\Repository\bin\Debug\net6.0\Repository.dll
+D:\SGU\MVC\online-shop-mvc\Repository\bin\Debug\net6.0\Repository.pdb
+D:\SGU\MVC\online-shop-mvc\Repository\obj\Debug\net6.0\Repository.csproj.AssemblyReference.cache
+D:\SGU\MVC\online-shop-mvc\Repository\obj\Debug\net6.0\Repository.GeneratedMSBuildEditorConfig.editorconfig
+D:\SGU\MVC\online-shop-mvc\Repository\obj\Debug\net6.0\Repository.AssemblyInfoInputs.cache
+D:\SGU\MVC\online-shop-mvc\Repository\obj\Debug\net6.0\Repository.AssemblyInfo.cs
+D:\SGU\MVC\online-shop-mvc\Repository\obj\Debug\net6.0\Repository.csproj.CoreCompileInputs.cache
+D:\SGU\MVC\online-shop-mvc\Repository\obj\Debug\net6.0\Repository.dll
+D:\SGU\MVC\online-shop-mvc\Repository\obj\Debug\net6.0\refint\Repository.dll
+D:\SGU\MVC\online-shop-mvc\Repository\obj\Debug\net6.0\Repository.pdb
+D:\SGU\MVC\online-shop-mvc\Repository\obj\Debug\net6.0\ref\Repository.dll
+D:\SGU\MVC\online-shop-mvc\Repository\bin\Debug\net6.0\Model.dll
+D:\SGU\MVC\online-shop-mvc\Repository\bin\Debug\net6.0\Model.pdb
+D:\SGU\MVC\online-shop-mvc\Repository\obj\Debug\net6.0\Repository.csproj.CopyComplete
