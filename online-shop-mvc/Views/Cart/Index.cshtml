@@ -1,7 +1,9 @@
 ﻿@{
     ViewData["Title"] = "Cart Page";
+    var categories = (IList<Model.Entities.Category>)ViewBag.Categories;
 }
 
+@Html.Partial("_Navbar", (IList<Model.Entities.Category>) categories)
 <!-- Breadcrumb Start -->
 <div class="container-fluid">
     <div class="row px-xl-5">
@@ -23,6 +25,8 @@
                 <thead class="thead-dark">
                     <tr>
                         <th>Products</th>
+                        <th>Size</th>
+                        <th>Color</th>
                         <th>Price</th>
                         <th>Quantity</th>
                         <th>Total</th>
@@ -32,6 +36,8 @@
                 <tbody class="align-middle">
                     <tr>
                         <td class="align-middle"><img src="img/product-1.jpg" alt="" style="width: 50px;"> Product Name</td>
+                        <td class="align-middle">Size</td>
+                        <td class="align-middle">Color</td>
                         <td class="align-middle">$150</td>
                         <td class="align-middle">
                             <div class="input-group quantity mx-auto" style="width: 100px;">
@@ -139,14 +145,7 @@
             </table>
         </div>
         <div class="col-lg-4">
-            <form class="mb-30" action="">
-                <div class="input-group">
-                    <input type="text" class="form-control border-0 p-4" placeholder="Coupon Code">
-                    <div class="input-group-append">
-                        <button class="btn btn-primary">Apply Coupon</button>
-                    </div>
-                </div>
-            </form>
+            
             <h5 class="section-title position-relative text-uppercase mb-3"><span class="bg-secondary pr-3">Cart Summary</span></h5>
             <div class="bg-light p-30 mb-5">
                 <div class="border-bottom pb-2">

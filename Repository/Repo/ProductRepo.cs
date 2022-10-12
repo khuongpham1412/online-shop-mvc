@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Model.Entities;
 using Model.ShopDbContext;
+using online_shop_mvc.Models.Request;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -69,6 +70,24 @@ namespace Repository.Repo
             return null;
         }
 
+        public async Task<IList<Product>> GetAllProductsPaging1(FilterRequestModel filterRequest)
+        {
+            try
+            {
+                var nameSearch = (string) filterRequest.NameSearch;
+                var prices = (IList<decimal>) filterRequest.Price;
+                var sizes = (IList<string>) filterRequest.Size;
+                var colors = (IList<string>) filterRequest.Color;
+
+                return await _onlineShopDbContext.Products.Skip((filterRequest.PageIndex * filterRequest.PageSize) - filterRequest.PageSize).Take(filterRequest.PageSize).Where(p => p.Name == nameSearch).ToListAsync();
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+            return null;
+        }
+
         public async Task<int> GetCountProduct()
         {
             try
@@ -100,7 +119,8 @@ namespace Repository.Repo
             try
             {
                 return await _onlineShopDbContext.Products.Where(p => p.CategoryID == categoryID).ToListAsync();
-            }catch(Exception ex)
+            }
+            catch(Exception ex)
             {
                 Console.WriteLine(ex.Message);
             }

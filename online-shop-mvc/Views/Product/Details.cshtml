@@ -1,8 +1,12 @@
 ﻿@{
     ViewData["Title"] = "Product Details";
     var product = (Model.Entities.Product) ViewBag.Product;
-    var sizes = (IList<Model.Entities.Size>)ViewBag.Sizes;
+    var sizesByProductId = (IList<Model.Entities.ProductSizeColor>)ViewBag.SizesByProductId;
+    var colorsByProductId = (IList<Model.Entities.ProductSizeColor>)ViewBag.ColorsByProductId;
     var colors = (IList<Model.Entities.Color>)ViewBag.Colors;
+    var sizes = (IList<Model.Entities.Size>)ViewBag.Sizes;
+    var sizeSelected = (int?)ViewBag.SizeSelected;
+    var productSelected = (int?)ViewBag.ProductSelected;
 }
 
 <!-- Breadcrumb Start -->
@@ -65,15 +69,52 @@
                 </p>
                 <div class="d-flex mb-3">
                     <strong class="text-dark mr-3">Sizes:</strong>
-                    <form>
+                    <form action="Product/HandleSizeOption" method="post">
                         
                         @{
-                            foreach(var item in @sizes){
-                                <div class="custom-control custom-radio custom-control-inline">
-                                    <input type="radio" class="custom-control-input" id="size-@item.Id" name="size" onclick="selectSize(@item.Id)">
-                                    <label class="custom-control-label" for="size-@item.Id">@item.Name</label>
-                                </div>
+                            if(sizes != null && sizesByProductId != null){
+                                bool check = false;
+                                for (var i = 0; i<sizes.Count;i++){
+                                    for (var j = 0; j<sizesByProductId.Count;j++)
+                                    {
+                                        if (sizes[i].Id == sizesByProductId[j].SizeID)
+                                        {
+                                            if(sizeSelected != null){
+                                                if(sizeSelected == sizes[i].Id){
+                                                    <div class="custom-control custom-radio custom-control-inline">
+                                                        <input type="radio" class="custom-control-input" checked id="size-@sizes[i].Id" name="size" onclick="selectSize(@sizes[i].Id)">
+                                                        <label class="custom-control-label" for="size-@sizes[i].Id">@sizes[i].Name</label>
+                                                    </div>
+                                                }else{
+                                                    <div class="custom-control custom-radio custom-control-inline">
+                                                        <input type="radio" class="custom-control-input" id="size-@sizes[i].Id" name="size" onclick="selectSize(@sizes[i].Id)">
+                                                        <label class="custom-control-label" for="size-@sizes[i].Id">@sizes[i].Name</label>
+                                                    </div>
+                                                }
+                                            }
+                                            else{
+                                                <div class="custom-control custom-radio custom-control-inline">
+                                                <input type="radio" class="custom-control-input" id="size-@sizes[i].Id" name="size" onclick="selectSize(@sizes[i].Id)">
+                                                                            <label class="custom-control-label" for="size-@sizes[i].Id">@sizes[i].Name</label>
+                                                                        </div>
+                                            }
+                                            check = true;
+                                            break;
+                                        }
+                                    }//for
+                                    if (!check)
+                                    {
+                                                                    <div class="custom-control custom-radio custom-control-inline">
+                                                <input type="radio" class="custom-control-input" id="size-@sizes[i].Id" name="size" disabled onclick="selectSize(@sizes[i].Id)">
+                                                                        <label class="custom-control-label" for="size-@sizes[i].Id">@sizes[i].Name</label>
+                                                                    </div>
+
+                                    }
+                                    check = false;
+                                } //for            
+                               
                             }
+                            
                         }
                     </form>
                 </div>
@@ -81,12 +122,46 @@
                     <strong class="text-dark mr-3">Colors:</strong>
                     <form>
                         @{
-                            foreach(var @item in @colors){
-                                <div class="custom-control custom-radio custom-control-inline">
-                                    <input type="radio" class="custom-control-input" id="color-@item.Id" name="color">
-                                    <label class="custom-control-label" for="color-@item.Id">@item.Name</label>
-                                </div>
+                            if (colorsByProductId != null)
+                            {
+                                bool check = false;
+                                for (var i = 0; i < colors.Count; i++)
+                                {
+                                    for (var j = 0; j < colorsByProductId.Count; j++)
+                                    {
+                                        if (colors[i].Id == colorsByProductId[j].ColorID)
+                                        {
+                                            <div class="custom-control custom-radio custom-control-inline">
+                                                <input type="radio" class="custom-control-input" id="color-@colors[i].Id" name="color" onclick="selectColor(@colors[i].Id)">
+                                                <label class="custom-control-label" for="color-@colors[i].Id">@colors[i].Name</label>
+                                            </div>
+                                            check = true;
+                                            break;
+                                        }
+                                    }
+                                    if (!check)
+                                    {//false
+                                        <div class="custom-control custom-radio custom-control-inline">
+                                            <input type="radio" class="custom-control-input" id="color-@colors[i].Id" name="color" disabled onclick="selectColor(@colors[i].Id)">
+                                            <label class="custom-control-label" for="color-@colors[i].Id">@colors[i].Name</label>
+                                        </div>
+
+                                    }
+                                    check = false;
+                                }
                             }
+                            else{
+                                foreach (var @item in @colors)
+                                {
+                                    <div class="custom-control custom-radio custom-control-inline">
+                                        <input type="radio" class="custom-control-input" disabled id="color-@item.Id" name="color">
+                                        <label class="custom-control-label" for="color-@item.Id">@item.Name</label>
+                                    </div>
+                                }
+                            }
+                            
+
+                            
                         }
                        
                     </form>
@@ -98,7 +173,7 @@
                                 <i class="fa fa-minus"></i>
                             </button>
                         </div>
-                        <input type="text" class="form-control bg-secondary border-0 text-center" value="1">
+                        <input type="text" min="1" class="form-control bg-secondary border-0 text-center" value="1">
                         <div class="input-group-btn">
                             <button class="btn btn-primary btn-plus">
                                 <i class="fa fa-plus"></i>
@@ -106,8 +181,10 @@
                         </div>
                     </div>
                     <button class="btn btn-primary px-3">
-                        <i class="fa fa-shopping-cart mr-1"></i> Add To
-                        Cart
+                        <a asp-controller="Cart" asp-action="Index">
+                            <i class="fa fa-shopping-cart mr-1"></i> Add To
+                            Cart
+                        </a>
                     </button>
                 </div>
                 <div class="d-flex pt-2">
@@ -378,7 +455,9 @@
 
 <script type="text/javascript">
     function selectSize(id) {
-        window.location.href="1"
+        window.history.replaceState({}, "Details", "/" + "HandleSizeOption");
+        window.location.href = "Product/Details/" + @productSelected + "?sizeID=" + id;
         }
     </script>
+  
 <!-- Products End -->

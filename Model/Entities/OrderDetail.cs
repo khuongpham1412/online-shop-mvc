@@ -21,6 +21,7 @@ namespace Model.Entities
 
         [Column(TypeName = "decimal(18,4)")]
         public decimal UnitPrice { get; set; }
+        public int? OrderID { get; set; }
 
     }
 }

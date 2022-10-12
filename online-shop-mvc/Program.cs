@@ -13,6 +13,9 @@ builder.Services.AddScoped<IProductService, ProductService>();
 builder.Services.AddScoped<ICategoryService, CategoryService>();
 builder.Services.AddScoped<ISizeService, SizeService>();
 builder.Services.AddScoped<IColorService, ColorService>();
+builder.Services.AddScoped<IOrderService, OrderService>();
+builder.Services.AddScoped<IOrderDetailService, OrderDetailService>();
+builder.Services.AddScoped<IProductSizeColorService, ProductSizeColorService>();
 
 //builder.Services.AddDbContext<OnlineShopDbContext>(
 //        options => options.UseSqlServer(IConfiguration.GetConnectionString("DefaultConnection"))
@@ -37,7 +40,7 @@ app.UseAuthorization();
 
 app.MapControllerRoute(
     name:"product",
-    pattern:"product/{id}",
+    pattern:"product/{action}/{id}",
     defaults: new { controller = "Product", action = "Index" }
     );
 

@@ -26,7 +26,7 @@ namespace online_shop_mvc.Controllers
         {
             try
             {
-                IList<Category> categories = await _categoryService.GetAllCategory();
+                IList<Category> categories = await _categoryService.GetAllCategories();
                 if(categories != null)
                 {
                     ViewBag.Categories = categories;

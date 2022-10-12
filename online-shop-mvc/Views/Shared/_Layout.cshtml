@@ -161,7 +161,11 @@
             </div>
         </div>
         <!-- Topbar End -->
-         @RenderSection("NAV_BAR", required: false)
+
+    @*@{
+        var a = (IList<Model.Entities.Category>)ViewBag.Categories;
+        Console.WriteLine(a.Count());
+    }*@
 
         <!-- Content Start -->
          @RenderBody()

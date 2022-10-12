@@ -20,11 +20,11 @@ namespace online_shop_mvc.ServicesImp
             throw new NotImplementedException();
         }
 
-        public async Task<IList<Category>> GetAllCategory()
+        public async Task<IList<Category>> GetAllCategories()
         {
             try
             {
-                IList<Category> categories = await _categoryRepo.GetAllCategory();
+                IList<Category> categories = await _categoryRepo.GetAllCategories();
 
                 if (categories != null)
                 {

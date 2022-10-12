@@ -1,9 +1,20 @@
 ﻿@{
     ViewData["Title"] = "Product Page";
     var products = (IList<Model.Entities.Product>)ViewBag.Products;
+    var productCategories = (IList<Model.Entities.Product>)ViewBag.ProductCategories;
     var sizes = (IList<Model.Entities.Size>)ViewBag.Sizes;
     var count =(int) ViewBag.Count;
+    var categories = (IList<Model.Entities.Category>)ViewBag.Categories;
 }
+
+@{
+    if (productCategories != null)
+    {
+        products = productCategories;
+    }
+}
+
+@Html.Partial("_Navbar", (IList<Model.Entities.Category>) categories)
 
 <!-- Breadcrumb Start -->
 <div class="container-fluid">

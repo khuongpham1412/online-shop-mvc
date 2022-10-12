@@ -61,7 +61,7 @@ namespace Repository.Repo
             return false;
         }
 
-        public async Task<IList<Category>> GetAllCategory()
+        public async Task<IList<Category>> GetAllCategories()
         {
             try
             {

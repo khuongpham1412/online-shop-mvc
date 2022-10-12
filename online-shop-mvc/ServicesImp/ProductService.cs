@@ -30,6 +30,23 @@ namespace online_shop_mvc.ServicesImp
             throw new NotImplementedException();
         }
 
+        public async Task<IList<Product>> GetAllProductByCategoryId(int categoryID)
+        {
+            try
+            {
+                IList<Product> products = await _productRepo.GetAllProductByCategoryId(categoryID);
+                if (products != null)
+                {
+                    return products;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            return null;
+        }
+
         public async Task<IList<Product>> GetAllProductsPaging(int page, int quantity)
         {
             try
