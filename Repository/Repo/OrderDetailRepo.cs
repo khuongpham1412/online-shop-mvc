@@ -82,5 +82,18 @@ namespace Repository.Repo
             }
             return null;
         }
+
+        public async Task<IList<OrderDetail>> GetAllOrderDetailsByOrderId(int orderId)
+        {
+            try
+            {
+                return await _onlineShopDbContext.OrderDetails.Where(s => s.OrderID == orderId).ToListAsync();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            return null;
+        }
     }
 }

@@ -10,5 +10,7 @@ namespace online_shop_mvc.Services
         public Task<bool> Delete(Order order);
         public Task<IList<Order>> GetAllOrders();
         public Task<bool> CheckUserOrder(int userID);
+        public Task<Order> GetOrderById(int id);
+        public Task<int> GetOrderIdByCustomerId(int customerId);
     }
 }

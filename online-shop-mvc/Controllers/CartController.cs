@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Model.Entities;
 using Model.Models.Request;
+using Model.Models.Response;
 using online_shop_mvc.Services;
 
 namespace online_shop_mvc.Controllers
@@ -10,11 +11,13 @@ namespace online_shop_mvc.Controllers
         private readonly IProductService _productService;
         private readonly ICategoryService _categoryService;
         private readonly IOrderService _orderService;
-        public CartController(IProductService productService, ICategoryService categoryService, IOrderService orderService)
+        private readonly IOrderDetailService _orderDetailService;
+        public CartController(IProductService productService, ICategoryService categoryService, IOrderService orderService, IOrderDetailService orderDetailService)
         {
             _productService = productService;
             _categoryService = categoryService;
             _orderService = orderService;
+            _orderDetailService = orderDetailService;
         }
         public async Task<IActionResult> Index()
         {
@@ -25,7 +28,9 @@ namespace online_shop_mvc.Controllers
             }
 
             int productID = 1;
-            int sizeID = Int32.Parse(Request.Form["size"]);
+            //Console.WriteLine(Request.Form["size"].ToString());
+
+            /*int sizeID = Int32.Parse(Request.Form["size"]);
             int colorID = Int32.Parse(Request.Form["color"]);
             int quantity = Int32.Parse(Request.Form["quantity"]);
 
@@ -39,7 +44,17 @@ namespace online_shop_mvc.Controllers
                 ColorId = colorID,
                 Quantity = quantity,
             };
-            await _orderService.Add(userOrder);
+            await _orderService.Add(userOrder);*/
+
+            var orderId = await _orderService.GetOrderIdByCustomerId(1);
+            if(orderId != -1)
+            {
+                var orderOfUser = (IList<CustomerOrderResponseModel>) await _orderDetailService.GetAllOrderDetailsByOrderId(orderId);
+                if(orderOfUser != null)
+                {
+                    ViewBag.OrderOfUser = orderOfUser;
+                }
+            }
 
             return View();
         }

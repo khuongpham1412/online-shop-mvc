@@ -33,7 +33,7 @@ namespace online_shop_mvc.ServicesImp
                 }
                 else
                 {
-                    orderID = await _orderRepo.GetOrderIdByCustomerId(customerId);
+                    orderID = await GetOrderIdByCustomerId(customerId);
                 }
                 var product = (Product)await _productRepo.GetProductById(productId);
                 decimal unitPrice = product.Price * quantity;
@@ -57,6 +57,19 @@ namespace online_shop_mvc.ServicesImp
                 Console.WriteLine(ex.Message);
             }
             return null;
+        }
+
+        public async Task<int> GetOrderIdByCustomerId(int customerId)
+        {
+            try
+            {
+                return await _orderRepo.GetOrderIdByCustomerId(customerId);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            return -1;
         }
 
         public async Task<bool> CheckUserOrder(int userID)

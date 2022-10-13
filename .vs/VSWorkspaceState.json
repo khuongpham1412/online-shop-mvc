@@ -5,8 +5,10 @@
     "\\Model\\ShopDbContext",
     "\\online-shop-mvc",
     "\\online-shop-mvc\\Controllers",
+    "\\online-shop-mvc\\Services",
     "\\online-shop-mvc\\ServicesImp",
     "\\online-shop-mvc\\Views",
+    "\\online-shop-mvc\\Views\\Cart",
     "\\online-shop-mvc\\Views\\Product",
     "\\online-shop-mvc\\Views\\Shared"
   ],

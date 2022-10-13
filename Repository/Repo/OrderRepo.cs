@@ -102,7 +102,10 @@ namespace Repository.Repo
             try
             {
                 var orderId = await _onlineShopDbContext.Orders.Where(s => s.CustomerID == userId).FirstOrDefaultAsync();
-                return orderId.Id;
+                if(orderId != null)
+                {
+                    return orderId.Id;
+                }
             }
             catch (Exception ex)
             {
@@ -110,5 +113,7 @@ namespace Repository.Repo
             }
             return -1;
         }
+
+        
     }
 }

@@ -1,4 +1,5 @@
 ﻿using Model.Entities;
+using Model.Models.Response;
 
 namespace online_shop_mvc.Services
 {
@@ -8,5 +9,6 @@ namespace online_shop_mvc.Services
         public Task<OrderDetail> Update(OrderDetail orderDetail);
         public Task<bool> Delete(OrderDetail orderDetail);
         public Task<IList<OrderDetail>> GetAllOrderDetails();
+        public Task<IList<CustomerOrderResponseModel>> GetAllOrderDetailsByOrderId(int orderId);
     }
 }
