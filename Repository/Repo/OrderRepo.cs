@@ -96,5 +96,19 @@ namespace Repository.Repo
             }
             return false;
         }
+
+        public async Task<int> GetOrderIdByCustomerId(int userId)
+        {
+            try
+            {
+                var orderId = await _onlineShopDbContext.Orders.Where(s => s.CustomerID == userId).FirstOrDefaultAsync();
+                return orderId.Id;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            return -1;
+        }
     }
 }

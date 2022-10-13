@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Model.Entities;
+using Model.Models.Request;
 using online_shop_mvc.Services;
 
 namespace online_shop_mvc.Controllers
@@ -23,14 +24,22 @@ namespace online_shop_mvc.Controllers
                 ViewBag.Categories = categories;
             }
 
+            int productID = 1;
+            int sizeID = Int32.Parse(Request.Form["size"]);
+            int colorID = Int32.Parse(Request.Form["color"]);
+            int quantity = Int32.Parse(Request.Form["quantity"]);
+
             //Handle user order product
-            
-                Order order = new Order()
-                {
-                    CreatedDate = DateTime.Now,
-                    CustomerID = 1,
-                };
-                await _orderService.Add(order);
+            CustomerOrderRequestModel userOrder = new CustomerOrderRequestModel()
+            {
+                CustomerId = 1,
+                ProductId = productID,
+                CreateDate = DateTime.Now,
+                SizeId = sizeID,
+                ColorId = colorID,
+                Quantity = quantity,
+            };
+            await _orderService.Add(userOrder);
 
             return View();
         }

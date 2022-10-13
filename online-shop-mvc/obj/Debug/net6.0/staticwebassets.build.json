@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "szbomTd8NhFjvUntPO4RWryuxtQ+Nh62a2j3e8egqec=",
+  "Hash": "EnmJbWRhYf8JwUQlvLG/II0qB37PrT8/j41WpGVNuos=",
   "Source": "online-shop-mvc",
   "BasePath": "_content/online-shop-mvc",
   "Mode": "Default",
@@ -49,6 +49,40 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "D:\\SGU\\MVC\\online-shop-mvc\\online-shop-mvc\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\online-shop-mvc.bundle.scp.css"
+    },
+    {
+      "Identity": "D:\\SGU\\MVC\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Assets\\Client\\product1.jpg",
+      "SourceId": "online-shop-mvc",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\SGU\\MVC\\online-shop-mvc\\online-shop-mvc\\wwwroot\\",
+      "BasePath": "_content/online-shop-mvc",
+      "RelativePath": "Assets/Client/product1.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Assets\\Client\\product1.jpg"
+    },
+    {
+      "Identity": "D:\\SGU\\MVC\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Assets\\Client\\product2.jpg",
+      "SourceId": "online-shop-mvc",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\SGU\\MVC\\online-shop-mvc\\online-shop-mvc\\wwwroot\\",
+      "BasePath": "_content/online-shop-mvc",
+      "RelativePath": "Assets/Client/product2.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Assets\\Client\\product2.jpg"
     },
     {
       "Identity": "D:\\SGU\\MVC\\online-shop-mvc\\online-shop-mvc\\wwwroot\\css\\bootstrap.css",

@@ -44,6 +44,10 @@ app.MapControllerRoute(
     defaults: new { controller = "Product", action = "Index" }
     );
 
+/*app.MapControllerRoute(
+    name: "admin_default",
+    pattern: "admin/{controller=Home}/{action=Index}/{id?}");*/
+
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");

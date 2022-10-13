@@ -1,4 +1,6 @@
-﻿using Model.Entities;
+﻿using Microsoft.CodeAnalysis.QuickInfo;
+using Model.Entities;
+using Model.Models.Request;
 using online_shop_mvc.Services;
 using Repository.Repo;
 
@@ -8,28 +10,44 @@ namespace online_shop_mvc.ServicesImp
     {
         private readonly OrderRepo _orderRepo = new OrderRepo();
         private readonly OrderDetailRepo _orderDetailRepo = new OrderDetailRepo();
-        public async Task<Order> Add(Order order)
+        private readonly ProductRepo _productRepo = new ProductRepo();
+        public async Task<CustomerOrderRequestModel> Add(CustomerOrderRequestModel userOrder)
         {
             try
             {
-                int orderID = 1;
-                if (!await _orderRepo.CheckUserOrder(1))
+                int customerId = userOrder.CustomerId;
+                int sizeId = userOrder.SizeId;
+                int colorId = userOrder.ColorId;
+                int quantity = userOrder.Quantity;
+                int productId = userOrder.ProductId;    
+
+                int orderID;
+                if (!await _orderRepo.CheckUserOrder(customerId))
                 {
-                    Order order1 = new Order()
+                    Order order = new Order()
                     {
-                        CreatedDate = DateTime.Now,
-                        CustomerID = 1,
+                        CreatedDate = userOrder.CreateDate,
+                        CustomerID = customerId,
                     };
                     orderID = await _orderRepo.Add(order);
                 }
+                else
+                {
+                    orderID = await _orderRepo.GetOrderIdByCustomerId(customerId);
+                }
+                var product = (Product)await _productRepo.GetProductById(productId);
+                decimal unitPrice = product.Price * quantity;
+
                 if (orderID != -1)
                 {
                     OrderDetail orderDetail = new OrderDetail()
                     {
-                        ProductID = 1,
-                        Quantity = 2,
-                        UnitPrice = 100,
                         OrderID = orderID,
+                        ProductID = productId,
+                        Quantity = quantity,
+                        UnitPrice = unitPrice,
+                        SizeID = sizeId,
+                        ColorID = colorId,
                     };
                     var response = await _orderDetailRepo.Add(orderDetail);
                 }

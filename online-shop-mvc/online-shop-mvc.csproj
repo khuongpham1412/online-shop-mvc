@@ -20,4 +20,15 @@
     <ProjectReference Include="..\Repository\Repository.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Areas\Admin\Data\" />
+    <Folder Include="Areas\Admin\Models\" />
+    <Folder Include="wwwroot\Assets\Admin\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\Assets\Client\product1.jpg" />
+    <None Include="wwwroot\Assets\Client\product2.jpg" />
+  </ItemGroup>
+
 </Project>
