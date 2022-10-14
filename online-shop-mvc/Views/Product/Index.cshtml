@@ -3,7 +3,8 @@
     var products = (IList<Model.Entities.Product>)ViewBag.Products;
     var productCategories = (IList<Model.Entities.Product>)ViewBag.ProductCategories;
     var sizes = (IList<Model.Entities.Size>)ViewBag.Sizes;
-    var count =(int) ViewBag.Count;
+    var colors = (IList<Model.Entities.Color>)ViewBag.Colors;
+    var count = (int)ViewBag.Count;
     var categories = (IList<Model.Entities.Category>)ViewBag.Categories;
 }
 
@@ -77,34 +78,23 @@
                 <form>
                     <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
                         <input type="checkbox" class="custom-control-input" checked id="color-all">
-                        <label class="custom-control-label" for="price-all">All Color</label>
+                        <label class="custom-control-label" for="color-all">All Color</label>
                         <span class="badge border font-weight-normal">1000</span>
                     </div>
-                    <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
-                        <input type="checkbox" class="custom-control-input" id="color-1">
-                        <label class="custom-control-label" for="color-1">Black</label>
-                        <span class="badge border font-weight-normal">150</span>
-                    </div>
-                    <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
-                        <input type="checkbox" class="custom-control-input" id="color-2">
-                        <label class="custom-control-label" for="color-2">White</label>
-                        <span class="badge border font-weight-normal">295</span>
-                    </div>
-                    <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
-                        <input type="checkbox" class="custom-control-input" id="color-3">
-                        <label class="custom-control-label" for="color-3">Red</label>
-                        <span class="badge border font-weight-normal">246</span>
-                    </div>
-                    <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
-                        <input type="checkbox" class="custom-control-input" id="color-4">
-                        <label class="custom-control-label" for="color-4">Blue</label>
-                        <span class="badge border font-weight-normal">145</span>
-                    </div>
-                    <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between">
-                        <input type="checkbox" class="custom-control-input" id="color-5">
-                        <label class="custom-control-label" for="color-5">Green</label>
-                        <span class="badge border font-weight-normal">168</span>
-                    </div>
+                    @{
+                        if (colors != null)
+                        {
+                            foreach (var @color in @colors)
+                            {
+                                <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
+                                    <input type="checkbox" class="custom-control-input" id="color-@color.Id">
+                                    <label class="custom-control-label" for="color-@color.Id">@color.Name</label>
+                                    <span class="badge border font-weight-normal">150</span>
+                                </div>
+                            }
+                        }
+                    }
+
                 </form>
             </div>
             <!-- Color End -->
@@ -117,17 +107,18 @@
                         <label class="custom-control-label" for="size-all">All Size</label>
                         <span class="badge border font-weight-normal">1000</span>
                     </div>
-                    
+
                     @{
-                        foreach(var @item in @sizes){
+                        foreach (var @size in @sizes)
+                        {
                             <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
-                                <input type="checkbox" class="custom-control-input" id="size-1">
-                                <label class="custom-control-label" for="size-1">@item.Name</label>
+                                <input type="checkbox" class="custom-control-input" id="size-@size.Id">
+                                <label class="custom-control-label" for="size-@size.Id">@size.Name</label>
                                 <span class="badge border font-weight-normal">150</span>
                             </div>
                         }
                     }
-                    
+
                 </form>
             </div>
             <!-- Size End -->
@@ -162,40 +153,40 @@
                         </div>
                     </div>
                 </div>
-                
+
                 @{
                     if (@products != null)
                     {
-                        foreach (var @item in @products)
+                        foreach (var @product in @products)
                         {
-                            
-                                <div class="col-lg-4 col-md-6 col-sm-6 pb-1">
-                                    <div class="product-item bg-light mb-4">
-                                        <div class="product-img position-relative overflow-hidden">
-                                            <img class="img-fluid w-100" src=@item.Image alt="">
-                                            <div class="product-action">
-                                                <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-shopping-cart"></i></a>
-                                                <a class="btn btn-outline-dark btn-square" href=""><i class="far fa-heart"></i></a>
-                                                <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-sync-alt"></i></a>
-                                                <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-search"></i></a>
-                                            </div>
+
+                            <div class="col-lg-4 col-md-6 col-sm-6 pb-1">
+                                <div class="product-item bg-light mb-4">
+                                    <div class="product-img position-relative overflow-hidden">
+                                        <img class="img-fluid w-100" src=@product.Image alt="">
+                                        <div class="product-action">
+                                            <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-shopping-cart"></i></a>
+                                            <a class="btn btn-outline-dark btn-square" href=""><i class="far fa-heart"></i></a>
+                                            <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-sync-alt"></i></a>
+                                            <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-search"></i></a>
                                         </div>
-                                        <div class="text-center py-4">
-                                        <a class="h6 text-decoration-none text-truncate" href="Product/Details/@item.Id">@item.Name</a>
-                                            <div class="d-flex align-items-center justify-content-center mt-2">
-                                                <h5>$@item.Price</h5><h6 class="text-muted ml-2"><del>$123.00</del></h6>
-                                            </div>
-                                            <div class="d-flex align-items-center justify-content-center mb-1">
-                                                <small class="fa fa-star text-primary mr-1"></small>
-                                                <small class="fa fa-star text-primary mr-1"></small>
-                                                <small class="fa fa-star text-primary mr-1"></small>
-                                                <small class="fa fa-star text-primary mr-1"></small>
-                                                <small class="fa fa-star text-primary mr-1"></small>
-                                                <small>(99)</small>
-                                            </div>
+                                    </div>
+                                    <div class="text-center py-4">
+                                        <a class="h6 text-decoration-none text-truncate" href="Product/Details/@product.Id">@product.Name</a>
+                                        <div class="d-flex align-sizes-center justify-content-center mt-2">
+                                            <h5>$@product.Price</h5><h6 class="text-muted ml-2"><del>$123.00</del></h6>
+                                        </div>
+                                        <div class="d-flex align-items-center justify-content-center mb-1">
+                                            <small class="fa fa-star text-primary mr-1"></small>
+                                            <small class="fa fa-star text-primary mr-1"></small>
+                                            <small class="fa fa-star text-primary mr-1"></small>
+                                            <small class="fa fa-star text-primary mr-1"></small>
+                                            <small class="fa fa-star text-primary mr-1"></small>
+                                            <small>(99)</small>
                                         </div>
                                     </div>
                                 </div>
+                            </div>
                         }
                     }
                 }
@@ -206,11 +197,11 @@
                             <li class="page-item disabled"><a class="page-link" href="#">Previous</span></a></li>
                             @{
                                 var totalPage = Math.Ceiling((double)@count / products.Count());
-                                for (var @i = 1; @i <=totalPage; @i++)
+                                for (var @page = 1; @page <= totalPage; @page++)
                                 {
-                                    <li class="page-item active"><a class="page-link">@Html.ActionLink(""+@i, "Details", "Product", new { id = @i }, null)</a></li>
+                                    <li class="page-item active"><a class="page-link">@Html.ActionLink(""+@page, "Details", "Product", new { id = @page }, null)</a></li>
 
-                                    
+
                                 }
                             }
 

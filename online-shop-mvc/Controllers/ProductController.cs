@@ -30,12 +30,19 @@ namespace online_shop_mvc.Controllers
             {
                 ViewBag.Categories = categories;
             }
+
+            //Get all list product have paging
             IList<Product> products = await _productService.GetAllProductsPaging(1, 5);
-            int count = await _productService.GetCountProduct();
-            IList<Size> sizes = await _sizeService.GetAllSizes();
             ViewBag.Products = products;
-            ViewBag.Sizes = sizes;
+            //Get count product
+            int count = await _productService.GetCountProduct();
             ViewBag.Count = count;
+            //Get all sizes
+            IList<Size> sizes = await _sizeService.GetAllSizes();
+            ViewBag.Sizes = sizes;
+            //Get all colors
+            IList<Color> colors = await _colorService.GetAllColors();
+            ViewBag.Color = colors;
 
             return View();
         }
@@ -50,21 +57,14 @@ namespace online_shop_mvc.Controllers
                 sizeID = Int32.Parse(Request.Query["sizeID"]);
                 
             }
-            
 
             if(productID > 0 && sizeID > 0)
             {
                 var colorsByProductId = (IList<ProductSizeColor>)await _productSizeColorService.GetColorByProductAndSize(productID, sizeID);
                 ViewBag.ColorsByProductId = colorsByProductId;
                 ViewBag.SizeSelected = sizeID;
-                Console.WriteLine("HAIZ: " + colorsByProductId.Count());
             }
 
-            /*var a = Request.Query["colors"];
-            if (a.ToString() != null)
-            {
-                Console.WriteLine("HAIZ: " + a.Count());
-            }*/
             IList<Size> sizes = await _sizeService.GetAllSizes();
             ViewBag.Sizes = sizes;
             IList<Color> colors = await _colorService.GetAllColors();
@@ -72,7 +72,6 @@ namespace online_shop_mvc.Controllers
             if (id != null)
             {
                 var sizesByProductId = await _productSizeColorService.GetSizeByProductId(id);
-                var sizesByProductId1 = await _productSizeColorService.GetColorByProductAndSize(1, 1);
                 if (sizesByProductId != null)
                 {
                     ViewBag.SizesByProductId = sizesByProductId;
@@ -84,11 +83,6 @@ namespace online_shop_mvc.Controllers
                 }
             }
 
-            /*if (ViewBag["data"] != null)
-            {
-                Console.WriteLine("hello nha");
-                ViewBag.Products = ViewBag["data"] as IList<ProductSizeColor>;
-            }*/
             return View();
         }
 

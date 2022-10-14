@@ -17,7 +17,7 @@ namespace online_shop_mvc.ServicesImp
             throw new NotImplementedException();
         }
 
-        public Task<IList<ProductSizeColor>> GetAllCategories()
+        public Task<IList<ProductSizeColor>> GetAllProductSizeColor()
         {
             throw new NotImplementedException();
         }
@@ -32,6 +32,11 @@ namespace online_shop_mvc.ServicesImp
                 Console.WriteLine(ex.Message);
             }
             return null;
+        }
+
+        public Task<int> GetQuantityByProductSizeColor(int productID, int sizeID, int colorID)
+        {
+            throw new NotImplementedException();
         }
 
         public async Task<IList<ProductSizeColor>> GetSizeByProductId(int productID)

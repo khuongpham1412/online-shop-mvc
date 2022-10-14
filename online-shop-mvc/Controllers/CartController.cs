@@ -21,16 +21,33 @@ namespace online_shop_mvc.Controllers
         }
         public async Task<IActionResult> Index()
         {
+            //Get all categories
             IList<Category> categories = await _categoryService.GetAllCategories();
             if (categories != null)
             {
                 ViewBag.Categories = categories;
             }
 
-            int productID = 1;
-            //Console.WriteLine(Request.Form["size"].ToString());
+            //Get order id by customer id
+            var orderId = await _orderService.GetOrderIdByCustomerId(1);
+            if(orderId != -1)
+            {
+                //Get all orders of customer
+                var orderOfUser = (IList<CustomerOrderResponseModel>) await _orderDetailService.GetAllOrderDetailsByOrderId(orderId);
+                if(orderOfUser != null)
+                {
+                    ViewBag.OrderOfUser = orderOfUser;
+                }
+            }
 
-            /*int sizeID = Int32.Parse(Request.Form["size"]);
+            return View();
+        }
+
+        public async Task<IActionResult> HandleUserOrder()
+        {
+            int productID = 1;
+
+            int sizeID = Int32.Parse(Request.Form["size"]);
             int colorID = Int32.Parse(Request.Form["color"]);
             int quantity = Int32.Parse(Request.Form["quantity"]);
 
@@ -44,19 +61,9 @@ namespace online_shop_mvc.Controllers
                 ColorId = colorID,
                 Quantity = quantity,
             };
-            await _orderService.Add(userOrder);*/
+            await _orderService.Add(userOrder);
 
-            var orderId = await _orderService.GetOrderIdByCustomerId(1);
-            if(orderId != -1)
-            {
-                var orderOfUser = (IList<CustomerOrderResponseModel>) await _orderDetailService.GetAllOrderDetailsByOrderId(orderId);
-                if(orderOfUser != null)
-                {
-                    ViewBag.OrderOfUser = orderOfUser;
-                }
-            }
-
-            return View();
+            return RedirectToAction("Index");
         }
     }
 }

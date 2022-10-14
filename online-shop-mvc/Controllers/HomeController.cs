@@ -17,11 +17,6 @@ namespace online_shop_mvc.Controllers
             _categoryService = categoryService;
         }
 
-       /* public HomeController(ILogger<HomeController> logger)
-        {
-            _logger = logger;
-        }*/
-
         public async Task<IActionResult> Index()
         {
             try

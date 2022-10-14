@@ -40,16 +40,26 @@ namespace online_shop_mvc.ServicesImp
 
                 if (orderID != -1)
                 {
-                    OrderDetail orderDetail = new OrderDetail()
+                    var checkUserOrder = await _orderDetailRepo.CheckUserOrderProduct(productId, sizeId, colorId);
+                    if (checkUserOrder != null)
                     {
-                        OrderID = orderID,
-                        ProductID = productId,
-                        Quantity = quantity,
-                        UnitPrice = unitPrice,
-                        SizeID = sizeId,
-                        ColorID = colorId,
-                    };
-                    var response = await _orderDetailRepo.Add(orderDetail);
+                        checkUserOrder.Quantity = checkUserOrder.Quantity + quantity;
+                        checkUserOrder.UnitPrice = checkUserOrder.UnitPrice + product.Price;
+                        var response = await _orderDetailRepo.Update(checkUserOrder);
+                    }
+                    else
+                    {
+                        OrderDetail orderDetail = new OrderDetail()
+                        {
+                            OrderID = orderID,
+                            ProductID = productId,
+                            Quantity = quantity,
+                            UnitPrice = unitPrice,
+                            SizeID = sizeId,
+                            ColorID = colorId,
+                        };
+                        var response = await _orderDetailRepo.Add(orderDetail);
+                    }
                 }
             }
             catch (Exception ex)
@@ -136,5 +146,6 @@ namespace online_shop_mvc.ServicesImp
         {
             throw new NotImplementedException();
         }
+
     }
 }

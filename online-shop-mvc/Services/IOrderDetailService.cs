@@ -10,5 +10,6 @@ namespace online_shop_mvc.Services
         public Task<bool> Delete(OrderDetail orderDetail);
         public Task<IList<OrderDetail>> GetAllOrderDetails();
         public Task<IList<CustomerOrderResponseModel>> GetAllOrderDetailsByOrderId(int orderId);
+        public Task<OrderDetail> GetOrderDetailById(int id);
     }
 }

@@ -83,11 +83,11 @@ namespace Repository.Repo
             return null;
         }
 
-        public async Task<bool> CheckUserOrder(int userID)
+        public async Task<bool> CheckUserOrder(int userId)
         {
             try
             {
-                var order = await _onlineShopDbContext.Orders.Where(s => s.CustomerID == userID).ToListAsync();
+                var order = await _onlineShopDbContext.Orders.Where(s => s.CustomerID == userId).ToListAsync();
                 return order.Count() == 1;
             }
             catch (Exception ex)

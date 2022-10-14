@@ -31,7 +31,7 @@ namespace Repository.Repo
         {
             try
             {
-                _onlineShopDbContext.OrderDetails.Add(orderDetail);
+                _onlineShopDbContext.OrderDetails.Update(orderDetail);
                 await _onlineShopDbContext.SaveChangesAsync();
                 return orderDetail;
             }
@@ -88,6 +88,20 @@ namespace Repository.Repo
             try
             {
                 return await _onlineShopDbContext.OrderDetails.Where(s => s.OrderID == orderId).ToListAsync();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            return null;
+        }
+
+        public async Task<OrderDetail> CheckUserOrderProduct(int productId, int sizeId, int colorId)
+        {
+            try
+            {
+                var userOrderProduct = await _onlineShopDbContext.OrderDetails.Where(o => o.ProductID == productId && o.SizeID == sizeId && o.ColorID == colorId).FirstOrDefaultAsync();
+                return userOrderProduct;
             }
             catch (Exception ex)
             {

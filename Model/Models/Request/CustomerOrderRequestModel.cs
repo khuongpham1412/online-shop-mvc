@@ -6,13 +6,8 @@ using System.Threading.Tasks;
 
 namespace Model.Models.Request
 {
-     public class CustomerOrderRequestModel
+     public class CustomerOrderRequestModel : CustomerOrderModel
      {
         public int CustomerId { get; set; }
-        public DateTime CreateDate { get; set; }
-        public int SizeId { get; set; }
-        public int ColorId { get; set; }
-        public int Quantity { get; set; }   
-        public int ProductId { get; set; }
      }
 }
