@@ -28,55 +28,61 @@
 
                 if (orderOfUser != null)
                 {
-                        <table class="table table-light table-borderless table-hover text-center mb-0">
-                            <thead class="thead-dark">
-                                <tr>
-                                    <th>Products</th>
-                                    <th>Size</th>
-                                    <th>Color</th>
-                                    <th>Price</th>
-                                    <th>Quantity</th>
-                                    <th>Total</th>
-                                    <th>Remove</th>
-                                    <th>
-                                    <td><input style="width: 20px; height: 20px;" type="checkbox" id="selected_all" name="check_all" value=""></td></th>
-                                </tr>
-                            </thead>
-                            <tbody id="tblCart" class="align-middle">
-                                @foreach (var item in orderOfUser.Select((value, i) => new { i, value }))
+                                    <table class="table table-light table-borderless table-hover text-center mb-0">
+                                        <thead class="thead-dark">
+                                            <tr>
+                                                <th>Products</th>
+                                                <th>Size</th>
+                                                <th>Color</th>
+                                                <th>Price</th>
+                                                <th>Quantity</th>
+                                                <th>Total</th>
+                                                <th>Remove</th>
+                                                <th>
+                                                <td><input style="width: 20px; height: 20px;" type="checkbox" id="selected_all" name="check_all" value=""></td></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="tblCart" class="align-middle">
+                                            @foreach (var item in orderOfUser.Select((value, i) => new { i, value }))
                             {
 
-                                    <tr id="tr-@item.i">
-                                        <td class="align-middle"><img src="img/product-1.jpg" alt="" style="width: 50px;">@item.value.ProductName</td>
-                                        <td class="align-middle">@item.value.SizeName</td>
-                                        <td class="align-middle">@item.value.ColorName</td>
-                                        <td class="align-middle">@item.value.Price</td>
-                                        <td class="align-middle">
-                                            <div class="input-group quantity mx-auto" style="width: 100px;">
-                                                <div class="input-group-btn" data-id="@item.value.OrderDetailId" id="btnDecrease-@item.i">
-                                                    <button class="btn btn-sm btn-primary btn-minus">
-                                                        <i class="fa fa-minus"></i>
-                                                    </button>
-                                                </div>
-                                                <input type="text" class="form-control form-control-sm bg-secondary border-0 text-center" id="quantity-@item.i" value="@item.value.Quantity">
-                                                <div class="input-group-btn" data-id="@item.value.OrderDetailId" id="btnIncrease-@item.i">
-                                                    <button class="btn btn-sm btn-primary btn-plus">
-                                                        <i class="fa fa-plus"></i>
-                                                    </button>
-                                                </div>
-                                            </div>
-                                        </td>
-                                        <td class="align-middle">$150</td>
-                                        <td class="align-middle"><button class="btn btn-sm btn-danger"><i class="fa fa-times"></i></button></td>
-                                        <td class="align-middle"> <input style="width: 20px; height: 20px;" type="checkbox" name="vehicle1" value="Bike" onchange="handle(event,@item.value.OrderDetailId)" /> </td>
-                                    </tr>
+                                                <tr id="tr-@item.i">
+                                                    <td class="align-middle"><img src="img/product-1.jpg" alt="" style="width: 50px;">@item.value.ProductName</td>
+                                                    <td class="align-middle">@item.value.SizeName</td>
+                                                    <td class="align-middle">@item.value.ColorName</td>
+                                                    <td class="align-middle">@item.value.Price</td>
+                                                    <td class="align-middle">
+                                                        <div class="input-group quantity mx-auto" style="width: 100px;">
+                                                            <div class="input-group-btn" data-id="@item.value.OrderDetailId" id="btnDecrease-@item.i">
+                                                                <button class="btn btn-sm btn-primary btn-minus">
+                                                                    <i class="fa fa-minus"></i>
+                                                                </button>
+                                                            </div>
+                                                            <input type="text" class="form-control form-control-sm bg-secondary border-0 text-center" id="quantity-@item.i" value="@item.value.Quantity">
+                                                            <div class="input-group-btn" data-id="@item.value.OrderDetailId" id="btnIncrease-@item.i">
+                                                                <button class="btn btn-sm btn-primary btn-plus">
+                                                                    <i class="fa fa-plus"></i>
+                                                                </button>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td class="align-middle">$150</td>
+
+                                                    <td class="align-middle">
+                                                        <button class="btn btn-sm btn-danger" id="btnDelete-@item.i" data-id="@item.value.OrderDetailId">
+                                                            <i class="fa fa-times">
+                                                            </i>
+                                                        </button>
+                                                    </td>
+                                                    <td class="align-middle"> <input style="width: 20px; height: 20px;" type="checkbox" name="vehicle1" value="Bike" onchange="handle(event,@item.value.OrderDetailId)" /> </td>
+                                                </tr>
                             }
-                            </tbody>
-                        </table>
+                                        </tbody>
+                                    </table>
                 }
                 else
                 {
-                        <h1>Hoong mua ma dou co sp a be oiiii!!</h1>
+                                    <h1>Hoong mua ma dou co sp a be oiiii!!</h1>
                 }
 
             }
@@ -119,6 +125,31 @@
 
         }
 
+
+        function DeleteProduct(orderDetailId) {
+            let text = "Press a button!\nEither OK or Cancel.";
+            if (confirm(text) == true) {
+                var a = $("#a1").attr('href');
+                window.Location(a);
+            } else {
+                event.preventDefault();
+            }
+        }
+
+        function CompareConfirm() {
+            var str1 = "abc";
+            var str2 = "def";
+            console.log(str1)
+
+            if (str1 === str2) {
+                // your logic here
+                return false;
+            } else {
+                // your logic here
+                return confirm("Confirm?");
+            }
+        }
+
         $(function () {
             for (let i = 0; i < 4; i++) {
                 $('#btnDecrease-' + i).on('click', function () {
@@ -158,6 +189,34 @@
                     })
                     return false;
                 });
+
+                $('#btnDelete-' + i).on('click', function () {
+                    let text = "Do yoy want delele this product!\nEither OK or Cancel.";
+                    var id = $('#btnDelete-' + i).data('id');
+
+                    if (confirm(text) == true) {
+                        $.ajax({
+                            type: 'POST',
+                            url: '@Url.Action("HandleDeleteCartItem", "Cart")',
+                            dataType: 'json',
+                            data: { id: id },
+                            success: function (response) {
+                                console.log(response);
+                                if(response.status == "success"){
+                                    $('#tblCart #tr-'+i).remove();
+                                }else{
+                                    console.log(response.status);
+                                }
+                            },
+                            error: function () {
+                                console.error('ERR');
+                            }
+                        })
+                    } else {
+                        event.preventDefault();
+                    }
+                    return false;
+                })
             }
         });
 

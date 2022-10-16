@@ -28,15 +28,15 @@ namespace online_shop_mvc.ServicesImp
             return null;
         }
 
-        public async Task<bool> Delete(OrderDetail orderDetail)
+        public async Task<bool> Delete(int id)
         {
             try
             {
-                if (await _orderDetailRepo.Delete(orderDetail))
-                {
-                    return true;
-                }
-            }catch(Exception ex)
+                var orderDetail = await GetOrderDetailById(id);
+                if (orderDetail != null)
+                    return await _orderDetailRepo.Delete(orderDetail);
+            }
+            catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
             }
@@ -48,11 +48,12 @@ namespace online_shop_mvc.ServicesImp
             try
             {
                 var orderDetails = await _orderDetailRepo.GetAllOrderDetail();
-                if(orderDetails != null)
+                if (orderDetails != null)
                 {
                     return orderDetails;
                 }
-            }catch(Exception ex)
+            }
+            catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
             }
@@ -64,7 +65,7 @@ namespace online_shop_mvc.ServicesImp
             try
             {
                 IList<CustomerOrderResponseModel> response = new List<CustomerOrderResponseModel>();
-                var orderDetail = (IList<OrderDetail>) await _orderDetailRepo.GetAllOrderDetailsByOrderId(orderId);
+                var orderDetail = (IList<OrderDetail>)await _orderDetailRepo.GetAllOrderDetailsByOrderId(orderId);
                 if (orderDetail != null)
                 {
                     foreach (var item in orderDetail)
@@ -87,13 +88,13 @@ namespace online_shop_mvc.ServicesImp
                             UnitPrice = unitPrice,
                             Price = price,
                             SizeId = item.SizeID,
-                            ColorId =item.ColorID,
+                            ColorId = item.ColorID,
                             ProductId = (int)item.ProductID,
                             PathImage = product.Image,
                             ProductName = product.Name,
                             OrderDetailId = (int)item.Id,
                         };
-                        
+
                         response.Add(customerOrder);
                     }
 
@@ -112,11 +113,10 @@ namespace online_shop_mvc.ServicesImp
             try
             {
                 var orderDetail = await _orderDetailRepo.GetOrderDetailById(id);
-                if(orderDetail != null)
-                {
+                if (orderDetail != null)
                     return orderDetail;
-                }
-            }catch(Exception ex)
+            }
+            catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
             }
@@ -127,15 +127,15 @@ namespace online_shop_mvc.ServicesImp
         {
             try
             {
-                Console.WriteLine(orderDetail.Id);
                 var response = await GetOrderDetailById(orderDetail.Id);
-                
+
                 if (response != null)
                 {
                     response.Quantity = orderDetail.Quantity;
                     return await _orderDetailRepo.Update(response);
                 }
-            }catch(Exception ex)
+            }
+            catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
             }

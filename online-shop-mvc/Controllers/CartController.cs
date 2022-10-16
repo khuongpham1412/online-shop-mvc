@@ -86,10 +86,18 @@ namespace online_shop_mvc.Controllers
             return Json("update success");
         }
 
-        public async Task<IActionResult> HandleDeleteCartItem()
+        [HttpPost]
+        public async Task<JsonResult> HandleDeleteCartItem(int id)
         {
+            if (id > 0)
+            {
+                if (await _orderDetailService.Delete(id))
+                {
+                    return Json(new { Status = "success" });
+                }
+            }
 
-            return RedirectToAction("Index");
+            return Json(new{ Status= "fail" });
         }
     }
 }

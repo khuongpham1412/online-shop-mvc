@@ -7,7 +7,7 @@ namespace online_shop_mvc.Services
     {
         public Task<OrderDetail> Add(OrderDetail orderDetail);
         public Task<OrderDetail> Update(OrderDetail orderDetail);
-        public Task<bool> Delete(OrderDetail orderDetail);
+        public Task<bool> Delete(int id);
         public Task<IList<OrderDetail>> GetAllOrderDetails();
         public Task<IList<CustomerOrderResponseModel>> GetAllOrderDetailsByOrderId(int orderId);
         public Task<OrderDetail> GetOrderDetailById(int id);
