@@ -2,9 +2,8 @@
   "ExpandedNodes": [
     "",
     "\\Model",
-    "\\Model\\ShopDbContext",
+    "\\Model\\Entities",
     "\\online-shop-mvc",
-    "\\online-shop-mvc\\Controllers",
     "\\online-shop-mvc\\Services",
     "\\online-shop-mvc\\ServicesImp",
     "\\online-shop-mvc\\Views",

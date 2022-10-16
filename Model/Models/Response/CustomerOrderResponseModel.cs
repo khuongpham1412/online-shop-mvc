@@ -14,5 +14,6 @@ namespace Model.Models.Response
         public string ProductName { get; set; }
         public decimal Price { get; set; }
         public decimal UnitPrice { get; set; }
+        public int OrderDetailId { get; set; }
     }
 }

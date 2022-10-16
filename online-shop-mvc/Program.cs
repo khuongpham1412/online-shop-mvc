@@ -17,6 +17,7 @@ builder.Services.AddScoped<IOrderService, OrderService>();
 builder.Services.AddScoped<IOrderDetailService, OrderDetailService>();
 builder.Services.AddScoped<IProductSizeColorService, ProductSizeColorService>();
 
+
 //builder.Services.AddDbContext<OnlineShopDbContext>(
 //        options => options.UseSqlServer(IConfiguration.GetConnectionString("DefaultConnection"))
 //);

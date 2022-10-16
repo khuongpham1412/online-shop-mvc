@@ -124,6 +124,10 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "AntDesign": {
+              "target": "Package",
+              "version": "[0.12.6, )"
+            },
             "Microsoft.EntityFrameworkCore.Design": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",

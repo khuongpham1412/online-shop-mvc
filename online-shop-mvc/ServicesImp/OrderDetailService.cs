@@ -86,6 +86,12 @@ namespace online_shop_mvc.ServicesImp
                             Quantity = quantity,
                             UnitPrice = unitPrice,
                             Price = price,
+                            SizeId = item.SizeID,
+                            ColorId =item.ColorID,
+                            ProductId = (int)item.ProductID,
+                            PathImage = product.Image,
+                            ProductName = product.Name,
+                            OrderDetailId = (int)item.Id,
                         };
                         
                         response.Add(customerOrder);
@@ -117,9 +123,23 @@ namespace online_shop_mvc.ServicesImp
             return null;
         }
 
-        public Task<OrderDetail> Update(OrderDetail orderDetail)
+        public async Task<OrderDetail> Update(OrderDetail orderDetail)
         {
-            throw new NotImplementedException();
+            try
+            {
+                Console.WriteLine(orderDetail.Id);
+                var response = await GetOrderDetailById(orderDetail.Id);
+                
+                if (response != null)
+                {
+                    response.Quantity = orderDetail.Quantity;
+                    return await _orderDetailRepo.Update(response);
+                }
+            }catch(Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            return null;
         }
     }
 }

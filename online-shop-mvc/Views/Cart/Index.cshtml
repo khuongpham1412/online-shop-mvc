@@ -1,10 +1,12 @@
-﻿@{
+﻿@using Model.Entities;
+@{
     ViewData["Title"] = "Cart Page";
-    var categories = (IList<Model.Entities.Category>)ViewBag.Categories; 
+    var categories = (IList<Model.Entities.Category>)ViewBag.Categories;
     var orderOfUser = (IList<Model.Models.Response.CustomerOrderResponseModel>)ViewBag.OrderOfUser;
 }
 
 @Html.Partial("_Navbar", (IList<Model.Entities.Category>) categories)
+
 <!-- Breadcrumb Start -->
 <div class="container-fluid">
     <div class="row px-xl-5">
@@ -23,64 +25,64 @@
     <div class="row px-xl-5">
         <div class="col-lg-8 table-responsive mb-5">
             @{
-                        if(orderOfUser != null){
-                            
-                    <table class="table table-light table-borderless table-hover text-center mb-0">
-                        <thead class="thead-dark">
-                            <tr>
-                                <th>Products</th>
-                                <th>Size</th>
-                                <th>Color</th>
-                                <th>Price</th>
-                                <th>Quantity</th>
-                                <th>Total</th>
-                                <th>Remove</th>
-                            </tr>
-                        </thead>
-                        <tbody class="align-middle">
-                        @{            
-                    foreach (var @item in orderOfUser)
-                                {
-                        
-                                            <tr>
-                                                <td class="align-middle"><img src="img/product-1.jpg" alt="" style="width: 50px;"> @item.ProductName</td>
-                                                <td class="align-middle">@item.SizeName</td>
-                                                <td class="align-middle">@item.ColorName</td>
-                                                <td class="align-middle">@item.Price</td>
-                                                <td class="align-middle">
-                                                    <div class="input-group quantity mx-auto" style="width: 100px;">
-                                                        <div class="input-group-btn">
-                                                            <button class="btn btn-sm btn-primary btn-minus">
-                                                                <i class="fa fa-minus"></i>
-                                                            </button>
-                                                        </div>
-                                                        <input type="text" class="form-control form-control-sm bg-secondary border-0 text-center" value="@item.Quantity">
-                                                        <div class="input-group-btn">
-                                                            <button class="btn btn-sm btn-primary btn-plus">
-                                                                <i class="fa fa-plus"></i>
-                                                            </button>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                                <td class="align-middle">$150</td>
-                                                <td class="align-middle"><button class="btn btn-sm btn-danger"><i class="fa fa-times"></i></button></td>
-                                            </tr>
-                                }
-                                    }
-                            
-                        </tbody>
-                    </table>
-                    
+
+                if (orderOfUser != null)
+                {
+                        <table class="table table-light table-borderless table-hover text-center mb-0">
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th>Products</th>
+                                    <th>Size</th>
+                                    <th>Color</th>
+                                    <th>Price</th>
+                                    <th>Quantity</th>
+                                    <th>Total</th>
+                                    <th>Remove</th>
+                                    <th>
+                                    <td><input style="width: 20px; height: 20px;" type="checkbox" id="selected_all" name="check_all" value=""></td></th>
+                                </tr>
+                            </thead>
+                            <tbody id="tblCart" class="align-middle">
+                                @foreach (var item in orderOfUser.Select((value, i) => new { i, value }))
+                            {
+
+                                    <tr id="tr-@item.i">
+                                        <td class="align-middle"><img src="img/product-1.jpg" alt="" style="width: 50px;">@item.value.ProductName</td>
+                                        <td class="align-middle">@item.value.SizeName</td>
+                                        <td class="align-middle">@item.value.ColorName</td>
+                                        <td class="align-middle">@item.value.Price</td>
+                                        <td class="align-middle">
+                                            <div class="input-group quantity mx-auto" style="width: 100px;">
+                                                <div class="input-group-btn" data-id="@item.value.OrderDetailId" id="btnDecrease-@item.i">
+                                                    <button class="btn btn-sm btn-primary btn-minus">
+                                                        <i class="fa fa-minus"></i>
+                                                    </button>
+                                                </div>
+                                                <input type="text" class="form-control form-control-sm bg-secondary border-0 text-center" id="quantity-@item.i" value="@item.value.Quantity">
+                                                <div class="input-group-btn" data-id="@item.value.OrderDetailId" id="btnIncrease-@item.i">
+                                                    <button class="btn btn-sm btn-primary btn-plus">
+                                                        <i class="fa fa-plus"></i>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="align-middle">$150</td>
+                                        <td class="align-middle"><button class="btn btn-sm btn-danger"><i class="fa fa-times"></i></button></td>
+                                        <td class="align-middle"> <input style="width: 20px; height: 20px;" type="checkbox" name="vehicle1" value="Bike" onchange="handle(event,@item.value.OrderDetailId)" /> </td>
+                                    </tr>
+                            }
+                            </tbody>
+                        </table>
                 }
                 else
                 {
-                        <h1>Hông mua mà đòi kó sản phẩm à bé owiiiiii  </h1>
+                        <h1>Hoong mua ma dou co sp a be oiiii!!</h1>
                 }
 
             }
         </div>
         <div class="col-lg-4">
-            
+
             <h5 class="section-title position-relative text-uppercase mb-3"><span class="bg-secondary pr-3">Cart Summary</span></h5>
             <div class="bg-light p-30 mb-5">
                 <div class="border-bottom pb-2">
@@ -98,10 +100,66 @@
                         <h5>Total</h5>
                         <h5>$160</h5>
                     </div>
-                    <button class="btn btn-block btn-primary font-weight-bold my-3 py-3">Proceed To Checkout</button>
+                    <button class="btn btn-block btn-primary font-weight-bold my-3 py-3 test">Proceed To Checkout</button>
+                    <button class="btn btn-block btn-primary font-weight-bold my-3 py-3 test">Proceed To Checkout</button>
+                    <button class="btn btn-block btn-primary font-weight-bold my-3 py-3 test">Proceed To Checkout</button>
                 </div>
             </div>
         </div>
     </div>
 </div>
-<!-- Cart End -->
+
+
+@section scripts{
+    <script type="text/javascript">
+
+        function handleUpdateQuantity(orderDetailId) {
+            var quantity = $('#quantity-' + orderDetailId).val();
+            var data = { OrderDetailId: orderDetailId, Quantity: quantity };
+
+        }
+
+        $(function () {
+            for (let i = 0; i < 4; i++) {
+                $('#btnDecrease-' + i).on('click', function () {
+                    var orderDetailId = $('#btnDecrease-' + i).data('id');
+                    var quantity = $('#quantity-' + i).val();
+                    var data = { OrderDetailId: orderDetailId, Quantity: quantity };
+                    $.ajax({
+                        type: 'POST',
+                        url: '@Url.Action("HandleUserOrderUpdateQuantity","Cart")',
+                        dataType: 'json',
+                        data: { data: data },
+                        success: function (response) {
+                            console.log(response);
+                        },
+                        error: function () {
+                            console.error('ERR');
+                        }
+                    })
+                    return false;
+                });
+
+                $('#btnIncrease-' + i).on('click', function () {
+                    var orderDetailId = $('#btnIncrease-' + i).data('id');
+                    var quantity = $('#quantity-' + i).val();
+                    var data = { OrderDetailId: orderDetailId, Quantity: quantity };
+                    $.ajax({
+                        type: 'POST',
+                        url: '@Url.Action("HandleUserOrderUpdateQuantity","Cart")',
+                        dataType: 'json',
+                        data: { data: data },
+                        success: function (response) {
+                            console.log(response);
+                        },
+                        error: function () {
+                            console.error('ERR');
+                        }
+                    })
+                    return false;
+                });
+            }
+        });
+
+    </script>
+}

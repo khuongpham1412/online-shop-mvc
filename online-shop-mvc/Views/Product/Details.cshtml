@@ -87,6 +87,7 @@
                                             {
                                                 if (sizeSelected == sizes[i].Id)
                                                 {
+                                                    <input type="hidden" name="product" value="@productSelected"/>
                                                     <div class="custom-control custom-radio custom-control-inline">
                                                         <input type="radio" class="custom-control-input" checked id="size-@sizes[i].Id" name="size" value="@sizes[i].Id" onclick="selectSize(@sizes[i].Id)">
                                                         <label class="custom-control-label" for="size-@sizes[i].Id">@sizes[i].Name</label>

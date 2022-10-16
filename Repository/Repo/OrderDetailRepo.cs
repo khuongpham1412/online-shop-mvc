@@ -74,7 +74,8 @@ namespace Repository.Repo
         {
             try
             {
-                return await _onlineShopDbContext.OrderDetails.Where(s => s.Id == id).FirstOrDefaultAsync();
+                var orderDetail = await _onlineShopDbContext.OrderDetails.Where(s => s.Id == id).FirstOrDefaultAsync();
+                return orderDetail;
             }
             catch (Exception ex)
             {
@@ -96,12 +97,15 @@ namespace Repository.Repo
             return null;
         }
 
-        public async Task<OrderDetail> CheckUserOrderProduct(int productId, int sizeId, int colorId)
+        public async Task<OrderDetail> CheckUserOrderProduct(int orderId, int productId, int sizeId, int colorId)
         {
             try
             {
-                var userOrderProduct = await _onlineShopDbContext.OrderDetails.Where(o => o.ProductID == productId && o.SizeID == sizeId && o.ColorID == colorId).FirstOrDefaultAsync();
-                return userOrderProduct;
+                var userOrderProduct = await _onlineShopDbContext.OrderDetails.Where(o => o.OrderID == orderId && o.ProductID == productId && o.SizeID == sizeId && o.ColorID == colorId).FirstOrDefaultAsync();
+                if(userOrderProduct != null)
+                {
+                    return userOrderProduct;
+                }
             }
             catch (Exception ex)
             {

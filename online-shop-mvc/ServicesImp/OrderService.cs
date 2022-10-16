@@ -40,7 +40,7 @@ namespace online_shop_mvc.ServicesImp
 
                 if (orderID != -1)
                 {
-                    var checkUserOrder = await _orderDetailRepo.CheckUserOrderProduct(productId, sizeId, colorId);
+                    var checkUserOrder = await _orderDetailRepo.CheckUserOrderProduct( orderID, productId, sizeId, colorId);
                     if (checkUserOrder != null)
                     {
                         checkUserOrder.Quantity = checkUserOrder.Quantity + quantity;

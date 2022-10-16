@@ -2,7 +2,11 @@
 using Model.Entities;
 using Model.Models.Request;
 using Model.Models.Response;
+using Model.ShopDbContext;
+using Newtonsoft.Json;
 using online_shop_mvc.Services;
+using System.Data;
+using System.Text.Json.Serialization;
 
 namespace online_shop_mvc.Controllers
 {
@@ -12,6 +16,7 @@ namespace online_shop_mvc.Controllers
         private readonly ICategoryService _categoryService;
         private readonly IOrderService _orderService;
         private readonly IOrderDetailService _orderDetailService;
+        private readonly OnlineShopDbContext _context = new OnlineShopDbContext();
         public CartController(IProductService productService, ICategoryService categoryService, IOrderService orderService, IOrderDetailService orderDetailService)
         {
             _productService = productService;
@@ -30,11 +35,11 @@ namespace online_shop_mvc.Controllers
 
             //Get order id by customer id
             var orderId = await _orderService.GetOrderIdByCustomerId(1);
-            if(orderId != -1)
+            if (orderId != -1)
             {
                 //Get all orders of customer
-                var orderOfUser = (IList<CustomerOrderResponseModel>) await _orderDetailService.GetAllOrderDetailsByOrderId(orderId);
-                if(orderOfUser != null)
+                var orderOfUser = (IList<CustomerOrderResponseModel>)await _orderDetailService.GetAllOrderDetailsByOrderId(orderId);
+                if (orderOfUser != null)
                 {
                     ViewBag.OrderOfUser = orderOfUser;
                 }
@@ -45,8 +50,7 @@ namespace online_shop_mvc.Controllers
 
         public async Task<IActionResult> HandleUserOrder()
         {
-            int productID = 1;
-
+            int productID = Int32.Parse(Request.Form["product"]);
             int sizeID = Int32.Parse(Request.Form["size"]);
             int colorID = Int32.Parse(Request.Form["color"]);
             int quantity = Int32.Parse(Request.Form["quantity"]);
@@ -62,6 +66,28 @@ namespace online_shop_mvc.Controllers
                 Quantity = quantity,
             };
             await _orderService.Add(userOrder);
+
+            return RedirectToAction("Index");
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> HandleUserOrderUpdateQuantity(CustomerUpdateQuantityModel data)
+        {
+            int quantity = data.Quantity;
+            int orderDetailId = data.OrderDetailId;
+
+            OrderDetail orderDetail = new OrderDetail()
+            {
+                Id = orderDetailId,
+                Quantity = quantity
+            };
+            await _orderDetailService.Update(orderDetail);
+
+            return Json("update success");
+        }
+
+        public async Task<IActionResult> HandleDeleteCartItem()
+        {
 
             return RedirectToAction("Index");
         }
