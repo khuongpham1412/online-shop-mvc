@@ -95,13 +95,14 @@ namespace online_shop_mvc.ServicesImp
             return false;
         }
 
-        public async Task<bool> Delete(Order order)
+        public async Task<bool> Delete(int orderId)
         {
             try
             {
-                if (await _orderRepo.Delete(order))
+                var order = await GetOrderById(orderId);
+                if(order != null)
                 {
-                    return true;
+                    return await _orderRepo.Delete(order);
                 }
             }catch(Exception ex)
             {

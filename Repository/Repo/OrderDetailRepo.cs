@@ -3,6 +3,7 @@ using Model.Entities;
 using Model.ShopDbContext;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -113,5 +114,23 @@ namespace Repository.Repo
             }
             return null;
         }
+
+        public async Task<int> GetCountOrderDetailsByOrderId(int orderId)
+        {
+            try
+            {
+                var count = await _onlineShopDbContext.OrderDetails.Where(o => o.OrderID == orderId).CountAsync();
+                if (count != null)
+                {
+                    return count;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            return -1;
+        }
+
     }
 }

@@ -93,6 +93,7 @@ namespace online_shop_mvc.ServicesImp
                             PathImage = product.Image,
                             ProductName = product.Name,
                             OrderDetailId = (int)item.Id,
+                            OrderId = (int) item.OrderID
                         };
 
                         response.Add(customerOrder);
@@ -106,6 +107,19 @@ namespace online_shop_mvc.ServicesImp
                 Console.WriteLine(ex.Message);
             }
             return null;
+        }
+
+        public async Task<int> GetCountOrderDetailsByOrderId(int orderId)
+        {
+            try
+            {
+                return await _orderDetailRepo.GetCountOrderDetailsByOrderId(orderId);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            return -1;
         }
 
         public async Task<OrderDetail> GetOrderDetailById(int id)

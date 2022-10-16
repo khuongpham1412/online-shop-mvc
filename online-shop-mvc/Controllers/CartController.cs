@@ -71,7 +71,7 @@ namespace online_shop_mvc.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> HandleUserOrderUpdateQuantity(CustomerUpdateQuantityModel data)
+        public async Task<JsonResult> HandleUserOrderUpdateQuantity(CustomerUpdateQuantityModel data)
         {
             int quantity = data.Quantity;
             int orderDetailId = data.OrderDetailId;
@@ -87,13 +87,18 @@ namespace online_shop_mvc.Controllers
         }
 
         [HttpPost]
-        public async Task<JsonResult> HandleDeleteCartItem(int id)
+        public async Task<JsonResult> HandleDeleteCartItem(int orderId, int orderDetailId)
         {
-            if (id > 0)
+            if (orderId > 0 && orderDetailId > 0)
             {
-                if (await _orderDetailService.Delete(id))
+                int count = await _orderDetailService.GetCountOrderDetailsByOrderId(orderId);
+                if (count == 1)
                 {
-                    return Json(new { Status = "success" });
+                    await _orderService.Delete(orderId);
+                }
+                if (await _orderDetailService.Delete(orderDetailId))
+                {
+                    return Json(new { Status = "success", Count= count });
                 }
             }
 
