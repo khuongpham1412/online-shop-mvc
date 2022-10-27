@@ -1,15 +1,21 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using AntDesign;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Model.Entities;
+using Model.ShopDbContext;
 using NuGet.Protocol;
+using online_shop_mvc.Models.Request;
 using online_shop_mvc.Services;
 using online_shop_mvc.ServicesImp;
 using System.Collections.Immutable;
+using System.Linq;
+using Color = Model.Entities.Color;
 
 namespace online_shop_mvc.Controllers
 {
     public class ProductController : Controller
     {
-
+        private readonly OnlineShopDbContext _onlineShopDbContext = new OnlineShopDbContext();
         private readonly IProductService _productService;
         private readonly ISizeService _sizeService;
         private readonly IColorService _colorService;
@@ -31,9 +37,6 @@ namespace online_shop_mvc.Controllers
                 ViewBag.Categories = categories;
             }
 
-            //Get all list product have paging
-            IList<Product> products = await _productService.GetAllProductsPaging(1, 5);
-            ViewBag.Products = products;
             //Get count product
             int count = await _productService.GetCountProduct();
             ViewBag.Count = count;
@@ -42,7 +45,7 @@ namespace online_shop_mvc.Controllers
             ViewBag.Sizes = sizes;
             //Get all colors
             IList<Color> colors = await _colorService.GetAllColors();
-            ViewBag.Color = colors;
+            ViewBag.Colors = colors;
 
             return View();
         }
@@ -131,6 +134,35 @@ namespace online_shop_mvc.Controllers
             {
                 colors = colors.ToString()
             });
+        }
+
+        [HttpPost]
+        public async Task<JsonResult> LoadProduct()
+        {
+            IList<Product> products = await _productService.GetAllProductsPaging(1, 5);
+            return Json(new { Status = "success", Data = products });
+        }
+
+        [HttpPost]
+        public async Task<JsonResult> LoadProductByPaging(FilterRequestModel data)
+        {
+            int[] sizes = data.Size;
+            int[] colors = data.Color;
+            string search = data.NameSearch;
+
+            var res = (from p in _onlineShopDbContext.ProductSizeColors
+                       join ps in _onlineShopDbContext.Products
+                       on p.ProductID equals ps.Id
+                       where sizes != null && sizes.Contains(p.SizeID) && colors != null && colors.Contains(p.ColorID) && search != null && ps.Name.Contains(search)
+                       group ps by p.ProductID into g
+                       select g.ToList()).AsEnumerable().Skip(0).Take(5).ToList();
+            IList<Product> p1 = new List<Product>();
+            foreach (var item in res)
+            {
+                p1.Add(item[0]);
+            }
+
+            return Json(new { Status = "success", Data = res});
         }
     }
 }

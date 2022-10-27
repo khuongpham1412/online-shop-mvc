@@ -2,9 +2,9 @@
 {
     public class FilterRequestModel : PagingRequestModel
     {
-        public string? NameSearch { get; set; }
-        public decimal? Price { get; set; }
-        public string? Size { get; set; }
-        public string? Color { get; set; }
+        public string NameSearch { get; set; }
+        public decimal Price { get; set; }
+        public int[] Size { get; set; }
+        public int[] Color { get; set; }
     }
 }

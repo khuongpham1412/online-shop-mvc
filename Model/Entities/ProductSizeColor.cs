@@ -16,11 +16,11 @@ namespace Model.Entities
         //[ForeignKey("ProductID")]
         //public Product Product { get; set; }
 
-        public int? SizeID { get; set; }
+        public int SizeID { get; set; }
         //[ForeignKey("SizeID")]
         //public Size Size { get; set; }
 
-        public int? ColorID { get; set; }
+        public int ColorID { get; set; }
         //[ForeignKey("ColorID")]
         //public Color Color { get; set; }
 

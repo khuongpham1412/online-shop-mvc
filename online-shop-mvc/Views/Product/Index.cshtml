@@ -1,6 +1,5 @@
 ﻿@{
     ViewData["Title"] = "Product Page";
-    var products = (IList<Model.Entities.Product>)ViewBag.Products;
     var productCategories = (IList<Model.Entities.Product>)ViewBag.ProductCategories;
     var sizes = (IList<Model.Entities.Size>)ViewBag.Sizes;
     var colors = (IList<Model.Entities.Color>)ViewBag.Colors;
@@ -8,12 +7,6 @@
     var categories = (IList<Model.Entities.Category>)ViewBag.Categories;
 }
 
-@{
-    if (productCategories != null)
-    {
-        products = productCategories;
-    }
-}
 
 @Html.Partial("_Navbar", (IList<Model.Entities.Category>) categories)
 
@@ -74,52 +67,44 @@
             <!-- Price End -->
             <!-- Color Start -->
             <h5 class="section-title position-relative text-uppercase mb-3"><span class="bg-secondary pr-3">Filter by color</span></h5>
-            <div class="bg-light p-4 mb-30">
-                <form>
+            <div id="test-color" class="bg-light p-4 mb-30">
                     <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
                         <input type="checkbox" class="custom-control-input" checked id="color-all">
                         <label class="custom-control-label" for="color-all">All Color</label>
                         <span class="badge border font-weight-normal">1000</span>
                     </div>
                     @{
-                        if (colors != null)
-                        {
+                        
                             foreach (var @color in @colors)
                             {
-                                <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
-                                    <input type="checkbox" class="custom-control-input" id="color-@color.Id">
-                                    <label class="custom-control-label" for="color-@color.Id">@color.Name</label>
-                                    <span class="badge border font-weight-normal">150</span>
-                                </div>
+                                    <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
+                                <input type="checkbox" value="@color.Id" class="custom-control-input" id="color-@color.Id">
+                                        <label class="custom-control-label" for="color-@color.Id">@color.Name</label>
+                                        <span class="badge border font-weight-normal">150</span>
+                                    </div>
                             }
-                        }
+                        
                     }
 
-                </form>
             </div>
             <!-- Color End -->
             <!-- Size Start -->
             <h5 class="section-title position-relative text-uppercase mb-3"><span class="bg-secondary pr-3">Filter by size</span></h5>
-            <div class="bg-light p-4 mb-30">
-                <form>
-                    <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
-                        <input type="checkbox" class="custom-control-input" checked id="size-all">
-                        <label class="custom-control-label" for="size-all">All Size</label>
-                        <span class="badge border font-weight-normal">1000</span>
-                    </div>
+            <div id="test-size" class="bg-light p-4 mb-30">
 
-                    @{
-                        foreach (var @size in @sizes)
-                        {
+
+
+                @{
+                    foreach (var @size in @sizes)
+                    {
                             <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
-                                <input type="checkbox" class="custom-control-input" id="size-@size.Id">
+                                <input type="checkbox" value="@size.Id" class="custom-control-input" id="size-@size.Id">
                                 <label class="custom-control-label" for="size-@size.Id">@size.Name</label>
                                 <span class="badge border font-weight-normal">150</span>
                             </div>
-                        }
                     }
+                }
 
-                </form>
             </div>
             <!-- Size End -->
         </div>
@@ -127,7 +112,7 @@
         <!-- Shop Product Start -->
         <div class="col-lg-9 col-md-8">
             <div class="row pb-3">
-                <div class="col-12 pb-1">
+                <div id="khuong" class="col-12 pb-1">
                     <div class="d-flex align-items-center justify-content-between mb-4">
                         <div>
                             <button class="btn btn-sm btn-light"><i class="fa fa-th-large"></i></button>
@@ -154,52 +139,17 @@
                     </div>
                 </div>
 
-                @{
-                    if (@products != null)
-                    {
-                        foreach (var @product in @products)
-                        {
 
-                            <div class="col-lg-4 col-md-6 col-sm-6 pb-1">
-                                <div class="product-item bg-light mb-4">
-                                    <div class="product-img position-relative overflow-hidden">
-                                        <img class="img-fluid w-100" src=~/client/@product.Image alt="">
-                                        <div class="product-action">
-                                            <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-shopping-cart"></i></a>
-                                            <a class="btn btn-outline-dark btn-square" href=""><i class="far fa-heart"></i></a>
-                                            <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-sync-alt"></i></a>
-                                            <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-search"></i></a>
-                                        </div>
-                                    </div>
-                                    <div class="text-center py-4">
-                                        <a class="h6 text-decoration-none text-truncate" href="Product/Details/@product.Id">@product.Name</a>
-                                        <div class="d-flex align-sizes-center justify-content-center mt-2">
-                                            <h5>$@product.Price</h5><h6 class="text-muted ml-2"><del>$123.00</del></h6>
-                                        </div>
-                                        <div class="d-flex align-items-center justify-content-center mb-1">
-                                            <small class="fa fa-star text-primary mr-1"></small>
-                                            <small class="fa fa-star text-primary mr-1"></small>
-                                            <small class="fa fa-star text-primary mr-1"></small>
-                                            <small class="fa fa-star text-primary mr-1"></small>
-                                            <small class="fa fa-star text-primary mr-1"></small>
-                                            <small>(99)</small>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        }
-                    }
-                }
 
                 <div class="col-12">
                     <nav>
                         <ul class="pagination justify-content-center">
                             <li class="page-item disabled"><a class="page-link" href="#">Previous</span></a></li>
                             @{
-                                var totalPage = Math.Ceiling((double)@count / products.Count());
+                                var totalPage = Math.Ceiling((double)@count / 5);
                                 for (var @page = 1; @page <= totalPage; @page++)
                                 {
-                                    <li class="page-item active"><a class="page-link">@Html.ActionLink(""+@page, "Details", "Product", new { id = @page }, null)</a></li>
+                                        <li class="page-item active"><a class="page-link">@Html.ActionLink(""+@page, "Details", "Product", new { id = @page }, null)</a></li>
 
 
                                 }
@@ -218,3 +168,75 @@
     </div>
 </div>
 <!-- Shop End -->
+@section scripts{
+
+    <script type="text/javascript">
+
+        $(function () {
+            loadData();
+            var data = { NameSearch: '', Size: [], Color: [] }
+
+            $('#test-size').off('click').on('click', 'div input', function () {
+                var sizeId = $(this).val();
+                (this.checked) ? data.Size.push(sizeId) : data.Size = $.grep(data.Size, function (value) { return value != sizeId; });
+                loadData(url = '@Url.Action("LoadProductByPaging","Product")', data = data);
+            })
+
+            $('#test-color').off('click').on('click', 'div input', function () {
+                var colorId = $(this).val();
+                (this.checked) ? data.Color.push(colorId) : data.Color = $.grep(data.Color, function (value) { return value != colorId; });
+                loadData(url = '@Url.Action("LoadProductByPaging","Product")', data = data);
+            })
+
+
+
+            function loadData(url = '@Url.Action("LoadProduct","Product")', data = {}) {
+                $.ajax({
+                    type: 'POST',
+                    url: url,
+                    dataType: 'json',
+                    data: data,
+                    success: function (response) {
+                        console.log(response);
+                        $('div').remove('.hihi');
+                        var data = '';
+                        $.each(response.data, function (index, value) {
+                            data += "<div class='col-lg-4 col-md-6 col-sm-6 pb-1 hihi' >"
+                                + "<div class='product-item bg-light mb-4' >"
+                                + "<div class='product-img position-relative overflow-hidden' >"
+                                + "<img class='img-fluid w-100' src='client/" + value.image + "' alt='' >"
+                                + "<div class='product-action' >"
+                                + "<a class='btn btn-outline-dark btn-square' href = ' > <i class='fa fa-shopping-cart' > </i></a >"
+                                + "<a class='btn btn-outline-dark btn-square' href = ' > <i class='far fa-heart' > </i></a >"
+                                + "<a class='btn btn-outline-dark btn-square' href = ' > <i class='fa fa-sync-alt' > </i></a >"
+                                + "<a class='btn btn-outline-dark btn-square' href = ' > <i class='fa fa-search' > </i></a >"
+                                + "</div>"
+                                + "</div>"
+                                + "<div class='text-center py-4' >"
+                                + "<a class='h6 text-decoration-none text-truncate' href = 'Product/Details/" + value.id + "' > " + value.name + "</a>"
+                                + "<div class='d-flex align-sizes-center justify-content-center mt-2' >"
+                                + "<h5>$" + value.price + "</h5><h6 class='text-muted ml-2'><del>$123.00</del > </h6>"
+                                + "</div>"
+                                + "<div class='d-flex align-items-center justify-content-center mb-1' >"
+                                + "<small class='fa fa-star text-primary mr-1' > </small>"
+                                + "<small class='fa fa-star text-primary mr-1' > </small>"
+                                + "<small class='fa fa-star text-primary mr-1' > </small>"
+                                + "<small class='fa fa-star text-primary mr-1' > </small>"
+                                + "<small class='fa fa-star text-primary mr-1' > </small>"
+                                + "<small>(99) </small>"
+                                + "</div>"
+                                + "</div>"
+                                + "</div>"
+                                + "</div>";
+                        });
+                        $('#khuong').after(data);
+                    },
+                    error: function () {
+                        console.error('ERR');
+                    }
+                });
+            }
+        });
+    </script>
+}
+

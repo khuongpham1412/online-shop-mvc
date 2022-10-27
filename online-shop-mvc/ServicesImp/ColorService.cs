@@ -44,6 +44,7 @@ namespace online_shop_mvc.ServicesImp
             try
             {
                 var colors = await _colorRepo.GetAllColor();
+                
                 if(colors != null)
                 {
                     return colors;
