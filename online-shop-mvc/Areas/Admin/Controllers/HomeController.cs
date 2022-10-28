@@ -2,7 +2,7 @@
 
 namespace online_shop_mvc.Areas.Admin.Controllers
 {
-    [Area("Home")]
+    [Area("Admin")]
     public class HomeController : Controller
     {
         public IActionResult Index()
