@@ -2,6 +2,8 @@
     Layout = null;
 }
 
+
+
 <!DOCTYPE html>
 
 <html>
@@ -11,10 +13,10 @@
 	<link rel="stylesheet" href="~/Client/css/style-login.css">
 </head>
 <body>
-    <h2>Chào Mừng Bạn Đến Với Bình Minh Vô Tận !!!</h2>
+    <h2>Chào Mừng Bạn Đến Với Bình Nguyên Vô Tận !!!</h2>
 <div class="container" id="container">
 	<div class="form-container sign-up-container">
-		<form action="#">
+			<form action="Login/HandleLogin" method="post">
 			<h1>Create Account</h1>
 			<div class="social-container">
 				<a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
@@ -23,13 +25,13 @@
 			</div>
 			<span>or use your email for registration</span>
 			<input type="text" placeholder="Name" />
-			<input type="email" placeholder="Email" />
-			<input type="password" placeholder="Password" />
-			<button>Sign Up</button>
+			<input type="email" placeholder="Email" name="Username"/>
+			<input type="password" placeholder="Password" name="Password"/>
+			<button type="submit">Sign Up</button>
 		</form>
 	</div>
 	<div class="form-container sign-in-container">
-		<form action="#">
+			<form action="Login/HandleLogin" method="post">
 			<h1>Sign in</h1>
 			<div class="social-container">
 				<a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
@@ -37,10 +39,11 @@
 				<a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
 			</div>
 			<span>or use your account</span>
-			<input type="email" placeholder="Email" />
-			<input type="password" placeholder="Password" />
+			<input type="email" placeholder="Email" name="Username"/>
+			<div class="error" style="color:red">error</div>
+			<input type="password" placeholder="Password" name="Password"/>
 			<a href="#">Forgot your password?</a>
-			<button>Sign In</button>
+			<button type="submit">Sign In</button>
 		</form>
 	</div>
 	<div class="overlay-container">
@@ -61,6 +64,21 @@
 
 	<script src="~/Client/js/login.js">
 	</script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	@section scripts{
+		<script type="text/javascript">
+			//$(function (){
+			//	$("#btn-login").click(function () {
+			//		console.log("hi")
+			//	});	
+			//})
+			//function handleLogin(){
+			//	console.log("jhei")
+			//}
+		
+		</script>
+	}
+		
 
 </body>
 </html>

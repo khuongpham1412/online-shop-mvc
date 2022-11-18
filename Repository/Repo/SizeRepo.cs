@@ -31,7 +31,7 @@ namespace Repository.Repo
         {
             try
             {
-                _onlineShopDbContext.Sizes.Add(size);
+                _onlineShopDbContext.Sizes.Update(size);
                 await _onlineShopDbContext.SaveChangesAsync();
                 return size;
             }

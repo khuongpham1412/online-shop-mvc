@@ -1,0 +1,193 @@
+﻿@{
+}
+
+<!-- Content Start -->
+<div class="content">
+    <!-- Navbar Start -->
+    <nav class="navbar navbar-expand bg-secondary navbar-dark sticky-top px-4 py-0">
+        <a href="index.html" class="navbar-brand d-flex d-lg-none me-4">
+            <h2 class="text-primary mb-0"><i class="fa fa-user-edit"></i></h2>
+        </a>
+        <a href="#" class="sidebar-toggler flex-shrink-0">
+            <i class="fa fa-bars"></i>
+        </a>
+        <form class="d-none d-md-flex ms-4">
+            <input class="form-control bg-dark border-0" type="search" placeholder="Search">
+        </form>
+        <div class="navbar-nav align-items-center ms-auto">
+            <div class="nav-item dropdown">
+                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
+                    <img class="rounded-circle me-lg-2" src="img/user.jpg" alt="" style="width: 40px; height: 40px;">
+                    <span class="d-none d-lg-inline-flex">John Doe</span>
+                </a>
+                <div class="dropdown-menu dropdown-menu-end bg-secondary border-0 rounded-0 rounded-bottom m-0">
+                    <a href="#" class="dropdown-item">Trang cá nhân</a>
+                    <a href="#" class="dropdown-item">Cài đặt</a>
+                    <a href="#" class="dropdown-item">Đăng xuất</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- Navbar End -->
+    <!-- Table Start -->
+    <div class="container-fluid pt-4 px-4">
+        <div class="row g-4">
+            <div class="col-12">
+                <div class="bg-secondary rounded h-100 p-4">
+                    <div class="d-flex align-items-center justify-content-between mb-4">
+                        <h6>Danh sách loại</h6>
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ModalAdd">
+                            Thêm loại
+                        </button>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Số thứ tự</th>
+                                    <th scope="col">Tên loại</th>
+                                    <th scope="col">Chỉnh sửa</th>
+                                </tr>
+                            </thead>
+                            <tbody id="data">
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="ModalAdd" tabindex="-1" role="dialog" aria-labelledby="ModalAdd" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button
+                    ]
+                    >
+                </div>
+                <input type="text" id="nameAdd" />
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" id="saveAdd">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Modal Edit -->
+    <div class="modal fade" id="ModalEdit" tabindex="-1" role="dialog" aria-labelledby="ModalEdit" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <input type="hidden" id="idCate" />
+                <!--<div class="modal-body" id="cate">
+                    
+                </div>-->
+                <input type="text" id="cate" />
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" id="saveEdit">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Table End -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            loadData();
+            function loadData() {
+                $.ajax({
+                    type: 'POST',
+                    url: '@Url.Action("handleLoadCategories","Category")',
+                    dataType: 'json',
+                    data: {},
+                    success: function (response) {
+                        var res = "";
+                        $.each(response.data, function (index, value) {
+                            res += "<tr>"
+                                + "<th value='"+value.id+"' scope='row'>" + (index + 1) + "</th>"
+                                + "<td  id='name-"+value.id+"'>" + value.name + "</td>"
+                                + "<td><button type='button' class='btn btn-primary' value='" + value.id + "-" + value.name + "' data-toggle='modal' data-target='#ModalEdit'>"
+                                + "Edit"
+                                + "</button><button type='button' class='btn btn-primary btn-delete'  value='"+value.id+"'>Delete</button></td>"
+                                + "</tr>";
+                        });
+                        $("#data").append(res);
+                    },
+                    error: function () {
+                        console.error('ERR');
+                    }
+                })
+                return false;
+            }
+            $('#data').on('click','td button', function () {
+                var value = $(this).val().split("-");
+                var id = value[0];
+                var name = value[1];
+                $('#idCate').val(id);
+                $('#cate').val(name);
+            });
+            $('#saveEdit').on('click', function(){
+                
+                var id = $('#idCate').val();
+                var name = $('#cate').val();
+                var data = {"Id":id,"Name":name};
+                $.ajax({
+                    type: 'POST',
+                    url: '@Url.Action("handleEditCategory","Category")',
+                    dataType: 'json',
+                    data: {data:data},
+                    success: function (response) {
+                        $("#name-"+response.data.id).html(response.data.name);
+                    },
+                    error: function () {
+                        console.error('ERR');
+                    }
+                })
+                return false;
+            })
+
+            $('#saveAdd').on('click', function(){
+                var name = $('#nameAdd').val();
+                var data = {"Name":name};
+                $.ajax({
+                    type: 'POST',
+                    url: '@Url.Action("handleAddCategory","Category")',
+                    dataType: 'json',
+                    data: {data:data},
+                    success: function (response) {
+                        var res = "<tr>"
+                                + "<th value='"+response.data.id+"' scope='row'>" + (54654) + "</th>"
+                                + "<td  id='name-"+response.data.id+"'>" + response.data.name + "</td>"
+                                + "<td><button type='button' class='btn btn-primary' value='" + response.data.id + "-" + response.data.name + "' data-toggle='modal' data-target='#ModalEdit'>"
+                                + "Edit"
+                                + "</button><button type='button' class='btn btn-primary btn-delete'  value='"+response.data.id+"'>Delete</button></td>"
+                                + "</tr>";
+                       
+                        $("#data").append(res);
+                    },
+                    error: function () {
+                        console.error('ERR');
+                    }
+                })
+                return false;
+            })
+            
+            $('#data').on('click', '.btn-delete', function () {
+                console.log($(this).val());
+            });
+
+        })
+    </script>

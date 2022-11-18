@@ -35,7 +35,7 @@ namespace Repository.Repo
         {
             try
             {
-                _onlineShopDbContext.Categories.Add(category);
+                _onlineShopDbContext.Categories.Update(category);
                 await _onlineShopDbContext.SaveChangesAsync();
                 return category;
             }

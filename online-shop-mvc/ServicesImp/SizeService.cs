@@ -71,9 +71,21 @@ namespace online_shop_mvc.ServicesImp
             return null;
         }
 
-        public Task<Size> Update(Size size)
+        public async Task<Size> Update(Size size)
         {
-            throw new NotImplementedException();
+            try
+            {
+                var res = await _sizeRepo.Update(size);
+                if (res != null)
+                {
+                    return res;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            return null;
         }
     }
 }

@@ -39,9 +39,23 @@ namespace online_shop_mvc.ServicesImp
             return null;
         }
 
-        public Task<Category> Update(Category category)
+        public async Task<Category> Update(Category category)
         {
-            throw new NotImplementedException();
+            try
+            {
+                Category cate = await _categoryRepo.Update(category);
+
+                if (cate != null)
+                {
+                    return cate;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                return null;
+            }
+            return null;
         }
     }
 }

@@ -1,10 +1,11 @@
 {
   "ExpandedNodes": [
     "",
-    "\\Model\\bin\\Debug\\net6.0",
-    "\\online-shop-mvc\\Controllers",
-    "\\online-shop-mvc\\Services",
-    "\\online-shop-mvc\\ServicesImp",
+    "\\online-shop-mvc",
+    "\\online-shop-mvc\\Areas",
+    "\\online-shop-mvc\\Areas\\Admin",
+    "\\online-shop-mvc\\Areas\\Admin\\Views",
+    "\\online-shop-mvc\\Areas\\Admin\\Views\\Home",
     "\\online-shop-mvc\\Views",
     "\\online-shop-mvc\\Views\\Cart",
     "\\online-shop-mvc\\Views\\Product",
