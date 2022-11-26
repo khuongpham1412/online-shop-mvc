@@ -84,16 +84,12 @@ namespace online_shop_mvc.ServicesImp
                         {
                             SizeName = sizeName,
                             ColorName = colorName,
-                            Quantity = quantity,
                             UnitPrice = unitPrice,
                             Price = price,
-                            SizeId = item.SizeID,
-                            ColorId = item.ColorID,
-                            ProductId = (int)item.ProductID,
                             PathImage = product.Image,
                             ProductName = product.Name,
                             OrderDetailId = (int)item.Id,
-                            OrderId = (int) item.OrderID
+                            OrderId = (int)item.OrderID
                         };
 
                         response.Add(customerOrder);

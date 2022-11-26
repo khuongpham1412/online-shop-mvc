@@ -1,6 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Model.Entities;
+using Model.Models.Response;
 using online_shop_mvc.Services;
+using System.Collections.Generic;
 
 namespace online_shop_mvc.Areas.Admin.Controllers
 {
@@ -8,20 +10,48 @@ namespace online_shop_mvc.Areas.Admin.Controllers
     public class OrderController : Controller
     {
         private readonly IOrderService orderService;
-        public OrderController(IOrderService orderService)
+        private readonly ICustomerService customerService;
+        private IOrderDetailService orderDetailService;
+        public OrderController(IOrderService orderService, ICustomerService customerService, IOrderDetailService orderDetailService)
         {
             this.orderService = orderService;
-
+            this.customerService = customerService;
+            this.orderDetailService = orderDetailService;
         }
         
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            return View();
+            IList<Order> orders = await orderService.GetAllOrders();
+            IList<CustomerOrderModel> ordersList = new List<CustomerOrderModel>();
+            if(orders != null)
+            {
+                foreach(var item in orders)
+                {
+                    Customer cus = await customerService.GetCustomerById(item.CustomerID);
+                    var order1 = new CustomerOrderModel()
+                    {
+                        OrderId = item.Id,
+                        CustomerName = cus.FullName,
+                        DateCreate = item.CreatedDate.ToString(),
+                        Total = item.Total,
+                        EmployeeId = (int) item.EmployeeID,
+                        Status = item.Status,
+                    };
+                    ordersList.Add(order1);
+                }
+                return View(ordersList);
+            }
+            return NotFound();
         }
 
-        public IActionResult OrderDetail()
+        public async Task<IActionResult> OrderDetail(int id)
         {
-            return View();
+            IList<CustomerOrderResponseModel> orderDetail = await orderDetailService.GetAllOrderDetailsByOrderId(id);
+            if(orderDetail == null)
+            {
+                return NotFound();
+            }
+            return View(orderDetail);
         }
 
         [HttpPost]

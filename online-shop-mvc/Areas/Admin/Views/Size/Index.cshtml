@@ -57,19 +57,22 @@
             </div>
         </div>
     </div>
-
+    
     <div class="modal fade" id="ModalAdd" tabindex="-1" role="dialog" aria-labelledby="ModalAdd" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <h5 class="modal-title" id="exampleModalLongTitle" style="color: black">Thêm Size Mới</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="background: white; border: none;">
                         <span aria-hidden="true">&times;</span>
                     </button
                     ]
                     >
                 </div>
-                <input type="text" id="nameAdd" />
+
+                 <div class="modal-body">
+                    <input class="form-control mx-3" style="width: 430px; background: white; color: black;" type="text" id="nameAdd" />
+                </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                     <button type="button" class="btn btn-primary" id="saveAdd">Save changes</button>
@@ -84,16 +87,16 @@
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <h5 class="modal-title" id="exampleModalLongTitle" style="color: black">Chỉnh Sửa Size</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="background: white; border: none;">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
                 <input type="hidden" id="idCate" />
-                <!--<div class="modal-body" id="cate">
-                    
-                </div>-->
-                <input type="text" id="cate" />
+
+                <div class="modal-body">
+                    <input class="form-control mx-3" style="width: 430px; background: white; color: black;" type="text" id="cate" />
+                </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                     <button type="button" class="btn btn-primary" id="saveEdit">Save changes</button>

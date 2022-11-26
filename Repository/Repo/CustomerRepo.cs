@@ -42,6 +42,22 @@ namespace Repository.Repo
             return null;
         }
 
+        public async Task<Customer> GetCustomerById(int id)
+        {
+            try
+            {
+                Customer customer = await _onlineShopDbContext.Customers.FindAsync(id);
+                if(customer != null)
+                {
+                    return customer;
+                }
+            }catch(Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            return null;
+        }
+
         public async Task<bool> Delete(Customer customer)
         {
             try

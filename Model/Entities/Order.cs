@@ -16,7 +16,11 @@ namespace Model.Entities
 
         public DateTime CreatedDate { get; set; }
 
-        public int? CustomerID { get; set; }
+        public int CustomerID { get; set; }
+        public decimal Total { get; set; }
+
+        public int? EmployeeID { get; set; }
+        public int Status { get; set; }
         /*[ForeignKey("ProductID")]
         public Product Product { get; set; }
 

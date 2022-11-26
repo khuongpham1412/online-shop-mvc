@@ -1,5 +1,5 @@
-﻿@{
-}
+﻿@using Model.Models.Response
+@model IList<CustomerOrderModel>
 
 <!-- Content Start -->
 <div class="content">
@@ -30,80 +30,53 @@
     </nav>
     <!-- Navbar End -->
     <!-- Table Start -->
-    <div class="container-fluid pt-4 px-4">
-        <div class="row g-4">
-            <div class="col-12">
-                <div class="bg-secondary rounded h-100 p-4">
-                    <div class="d-flex align-items-center justify-content-between mb-4">
-                        <h6>Danh sách hóa đơn</h6>
-                        
-                    </div>
-                    <div class="table-responsive">
-                        <table class="table">
-                            <thead>
+<div class="container-fluid pt-4 px-4">
+    
+        <div class="col-12">
+            <div class="bg-secondary rounded h-100 p-4">
+                <h6 class="mb-4">Quản Lý Hóa Đơn</h6>
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">ID Hóa Đơn</th>
+                                <th scope="col">Tên Khách Hàng</th>
+                                <th scope="col">Ngày Đặt Hàng</th>
+                                <th scope="col">Tổng Tiền</th>
+                                <th scope="col">ID Nhân Viên</th>
+                                <th scope="col">Chi Tiết Đơn Hàng </th>
+                                <th scope="col">Tình Trạng</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach(var item in Model){
                                 <tr>
-                                    <th scope="col">Số thứ tự</th>
-                                    <th scope="col">Tên khách hàng</th>
-                                     <th scope="col">Ngày đặt</th>
-                                     <th scope="col">Tổng tiền</th>
-                                    <th scope="col">Chi tiết đơn hàng</th>
-                                    <th scope="col">Trạng thái xác nhận</th>
+                                    <th scope="row">@item.OrderId</th>
+                                    <td>@item.CustomerName</td>
+                                    <td>@item.DateCreate</td>
+
+                                    <td>@item.Total</td>
+                                    <th>@item.EmployeeId</th>
+                                    <td><a asp-controller="Order" asp-action="OrderDetail" asp-route-id="@item.OrderId">Chi tiết</a> </td>
+                                    @if(item.Status == 1){
+                                        <td><button class="btn btn-success w-75">Xác Nhận</button></td>
+                                    }else{
+                                        <td><button class="btn btn-danger w-75">Chưa Xác Nhận</button></td>
+                                    }
+                                    
                                 </tr>
-                            </thead>
-                            <tbody id="data">
-                            </tbody>
-                        </table>
-                    </div>
+                            }
+                            
+                            
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>
     </div>
+</div>
 
-    <div class="modal fade" id="ModalAdd" tabindex="-1" role="dialog" aria-labelledby="ModalAdd" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button
-                    ]
-                    >
-                </div>
-                <input type="text" id="nameAdd" />
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary" id="saveAdd">Save changes</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-    <!-- Modal Edit -->
-    <div class="modal fade" id="ModalEdit" tabindex="-1" role="dialog" aria-labelledby="ModalEdit" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <input type="hidden" id="idCate" />
-                <!--<div class="modal-body" id="cate">
-                    
-                </div>-->
-                <input type="text" id="cate" />
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary" id="saveEdit">Save changes</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Table End -->
+    <!-- Content End -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script type="text/javascript">
         $(function () {
