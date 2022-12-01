@@ -15,15 +15,10 @@ namespace Model.Entities
         public int Id { get; set; }
 
         public DateTime CreatedDate { get; set; }
-
-        public int CustomerID { get; set; }
+        public int CustomerId { get; set; }
+        [ForeignKey("CustomerId")]
+        public Customer Customer { get; set; }
+        [Column(TypeName = "decimal(18,4)")]
         public decimal Total { get; set; }
-
-        public int? EmployeeID { get; set; }
-        public int Status { get; set; }
-        /*[ForeignKey("ProductID")]
-        public Product Product { get; set; }
-
-        public int Quantity { get; set; }*/
     }
 }

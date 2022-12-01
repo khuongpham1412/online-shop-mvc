@@ -1,13 +1,13 @@
 ﻿@{
     ViewData["Title"] = "Contact Page";
 }
-
+@Html.Partial("_Header");
 <!-- Breadcrumb Start -->
 <div class="container-fluid">
     <div class="row px-xl-5">
         <div class="col-12">
             <nav class="breadcrumb bg-light mb-30">
-                <a class="breadcrumb-item text-dark" href="#">Home</a>
+                <a class="breadcrumb-item text-dark" asp-controller="Home" asp-action="Index">Home</a>
                 <span class="breadcrumb-item active">Contact</span>
             </nav>
         </div>

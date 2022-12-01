@@ -28,6 +28,40 @@ namespace online_shop_mvc.ServicesImp
             return null;
         }
 
+        public async Task<IList<OrderDetail>> AddRanges(IList<OrderDetail> orderDetail)
+        {
+            try
+            {
+                var Response = await _orderDetailRepo.AddRanges(orderDetail);
+                if (Response != null)
+                {
+                    return Response;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            return null;
+        }
+
+        public Task<OrderDetail> CheckUserOrderProduct(int orderId, int productId, int sizeId, int colorId)
+        {
+            try
+            {
+                var Response = _orderDetailRepo.CheckUserOrderProduct(orderId, productId, sizeId, colorId);
+                if (Response != null)
+                {
+                    return Response;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            return null;
+        }
+
         public async Task<bool> Delete(int id)
         {
             try
@@ -35,6 +69,19 @@ namespace online_shop_mvc.ServicesImp
                 var orderDetail = await GetOrderDetailById(id);
                 if (orderDetail != null)
                     return await _orderDetailRepo.Delete(orderDetail);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            return false;
+        }
+
+        public async Task<bool> DeleteRanges(int orderId)
+        {
+            try
+            {
+                return await _orderDetailRepo.DeleteRanges(orderId);
             }
             catch (Exception ex)
             {
@@ -70,9 +117,9 @@ namespace online_shop_mvc.ServicesImp
                 {
                     foreach (var item in orderDetail)
                     {
-                        Product product = await _productRepo.GetProductById((int)item.ProductID);
-                        Size size = await _sizeRepo.GetSizeById((int)item.SizeID);
-                        Color color = await _colorRepo.GetColorById((int)item.ColorID);
+                        Product product = await _productRepo.GetProductById((int)item.ProductId);
+                        Size size = await _sizeRepo.GetSizeById((int)item.SizeId);
+                        Color color = await _colorRepo.GetColorById((int)item.ColorId);
 
                         string sizeName = size.Name;
                         string colorName = color.Name;
@@ -82,14 +129,18 @@ namespace online_shop_mvc.ServicesImp
 
                         var customerOrder = new CustomerOrderResponseModel()
                         {
+                            SizeId = item.SizeId,
                             SizeName = sizeName,
+                            ColorId = item.ColorId,
                             ColorName = colorName,
+                            ProductId = item.ProductId,
                             UnitPrice = unitPrice,
                             Price = price,
                             PathImage = product.Image,
                             ProductName = product.Name,
                             OrderDetailId = (int)item.Id,
-                            OrderId = (int)item.OrderID
+                            OrderId = (int)item.OrderId,
+                            Quantity = quantity,
                         };
 
                         response.Add(customerOrder);

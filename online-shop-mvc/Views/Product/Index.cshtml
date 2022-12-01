@@ -7,7 +7,7 @@
     var categories = (IList<Model.Entities.Category>)ViewBag.Categories;
 }
 
-
+@Html.Partial("_Header");
 @Html.Partial("_Navbar", (IList<Model.Entities.Category>) categories)
 
 <!-- Breadcrumb Start -->
@@ -68,43 +68,37 @@
             <!-- Color Start -->
             <h5 class="section-title position-relative text-uppercase mb-3"><span class="bg-secondary pr-3">Filter by color</span></h5>
             <div id="test-color" class="bg-light p-4 mb-30">
-                    <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
-                        <input type="checkbox" class="custom-control-input" checked id="color-all">
-                        <label class="custom-control-label" for="color-all">All Color</label>
-                        <span class="badge border font-weight-normal">1000</span>
-                    </div>
-                    @{
-                        
-                            foreach (var @color in @colors)
-                            {
-                                    <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
-                                <input type="checkbox" value="@color.Id" class="custom-control-input" id="color-@color.Id">
-                                        <label class="custom-control-label" for="color-@color.Id">@color.Name</label>
-                                        <span class="badge border font-weight-normal">150</span>
-                                    </div>
-                            }
-                        
+                <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
+                    <input type="checkbox" class="custom-control-input" checked id="color-all">
+                    <label class="custom-control-label" for="color-all">All Color</label>
+                    <span class="badge border font-weight-normal">1000</span>
+                </div>
+                @{
+                    foreach (var @color in @colors)
+                    {
+                        <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
+                            <input type="checkbox" value="@color.Id" class="custom-control-input" id="color-@color.Id">
+                            <label class="custom-control-label" for="color-@color.Id">@color.Name</label>
+                            <span class="badge border font-weight-normal">150</span>
+                        </div>
                     }
+                }
 
             </div>
             <!-- Color End -->
             <!-- Size Start -->
             <h5 class="section-title position-relative text-uppercase mb-3"><span class="bg-secondary pr-3">Filter by size</span></h5>
             <div id="test-size" class="bg-light p-4 mb-30">
-
-
-
                 @{
                     foreach (var @size in @sizes)
                     {
-                            <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
-                                <input type="checkbox" value="@size.Id" class="custom-control-input" id="size-@size.Id">
-                                <label class="custom-control-label" for="size-@size.Id">@size.Name</label>
-                                <span class="badge border font-weight-normal">150</span>
-                            </div>
+                        <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
+                            <input type="checkbox" value="@size.Id" class="custom-control-input" id="size-@size.Id">
+                            <label class="custom-control-label" for="size-@size.Id">@size.Name</label>
+                            <span class="badge border font-weight-normal">150</span>
+                        </div>
                     }
                 }
-
             </div>
             <!-- Size End -->
         </div>
@@ -138,9 +132,6 @@
                         </div>
                     </div>
                 </div>
-
-
-
                 <div class="col-12">
                     <nav>
                         <ul class="pagination justify-content-center">
@@ -149,13 +140,9 @@
                                 var totalPage = Math.Ceiling((double)@count / 5);
                                 for (var @page = 1; @page <= totalPage; @page++)
                                 {
-                                        <li class="page-item active"><a class="page-link">@Html.ActionLink(""+@page, "Details", "Product", new { id = @page }, null)</a></li>
-
-
+                                    <li class="page-item active"><a class="page-link">@Html.ActionLink(""+@page, "Details", "Product", new { id = @page }, null)</a></li>
                                 }
                             }
-
-
                             @* <li class="page-item active"><a class="page-link" href="#">2</a></li>
                             <li class="page-item"><a class="page-link" href="#">3</a></li>*@
                             <li class="page-item"><a class="page-link" href="#">Next</a></li>
@@ -179,37 +166,33 @@
             $('#test-size').off('click').on('click', 'div input', function () {
                 var sizeId = $(this).val();
                 (this.checked) ? data.Size.push(sizeId) : data.Size = $.grep(data.Size, function (value) { return value != sizeId; });
-                loadData(url = '@Url.Action("LoadProductByPaging","Product")', data = data);
+                loadData(url = '@Url.Action("LoadProductByFilter","Product")', data = data);
             })
 
             $('#test-color').off('click').on('click', 'div input', function () {
                 var colorId = $(this).val();
                 (this.checked) ? data.Color.push(colorId) : data.Color = $.grep(data.Color, function (value) { return value != colorId; });
-                loadData(url = '@Url.Action("LoadProductByPaging","Product")', data = data);
+                loadData(url = '@Url.Action("LoadProductByFilter","Product")', data = data);
             })
 
+            
 
-
-            function loadData(url = '@Url.Action("LoadProduct","Product")', data = {}) {
+            function loadData(url = '@Url.Action("LoadProductByPaging","Product", new{ page = 1})', data = {}) {
                 $.ajax({
-                    type: 'POST',
+                    type: 'get',
                     url: url,
                     dataType: 'json',
                     data: data,
                     success: function (response) {
                         console.log(response);
-                        $('div').remove('.hihi');
+                        $('div').remove('.product');
                         var data = '';
                         $.each(response.data, function (index, value) {
-                            data += "<div class='col-lg-4 col-md-6 col-sm-6 pb-1 hihi' >"
+                            data += "<div class='col-lg-4 col-md-6 col-sm-6 pb-1 product' >"
                                 + "<div class='product-item bg-light mb-4' >"
                                 + "<div class='product-img position-relative overflow-hidden' >"
-                                + "<img class='img-fluid w-100' src='client/" + value.image + "' alt='' >"
+                                + "<img class='img-fluid w-100' src='Assets/Admin/Products/" + value.image + "' alt='' >"
                                 + "<div class='product-action' >"
-                                + "<a class='btn btn-outline-dark btn-square' href = ' > <i class='fa fa-shopping-cart' > </i></a >"
-                                + "<a class='btn btn-outline-dark btn-square' href = ' > <i class='far fa-heart' > </i></a >"
-                                + "<a class='btn btn-outline-dark btn-square' href = ' > <i class='fa fa-sync-alt' > </i></a >"
-                                + "<a class='btn btn-outline-dark btn-square' href = ' > <i class='fa fa-search' > </i></a >"
                                 + "</div>"
                                 + "</div>"
                                 + "<div class='text-center py-4' >"

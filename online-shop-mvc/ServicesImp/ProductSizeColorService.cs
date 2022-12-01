@@ -34,9 +34,17 @@ namespace online_shop_mvc.ServicesImp
             return null;
         }
 
-        public Task<int> GetQuantityByProductSizeColor(int productID, int sizeID, int colorID)
+        public async Task<int> GetQuantityByProductSizeColor(int productID, int sizeID, int colorID)
         {
-            throw new NotImplementedException();
+            try
+            {
+                return await _productSizeColorRepo.GetQuantityByProductSizeColor(productID, sizeID, colorID);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            return -1;
         }
 
         public async Task<IList<ProductSizeColor>> GetSizeByProductId(int productID)
@@ -55,6 +63,18 @@ namespace online_shop_mvc.ServicesImp
         public Task<ProductSizeColor> Update(ProductSizeColor productSizeColor)
         {
             throw new NotImplementedException();
+        }
+
+        public async Task<bool> UpdateQuantity(int productId, int sizeId, int colorId, int quantity)
+        {
+            try
+            {
+               return await _productSizeColorRepo.UpdateQuantity(productId, sizeId, colorId, quantity);
+            }catch(Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            return false;
         }
     }
 }

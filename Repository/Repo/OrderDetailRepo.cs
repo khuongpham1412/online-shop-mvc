@@ -27,6 +27,20 @@ namespace Repository.Repo
             }
             return null;
         }
+        public async Task<IList<OrderDetail>> AddRanges(IList<OrderDetail> orderDetail)
+        {
+            try
+            {
+                await _onlineShopDbContext.OrderDetails.AddRangeAsync(orderDetail);
+                await _onlineShopDbContext.SaveChangesAsync();
+                return orderDetail;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            return null;
+        }
 
         public async Task<OrderDetail> Update(OrderDetail orderDetail)
         {
@@ -42,7 +56,20 @@ namespace Repository.Repo
             }
             return null;
         }
-
+        public async Task<bool> DeleteRanges(int orderId)
+        {
+            try
+            {
+                _onlineShopDbContext.OrderDetails.RemoveRange(_onlineShopDbContext.OrderDetails.Where(o => o.OrderId == orderId));
+                await _onlineShopDbContext.SaveChangesAsync();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            return false;
+        }
         public async Task<bool> Delete(OrderDetail orderDetail)
         {
             try
@@ -89,7 +116,7 @@ namespace Repository.Repo
         {
             try
             {
-                return await _onlineShopDbContext.OrderDetails.Where(s => s.OrderID == orderId).ToListAsync();
+                return await _onlineShopDbContext.OrderDetails.Where(s => s.OrderId == orderId).ToListAsync();
             }
             catch (Exception ex)
             {
@@ -102,7 +129,7 @@ namespace Repository.Repo
         {
             try
             {
-                var userOrderProduct = await _onlineShopDbContext.OrderDetails.Where(o => o.OrderID == orderId && o.ProductID == productId && o.SizeID == sizeId && o.ColorID == colorId).FirstOrDefaultAsync();
+                var userOrderProduct = await _onlineShopDbContext.OrderDetails.Where(o => o.OrderId == orderId && o.ProductId == productId && o.SizeId == sizeId && o.ColorId == colorId).FirstOrDefaultAsync();
                 if(userOrderProduct != null)
                 {
                     return userOrderProduct;
@@ -119,7 +146,7 @@ namespace Repository.Repo
         {
             try
             {
-                var count = await _onlineShopDbContext.OrderDetails.Where(o => o.OrderID == orderId).CountAsync();
+                var count = await _onlineShopDbContext.OrderDetails.Where(o => o.OrderId == orderId).CountAsync();
                 if (count != null)
                 {
                     return count;

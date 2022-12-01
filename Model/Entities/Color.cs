@@ -14,5 +14,6 @@ namespace Model.Entities
         [StringLength(20)]
         [Required]
         public string Name { get; set; }
+        public IList<ProductSizeColor> ProductSizeColors { get; set; }
     }
 }

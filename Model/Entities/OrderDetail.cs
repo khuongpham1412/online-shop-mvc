@@ -12,18 +12,17 @@ namespace Model.Entities
     {
         [Key]
         public int Id { get; set; }
-
-        public int? ProductID { get; set; }
-        [ForeignKey("ProductID")]
+        public int ProductId { get; set; }
+        [ForeignKey("ProductId")]
         public Product Product { get; set; }
 
         public int Quantity { get; set; }
 
         [Column(TypeName = "decimal(18,4)")]
         public decimal UnitPrice { get; set; }
-        public int? OrderID { get; set; }
-        public int SizeID { get; set; }
-        public int ColorID { get; set; }
+        public int? OrderId { get; set; }
+        public int SizeId { get; set; }
+        public int ColorId { get; set; }
 
     }
 }

@@ -6,6 +6,7 @@ namespace online_shop_mvc.Services
     {
         public Task<ProductSizeColor> Add(ProductSizeColor productSizeColor);
         public Task<ProductSizeColor> Update(ProductSizeColor productSizeColor);
+        public Task<bool> UpdateQuantity(int productId, int sizeId, int colorId, int quantity);
         public Task<bool> Delete(ProductSizeColor productSizeColor);
         public Task<IList<ProductSizeColor>> GetAllProductSizeColor();
         public Task<IList<ProductSizeColor>> GetColorByProductAndSize(int productID,int sizeID);

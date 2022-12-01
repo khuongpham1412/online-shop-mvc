@@ -9,58 +9,11 @@ namespace online_shop_mvc.ServicesImp
     public class OrderService : IOrderService
     {
         private readonly OrderRepo _orderRepo = new OrderRepo();
-        private readonly OrderDetailRepo _orderDetailRepo = new OrderDetailRepo();
-        private readonly ProductRepo _productRepo = new ProductRepo();
-        public async Task<CustomerOrderRequestModel> Add(CustomerOrderRequestModel userOrder)
+        public async Task<Order> Add(Order order)
         {
             try
             {
-                int customerId = userOrder.CustomerId;
-                int sizeId = userOrder.SizeId;
-                int colorId = userOrder.ColorId;
-                int quantity = userOrder.Quantity;
-                int productId = userOrder.ProductId;    
-
-                int orderID;
-                if (!await _orderRepo.CheckUserOrder(customerId))
-                {
-                    Order order = new Order()
-                    {
-                        CreatedDate = userOrder.CreateDate,
-                        CustomerID = customerId,
-                    };
-                    orderID = await _orderRepo.Add(order);
-                }
-                else
-                {
-                    orderID = await GetOrderIdByCustomerId(customerId);
-                }
-                var product = (Product)await _productRepo.GetProductById(productId);
-                decimal unitPrice = product.Price * quantity;
-
-                if (orderID != -1)
-                {
-                    var checkUserOrder = await _orderDetailRepo.CheckUserOrderProduct( orderID, productId, sizeId, colorId);
-                    if (checkUserOrder != null)
-                    {
-                        checkUserOrder.Quantity = checkUserOrder.Quantity + quantity;
-                        checkUserOrder.UnitPrice = checkUserOrder.UnitPrice + product.Price;
-                        var response = await _orderDetailRepo.Update(checkUserOrder);
-                    }
-                    else
-                    {
-                        OrderDetail orderDetail = new OrderDetail()
-                        {
-                            OrderID = orderID,
-                            ProductID = productId,
-                            Quantity = quantity,
-                            UnitPrice = unitPrice,
-                            SizeID = sizeId,
-                            ColorID = colorId,
-                        };
-                        var response = await _orderDetailRepo.Add(orderDetail);
-                    }
-                }
+                return await _orderRepo.Add(order);
             }
             catch (Exception ex)
             {
@@ -69,7 +22,7 @@ namespace online_shop_mvc.ServicesImp
             return null;
         }
 
-        public async Task<int> GetOrderIdByCustomerId(int customerId)
+        public async Task<Order> GetOrderIdByCustomerId(int customerId)
         {
             try
             {
@@ -79,7 +32,7 @@ namespace online_shop_mvc.ServicesImp
             {
                 Console.WriteLine(ex.Message);
             }
-            return -1;
+            return null;
         }
 
         public async Task<bool> CheckUserOrder(int userID)

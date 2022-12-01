@@ -24,9 +24,11 @@ namespace Model.Entities
         [StringLength(50)]
         public string Address { get; set; }
 
-        public int? AccountID { get; set; }
+        public int? AccountId { get; set; }
 
-        [ForeignKey("AccountID")]
+        [ForeignKey("AccountId")]
         public Account Account { get; set; }
+        public IList<Bill> Bills { get; set; }
+        public IList<Order> Orders { get; set; }
     }
 }

@@ -27,7 +27,24 @@ namespace Repository.Repo
             }
             return null;
         }
-
+        public async Task<bool> UpdateQuantity(int productId, int sizeId, int colorId, int quantity)
+        {
+            try
+            {
+               var product = await _onlineShopDbContext.ProductSizeColors.Where(p => p.ProductId == productId && p.SizeId == sizeId && p.ColorId == colorId).FirstOrDefaultAsync();
+                if(product != null)
+                {
+                    product.Quantity = quantity;
+                }
+                await _onlineShopDbContext.SaveChangesAsync();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            return false;
+        }
         public async Task<ProductSizeColor> Update(ProductSizeColor ProductSizeColor)
         {
             try
@@ -103,13 +120,13 @@ namespace Repository.Repo
             {
                 IList<ProductSizeColor> response = new List<ProductSizeColor>();
                 var colors = (IList<ProductSizeColor>)_onlineShopDbContext.ProductSizeColors
-                    .Where(p => p.ProductID == productID && p.SizeID == sizeID)
+                    .Where(p => p.ProductId == productID && p.SizeId == sizeID)
                     .AsEnumerable()
                     .ToList();
 
                 foreach(var color in colors)
                 {
-                    int quantity = await this.GetQuantityByProductSizeColor((int)color.ProductID, (int)color.SizeID,(int) color.ColorID);
+                    int quantity = await this.GetQuantityByProductSizeColor((int)color.ProductId, (int)color.SizeId,(int) color.ColorId);
                     if(quantity > 0)
                     {
                         response.Add(color);
@@ -129,9 +146,9 @@ namespace Repository.Repo
             try
             {
                 var sizes = (IList<ProductSizeColor>) _onlineShopDbContext.ProductSizeColors
-                    .Where(p => p.ProductID == productID)
+                    .Where(p => p.ProductId == productID)
                     .AsEnumerable()
-                    .GroupBy(p => p.SizeID)
+                    .GroupBy(p => p.SizeId)
                     .SelectMany(p => p)
                     .ToList();
 
@@ -159,7 +176,7 @@ namespace Repository.Repo
 
         public async Task<int> GetQuantityByProductSizeColor(int productID, int sizeID, int colorID)
         {
-            var product = await _onlineShopDbContext.ProductSizeColors.Where(p => p.ProductID == productID && p.SizeID == sizeID && p.ColorID == colorID).FirstOrDefaultAsync();
+            var product = await _onlineShopDbContext.ProductSizeColors.Where(p => p.ProductId == productID && p.SizeId == sizeID && p.ColorId == colorID).FirstOrDefaultAsync();
             return product.Quantity;
         }
     }

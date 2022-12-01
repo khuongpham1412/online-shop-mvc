@@ -7,13 +7,9 @@ namespace online_shop_mvc.ServicesImp
     public class CategoryService : ICategoryService
     {
         private readonly CategoryRepo _categoryRepo = new CategoryRepo();
-        /*public CategoryService(CategoryRepo categoryRepo)
+        public async Task<Category> Add(Category category)
         {
-            _categoryRepo = categoryRepo;
-        }*/
-        public Task<Category> Add(Category category)
-        {
-            return _categoryRepo.Add(category);
+            return await _categoryRepo.Add(category);
         }
         public Task<bool> Delete(Category category)
         {

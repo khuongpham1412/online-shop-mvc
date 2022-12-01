@@ -25,8 +25,9 @@ namespace Model.Entities
         public decimal Price { get; set; }
         public string Image { get; set; }
 
-        public int? CategoryID { get; set; }
-        [ForeignKey("CategoryID")]
+        public int? CategoryId { get; set; }
+        [ForeignKey("CategoryId")]
         public Category Category { get; set; }
+        public IList<ProductSizeColor> ProductSizeColors { get; set; }
     }
 }

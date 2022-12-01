@@ -12,26 +12,26 @@ namespace Repository.Repo
     public class OrderRepo
     {
         private readonly OnlineShopDbContext _onlineShopDbContext = new OnlineShopDbContext();
-        public async Task<int> Add(Order order)
+        public async Task<Order> Add(Order order)
         {
             try
             {
-                _onlineShopDbContext.Orders.Add(order);
+                await _onlineShopDbContext.Orders.AddAsync(order);
                 await _onlineShopDbContext.SaveChangesAsync();
-                return order.Id;
+                return order;
             }
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
             }
-            return -1;
+            return null;
         }
 
         public async Task<Order> Update(Order order)
         {
             try
             {
-                _onlineShopDbContext.Orders.Add(order);
+                //await _onlineShopDbContext.Orders.
                 await _onlineShopDbContext.SaveChangesAsync();
                 return order;
             }
@@ -87,31 +87,27 @@ namespace Repository.Repo
         {
             try
             {
-                var order = await _onlineShopDbContext.Orders.Where(s => s.CustomerID == userId).ToListAsync();
+                var order = await _onlineShopDbContext.Orders.Where(s => s.CustomerId == userId).ToListAsync();
                 return order.Count() == 1;
             }
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
             }
-            return false;
+            return true;
         }
 
-        public async Task<int> GetOrderIdByCustomerId(int userId)
+        public async Task<Order> GetOrderIdByCustomerId(int userId)
         {
             try
             {
-                var orderId = await _onlineShopDbContext.Orders.Where(s => s.CustomerID == userId).FirstOrDefaultAsync();
-                if(orderId != null)
-                {
-                    return orderId.Id;
-                }
+                return await _onlineShopDbContext.Orders.Where(s => s.CustomerId == userId).FirstOrDefaultAsync();
             }
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
             }
-            return -1;
+            return null;
         }
 
         

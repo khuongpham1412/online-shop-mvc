@@ -12,10 +12,12 @@ public class OnlineShopDbContext : DbContext
 {
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
-        optionsBuilder.UseSqlServer(@"Server=LAPTOP-0N9NUIQQ\SQLEXPRESS;Database=OnlineShopMVC;Trusted_Connection=True;");
+        optionsBuilder.UseSqlServer(@"Server=LAPTOP-0N9NUIQQ\SQLEXPRESS;Database=OnlineShopASP_NET_MVC;Trusted_Connection=True;");
     }
 
     public virtual DbSet<Account> Accounts { get; set; }
+    public virtual DbSet<Bill> Bills { get; set; }
+    public virtual DbSet<BillDetail> BillDetails { get; set; }
     public virtual DbSet<Customer> Customers { get; set; }
     public virtual DbSet<Employee> Employees { get; set; }
     public virtual DbSet<Product> Products { get; set; }

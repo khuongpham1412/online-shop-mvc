@@ -1,13 +1,13 @@
 ﻿@{
     ViewData["Title"] = "Checkout Page";
 }
-
+@Html.Partial("_Header");
 <!-- Breadcrumb Start -->
 <div class="container-fluid">
     <div class="row px-xl-5">
         <div class="col-12">
             <nav class="breadcrumb bg-light mb-30">
-                <a class="breadcrumb-item text-dark" href="#">Home</a>
+                <a class="breadcrumb-item text-dark" asp-controller="Home" asp-action="Index">Home</a>
                 <a class="breadcrumb-item text-dark" href="#">Shop</a>
                 <span class="breadcrumb-item active">Checkout</span>
             </nav>
@@ -190,7 +190,11 @@
                             <label class="custom-control-label" for="banktransfer">Bank Transfer</label>
                         </div>
                     </div>
-                    <button class="btn btn-block btn-primary font-weight-bold py-3">Place Order</button>
+                    @using(Html.BeginForm("HandleCheckout","Checkout", FormMethod.Get))
+                    {
+                        <button class="btn btn-block btn-primary font-weight-bold py-3">Place Order</button>
+                    }
+                   
                 </div>
             </div>
         </div>

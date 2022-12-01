@@ -136,33 +136,37 @@ namespace online_shop_mvc.Controllers
             });
         }
 
-        [HttpPost]
-        public async Task<JsonResult> LoadProduct()
+        [HttpGet]
+        [Route("Product/LoadProductByPaging/{page:int}")]
+        public async Task<JsonResult> LoadProductByPaging([FromQuery(Name = "page")] int page = 1)
         {
             IList<Product> products = await _productService.GetAllProductsPaging(1, 5);
             return Json(new { Status = "success", Data = products });
         }
 
-        [HttpPost]
-        public async Task<JsonResult> LoadProductByPaging(FilterRequestModel data)
+        [HttpGet]
+        public async Task<JsonResult> LoadProductByFilter(FilterRequestModel data)
         {
             int[] sizes = data.Size;
             int[] colors = data.Color;
             string search = data.NameSearch;
+            Console.WriteLine("Da vao");
+            Console.WriteLine(search);
 
-            var res = (from p in _onlineShopDbContext.ProductSizeColors
-                       join ps in _onlineShopDbContext.Products
-                       on p.ProductID equals ps.Id
-                       where sizes != null && sizes.Contains(p.SizeID) && colors != null && colors.Contains(p.ColorID) && search != null && ps.Name.Contains(search)
-                       group ps by p.ProductID into g
-                       select g.ToList()).AsEnumerable().Skip(0).Take(5).ToList();
-            IList<Product> p1 = new List<Product>();
-            foreach (var item in res)
-            {
-                p1.Add(item[0]);
-            }
+            //var res = (from p in _onlineShopDbContext.ProductSizeColors
+            //           join ps in _onlineShopDbContext.Products
+            //           on p.ProductID equals ps.Id into g
+            //           where sizes.Contains(p.SizeId) && colors.Contains(p.ColorId) && search != null
+            //           //group ps by p.ProductID into g
+            //           select g.ToList()).AsEnumerable().Skip(0).Take(5).ToList();
+            //IList<Product> p1 = new List<Product>();
+            //foreach (var item in res)
+            //{
+            //    Console.WriteLine(item);
+            //    p1.Add(item[0]);
+            //}
 
-            return Json(new { Status = "success", Data = res});
+            return Json(new { Status = "success", Data = ""});
         }
     }
 }

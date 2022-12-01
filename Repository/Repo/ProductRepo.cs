@@ -118,7 +118,7 @@ namespace Repository.Repo
         {
             try
             {
-                return await _onlineShopDbContext.Products.Where(p => p.CategoryID == categoryID).ToListAsync();
+                return await _onlineShopDbContext.Products.Where(p => p.CategoryId == categoryID).ToListAsync();
             }
             catch(Exception ex)
             {

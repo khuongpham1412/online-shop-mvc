@@ -27,15 +27,12 @@ namespace online_shop_mvc.Areas.Admin.Controllers
             {
                 foreach(var item in orders)
                 {
-                    Customer cus = await customerService.GetCustomerById(item.CustomerID);
+                    Customer cus = await customerService.GetCustomerById(item.CustomerId);
                     var order1 = new CustomerOrderModel()
                     {
                         OrderId = item.Id,
                         CustomerName = cus.FullName,
                         DateCreate = item.CreatedDate.ToString(),
-                        Total = item.Total,
-                        EmployeeId = (int) item.EmployeeID,
-                        Status = item.Status,
                     };
                     ordersList.Add(order1);
                 }

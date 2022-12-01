@@ -49,6 +49,72 @@ namespace Model.Migrations
                     b.ToTable("Accounts");
                 });
 
+            modelBuilder.Entity("Model.Entities.Bill", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("CustomerId")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("EmployeeId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Status")
+                        .HasColumnType("int");
+
+                    b.Property<decimal>("Total")
+                        .HasColumnType("decimal(18,4)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CustomerId");
+
+                    b.HasIndex("EmployeeId");
+
+                    b.ToTable("Bills");
+                });
+
+            modelBuilder.Entity("Model.Entities.BillDetail", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<int?>("BillId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("ColorId")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("ProductId")
+                        .IsRequired()
+                        .HasColumnType("int");
+
+                    b.Property<int>("Quantity")
+                        .HasColumnType("int");
+
+                    b.Property<int>("SizeId")
+                        .HasColumnType("int");
+
+                    b.Property<decimal>("UnitPrice")
+                        .HasColumnType("decimal(18,4)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ProductId");
+
+                    b.ToTable("BillDetails");
+                });
+
             modelBuilder.Entity("Model.Entities.Category", b =>
                 {
                     b.Property<int>("Id")
@@ -93,7 +159,7 @@ namespace Model.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
-                    b.Property<int?>("AccountID")
+                    b.Property<int?>("AccountId")
                         .IsRequired()
                         .HasColumnType("int");
 
@@ -117,7 +183,7 @@ namespace Model.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("AccountID");
+                    b.HasIndex("AccountId");
 
                     b.ToTable("Customers");
                 });
@@ -130,7 +196,7 @@ namespace Model.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
-                    b.Property<int?>("AccountID")
+                    b.Property<int?>("AccountId")
                         .IsRequired()
                         .HasColumnType("int");
 
@@ -154,7 +220,7 @@ namespace Model.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("AccountID");
+                    b.HasIndex("AccountId");
 
                     b.ToTable("Employees");
                 });
@@ -170,16 +236,18 @@ namespace Model.Migrations
                     b.Property<DateTime>("CreatedDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<int?>("CustomerID")
+                    b.Property<int>("CustomerId")
                         .HasColumnType("int");
 
-                    b.Property<int?>("EmployeeID")
+                    b.Property<int>("Status")
                         .HasColumnType("int");
 
                     b.Property<decimal>("Total")
                         .HasColumnType("decimal(18,4)");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("CustomerId");
 
                     b.ToTable("Orders");
                 });
@@ -192,11 +260,20 @@ namespace Model.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
-                    b.Property<int?>("ProductID")
+                    b.Property<int>("ColorId")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("OrderId")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("ProductId")
                         .IsRequired()
                         .HasColumnType("int");
 
                     b.Property<int>("Quantity")
+                        .HasColumnType("int");
+
+                    b.Property<int>("SizeId")
                         .HasColumnType("int");
 
                     b.Property<decimal>("UnitPrice")
@@ -204,7 +281,7 @@ namespace Model.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("ProductID");
+                    b.HasIndex("ProductId");
 
                     b.ToTable("OrderDetails");
                 });
@@ -217,7 +294,7 @@ namespace Model.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
-                    b.Property<int?>("CategoryID")
+                    b.Property<int?>("CategoryId")
                         .IsRequired()
                         .HasColumnType("int");
 
@@ -240,7 +317,7 @@ namespace Model.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("CategoryID");
+                    b.HasIndex("CategoryId");
 
                     b.ToTable("Products");
                 });
@@ -253,28 +330,25 @@ namespace Model.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
-                    b.Property<int?>("ColorID")
-                        .IsRequired()
+                    b.Property<int>("ColorId")
                         .HasColumnType("int");
 
-                    b.Property<int?>("ProductID")
-                        .IsRequired()
+                    b.Property<int>("ProductId")
                         .HasColumnType("int");
 
                     b.Property<int>("Quantity")
                         .HasColumnType("int");
 
-                    b.Property<int?>("SizeID")
-                        .IsRequired()
+                    b.Property<int>("SizeId")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("ColorID");
+                    b.HasIndex("ColorId");
 
-                    b.HasIndex("ProductID");
+                    b.HasIndex("ProductId");
 
-                    b.HasIndex("SizeID");
+                    b.HasIndex("SizeId");
 
                     b.ToTable("ProductSizeColors");
                 });
@@ -296,11 +370,35 @@ namespace Model.Migrations
                     b.ToTable("Sizes");
                 });
 
+            modelBuilder.Entity("Model.Entities.Bill", b =>
+                {
+                    b.HasOne("Model.Entities.Customer", null)
+                        .WithMany("Bills")
+                        .HasForeignKey("CustomerId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Model.Entities.Employee", null)
+                        .WithMany("Bills")
+                        .HasForeignKey("EmployeeId");
+                });
+
+            modelBuilder.Entity("Model.Entities.BillDetail", b =>
+                {
+                    b.HasOne("Model.Entities.Product", "Product")
+                        .WithMany()
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Product");
+                });
+
             modelBuilder.Entity("Model.Entities.Customer", b =>
                 {
                     b.HasOne("Model.Entities.Account", "Account")
                         .WithMany()
-                        .HasForeignKey("AccountID")
+                        .HasForeignKey("AccountId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -311,18 +409,29 @@ namespace Model.Migrations
                 {
                     b.HasOne("Model.Entities.Account", "Account")
                         .WithMany()
-                        .HasForeignKey("AccountID")
+                        .HasForeignKey("AccountId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("Account");
                 });
 
+            modelBuilder.Entity("Model.Entities.Order", b =>
+                {
+                    b.HasOne("Model.Entities.Customer", "Customer")
+                        .WithMany("Orders")
+                        .HasForeignKey("CustomerId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Customer");
+                });
+
             modelBuilder.Entity("Model.Entities.OrderDetail", b =>
                 {
                     b.HasOne("Model.Entities.Product", "Product")
                         .WithMany()
-                        .HasForeignKey("ProductID")
+                        .HasForeignKey("ProductId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -333,7 +442,7 @@ namespace Model.Migrations
                 {
                     b.HasOne("Model.Entities.Category", "Category")
                         .WithMany()
-                        .HasForeignKey("CategoryID")
+                        .HasForeignKey("CategoryId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -342,29 +451,50 @@ namespace Model.Migrations
 
             modelBuilder.Entity("Model.Entities.ProductSizeColor", b =>
                 {
-                    b.HasOne("Model.Entities.Color", "Color")
-                        .WithMany()
-                        .HasForeignKey("ColorID")
+                    b.HasOne("Model.Entities.Color", null)
+                        .WithMany("ProductSizeColors")
+                        .HasForeignKey("ColorId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Model.Entities.Product", "Product")
-                        .WithMany()
-                        .HasForeignKey("ProductID")
+                    b.HasOne("Model.Entities.Product", null)
+                        .WithMany("ProductSizeColors")
+                        .HasForeignKey("ProductId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Model.Entities.Size", "Size")
-                        .WithMany()
-                        .HasForeignKey("SizeID")
+                    b.HasOne("Model.Entities.Size", null)
+                        .WithMany("ProductSizeColors")
+                        .HasForeignKey("SizeId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
 
-                    b.Navigation("Color");
+            modelBuilder.Entity("Model.Entities.Color", b =>
+                {
+                    b.Navigation("ProductSizeColors");
+                });
 
-                    b.Navigation("Product");
+            modelBuilder.Entity("Model.Entities.Customer", b =>
+                {
+                    b.Navigation("Bills");
 
-                    b.Navigation("Size");
+                    b.Navigation("Orders");
+                });
+
+            modelBuilder.Entity("Model.Entities.Employee", b =>
+                {
+                    b.Navigation("Bills");
+                });
+
+            modelBuilder.Entity("Model.Entities.Product", b =>
+                {
+                    b.Navigation("ProductSizeColors");
+                });
+
+            modelBuilder.Entity("Model.Entities.Size", b =>
+                {
+                    b.Navigation("ProductSizeColors");
                 });
 #pragma warning restore 612, 618
         }

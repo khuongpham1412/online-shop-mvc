@@ -12,17 +12,11 @@ namespace Model.Entities
     {
         [Key]
         public int Id { get; set; }
-        public int? ProductID { get; set; }
-        //[ForeignKey("ProductID")]
-        //public Product Product { get; set; }
+        public int ProductId { get; set; }
 
-        public int SizeID { get; set; }
-        //[ForeignKey("SizeID")]
-        //public Size Size { get; set; }
+        public int SizeId { get; set; }
 
-        public int ColorID { get; set; }
-        //[ForeignKey("ColorID")]
-        //public Color Color { get; set; }
+        public int ColorId { get; set; }
 
         public int Quantity { get; set; }
     }
