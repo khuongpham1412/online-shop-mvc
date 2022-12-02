@@ -63,5 +63,18 @@ namespace Repository.Repo
             }
             return null;
         }
+
+        public async Task<IList<BillDetail>> GetAllBillDetailsByBillId(int billId)
+        {
+            try
+            {
+                return await _context.BillDetails.Where(s => s.BillId == billId).ToListAsync();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            return null;
+        }
     }
 }

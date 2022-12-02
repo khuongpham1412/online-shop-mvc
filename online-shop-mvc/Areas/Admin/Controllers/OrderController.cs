@@ -9,56 +9,65 @@ namespace online_shop_mvc.Areas.Admin.Controllers
     [Area("Admin")]
     public class OrderController : Controller
     {
-        private readonly IOrderService orderService;
-        private readonly ICustomerService customerService;
-        private IOrderDetailService orderDetailService;
-        public OrderController(IOrderService orderService, ICustomerService customerService, IOrderDetailService orderDetailService)
+        private readonly IBillService _billService;
+        private readonly ICustomerService _customerService;
+        private readonly IBillDetailService _billDetailService;
+        public OrderController(IBillService billService, ICustomerService customerService, IBillDetailService billDetailService)
         {
-            this.orderService = orderService;
-            this.customerService = customerService;
-            this.orderDetailService = orderDetailService;
+            _billService = billService;
+            _customerService = customerService;
+            _billDetailService = billDetailService;
         }
-        
+
         public async Task<IActionResult> Index()
         {
-            IList<Order> orders = await orderService.GetAllOrders();
-            IList<CustomerOrderModel> ordersList = new List<CustomerOrderModel>();
-            if(orders != null)
+            IList<Bill> bills = await _billService.GetAllBill();
+            Console.WriteLine(bills);
+            IList<CustomerOrderModel> billList = new List<CustomerOrderModel>();
+            if (bills != null)
             {
-                foreach(var item in orders)
+                foreach (var item in bills)
                 {
-                    Customer cus = await customerService.GetCustomerById(item.CustomerId);
-                    var order1 = new CustomerOrderModel()
+                    Customer cus = await _customerService.GetCustomerById(item.CustomerId);
+                    var bill = new CustomerOrderModel()
                     {
-                        OrderId = item.Id,
+
+                        BillId = item.Id,
                         CustomerName = cus.FullName,
+                        Phone = cus.PhoneNumber,
+                        Address = cus.Address,
                         DateCreate = item.CreatedDate.ToString(),
+                        Total = item.Total,
+                        EmployeeId = item.EmployeeId,
+                        EmployeeName = "test",
+                        Status = item.Status,
+
                     };
-                    ordersList.Add(order1);
+                    billList.Add(bill);
                 }
-                return View(ordersList);
+                return View(billList);
             }
             return NotFound();
         }
 
         public async Task<IActionResult> OrderDetail(int id)
         {
-            IList<CustomerOrderResponseModel> orderDetail = await orderDetailService.GetAllOrderDetailsByOrderId(id);
-            if(orderDetail == null)
+            IList<CustomerOrderResponseModel> billDetail = await _billDetailService.GetAllBillDetailsByBillId(id);
+            if (billDetail == null)
             {
                 return NotFound();
             }
-            return View(orderDetail);
+            return View(billDetail);
         }
 
         [HttpPost]
         public async Task<JsonResult> handleLoadOrders()
         {
-            IList<Order> orders = await orderService.GetAllOrders();
-            if (orders != null)
-            {
-                return Json(new { Status = "Success", Data = orders });
-            }
+            //IList<Order> orders = await orderService.GetAllOrders();
+            //if (orders != null)
+            //{
+            //    return Json(new { Status = "Success", Data = orders });
+            //}
 
             return Json(new { Status = "Fail", Data = "null" });
         }
@@ -74,6 +83,15 @@ namespace online_shop_mvc.Areas.Admin.Controllers
             //}
 
             return Json(new { Status = "Fail", Data = "null" });
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> HandleUpdateStatusBill()
+        {
+            int status = Int32.Parse(Request.Query["status"]);
+            int billId = Int32.Parse(Request.Query["billid"]);
+            await _billService.UpdateStatus(billId, status);
+            return RedirectToAction("Index");
         }
     }
 }

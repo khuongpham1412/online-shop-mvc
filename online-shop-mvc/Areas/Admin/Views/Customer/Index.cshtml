@@ -1,0 +1,89 @@
+﻿@using Model.Models.Response
+@model IList<InfomationUserAccountModelResponse>
+
+<!-- Content Start -->
+<div class="content">
+    <!-- Navbar Start -->
+    <nav class="navbar navbar-expand bg-secondary navbar-dark sticky-top px-4 py-0">
+        <a href="index.html" class="navbar-brand d-flex d-lg-none me-4">
+            <h2 class="text-primary mb-0"><i class="fa fa-user-edit"></i></h2>
+        </a>
+        <a href="#" class="sidebar-toggler flex-shrink-0">
+            <i class="fa fa-bars"></i>
+        </a>
+        <form class="d-none d-md-flex ms-4">
+            <input class="form-control bg-dark border-0" type="search" placeholder="Search">
+        </form>
+        <div class="navbar-nav align-items-center ms-auto">
+            <div class="nav-item dropdown">
+                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
+                    <img class="rounded-circle me-lg-2" src="img/user.jpg" alt="" style="width: 40px; height: 40px;">
+                    <span class="d-none d-lg-inline-flex">John Doe</span>
+                </a>
+                <div class="dropdown-menu dropdown-menu-end bg-secondary border-0 rounded-0 rounded-bottom m-0">
+                    <a href="#" class="dropdown-item">Trang cá nhân</a>
+                    <a href="#" class="dropdown-item">Cài đặt</a>
+                    <a href="#" class="dropdown-item">Đăng xuất</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- Navbar End -->
+    <!-- Table Start -->
+    <div class="container-fluid pt-4 px-4">
+
+        <div class="col-12">
+            <div class="bg-secondary rounded h-100 p-4">
+                <h6 class="mb-4">Quản Lý Tài Khoản Khách Hàng</h6>
+                <div class="table-responsive">
+                    @if (Model != null && Model.Count() > 0)
+                    {
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">STT</th>
+                                    <th scope="col">Email</th>
+                                    <th scope="col">Tên Khách Hàng</th>
+                                    <th scope="col">SĐT</th>
+                                    <th scope="col">Địa Chỉ</th>
+                                    <th scope="col">Ngày Tạo</th>
+                                    <th scope="col">Trạng thái</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model.Select((value, i) => new { value, i }))
+                                {
+                                    int index = item.i + 1;
+                                    <tr>
+                                        <th scope="row">@index</th>
+                                        <th scope="row">@item.value.UserName</th>
+                                        <th scope="row">@item.value.FullName</th>
+                                        <th scope="row">@item.value.Phone</th>
+                                        <th scope="row">@item.value.Address</th>
+                                        <th scope="row">@item.value.Created.ToString()</th>
+
+                                        @using (Html.BeginForm("HandleUpdateStatusAccount", "Account", FormMethod.Get))
+                                        {
+                                            <input type="hidden" name="accountid" value="@item.value.AccountId" />
+                                            @if (item.value.Status == 0)
+                                            {
+                                                <td><button name="status" value="1" class="btn btn-dangger w-75">Đã Khóa</button></td>
+                                            }
+                                            else
+                                            {
+                                                <td><button name="status" value="0" class="btn btn-success w-75">Hoạt Động</button></td>
+                                            }
+                                        }
+
+                                    </tr>
+                                }
+
+
+                            </tbody>
+                        </table>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

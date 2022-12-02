@@ -1,4 +1,6 @@
-﻿@{
+﻿@using Model.Models.Response
+@model IList<CustomerOrderResponseModel>
+@{
 }
 
 <!-- Content Start -->
@@ -36,35 +38,42 @@
             <div class="bg-secondary rounded h-100 p-4">
                 <h6 class="mb-4">Chi Tiết Hóa Đơn</h6>
                 <div class="table-responsive">
-                    <table class="table">
-                        <thead>
-                            <tr>
-                                <th scope="col">ID Hóa Đơn</th>
-                                <th scope="col">Tên Khách Hàng</th>
-                                <th scope="col">Ngày Đặt Hàng</th>
-                                <th scope="col">Tổng Tiền</th>
-                                <th scope="col">ID Nhân Viên</th>
-                                <th scope="col">Chi Tiết Đơn Hàng </th>
-                                <th scope="col">Tình Trạng</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            
+                    @if (Model != null && Model.Count() > 0)
+                    {
+                        <table class="table">
+                            <thead>
                                 <tr>
-                                    <th scope="row">OrderId</th>
-                                    <td>.CustomerName</td>
-                                    <td>.DateCreate</td>
-
-                                    <td>.Total</td>
-                                    <th>.EmployeeId</th>
-                                   
-
+                                    <th scope="col">STT</th>
+                                    <th scope="col">Hình Ảnh</th>
+                                    <th scope="col">Tên Sản Phẩm</th>
+                                    <th scope="col">Size</th>
+                                    <th scope="col">Màu</th>
+                                    <th scope="col">Số Lượng </th>
+                                    <th scope="col">Giá</th>
+                                    <th scope="col">Tổng Giá</th>
                                 </tr>
-                            
+                            </thead>
+                            <tbody>
+
+                                @foreach (var item in @Model.Select((value, i) => new {value, i}))
+                                {
+                                    int index = item.i + 1;
+                                    <tr>
+                                        <th scope="row">@index</th>
+                                        <th scope="row">@item.value.PathImage</th>
+                                        <th scope="row">@item.value.ProductName</th>
+                                        <th scope="row">@item.value.SizeName</th>
+                                        <th scope="row">@item.value.ColorName</th>
+                                        <th scope="row">@item.value.Quantity</th>
+                                        <th scope="row">@item.value.Price</th>
+                                        <th scope="row">@item.value.UnitPrice</th>
+                                    </tr>
+                                }
 
 
-                        </tbody>
-                    </table>
+                            </tbody>
+                        </table>
+                    }
                 </div>
             </div>
         </div>

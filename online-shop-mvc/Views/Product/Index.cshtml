@@ -135,9 +135,8 @@
                 <div class="col-12">
                     <nav>
                         <ul class="pagination justify-content-center">
-                            <li class="page-item disabled"><a class="page-link" href="#">Previous</span></a></li>
                             @{
-                                var totalPage = Math.Ceiling((double)@count / 5);
+                                var totalPage = Math.Ceiling((double)@count / 6);
                                 for (var @page = 1; @page <= totalPage; @page++)
                                 {
                                     <li class="page-item active"><a class="page-link">@Html.ActionLink(""+@page, "Details", "Product", new { id = @page }, null)</a></li>
@@ -145,7 +144,6 @@
                             }
                             @* <li class="page-item active"><a class="page-link" href="#">2</a></li>
                             <li class="page-item"><a class="page-link" href="#">3</a></li>*@
-                            <li class="page-item"><a class="page-link" href="#">Next</a></li>
                         </ul>
                     </nav>
                 </div>
@@ -161,21 +159,29 @@
 
         $(function () {
             loadData();
-            var data = { NameSearch: '', Size: [], Color: [] }
+            handleSelectedSize();
+            handleSelectedColor();
 
-            $('#test-size').off('click').on('click', 'div input', function () {
-                var sizeId = $(this).val();
-                (this.checked) ? data.Size.push(sizeId) : data.Size = $.grep(data.Size, function (value) { return value != sizeId; });
-                loadData(url = '@Url.Action("LoadProductByFilter","Product")', data = data);
-            })
+            var data = { NameSearch: 'ao thun', Size: [], Color: [] }
 
-            $('#test-color').off('click').on('click', 'div input', function () {
-                var colorId = $(this).val();
-                (this.checked) ? data.Color.push(colorId) : data.Color = $.grep(data.Color, function (value) { return value != colorId; });
-                loadData(url = '@Url.Action("LoadProductByFilter","Product")', data = data);
-            })
+            function handleSelectedSize() {
+                $('#test-size').off('click').on('click', 'div input', function () {
+                    var sizeId = $(this).val();
+                    (this.checked) ? data.Size.push(sizeId) : data.Size = $.grep(data.Size, function (value) { return value != sizeId; });
+                    loadData(url = '@Url.Action("LoadProductByFilter","Product")', data = data);
+                });
 
-            
+            }
+
+            function handleSelectedColor() {
+                $('#test-color').off('click').on('click', 'div input', function () {
+                    var colorId = $(this).val();
+                    (this.checked) ? data.Color.push(colorId) : data.Color = $.grep(data.Color, function (value) { return value != colorId; });
+                    loadData(url = '@Url.Action("LoadProductByFilter","Product")', data = data);
+                })
+            }
+
+
 
             function loadData(url = '@Url.Action("LoadProductByPaging","Product", new{ page = 1})', data = {}) {
                 $.ajax({

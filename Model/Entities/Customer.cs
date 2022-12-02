@@ -24,7 +24,7 @@ namespace Model.Entities
         [StringLength(50)]
         public string Address { get; set; }
 
-        public int? AccountId { get; set; }
+        public int AccountId { get; set; }
 
         [ForeignKey("AccountId")]
         public Account Account { get; set; }

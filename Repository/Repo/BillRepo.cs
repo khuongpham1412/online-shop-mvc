@@ -39,6 +39,36 @@ namespace Repository.Repo
             }
             return null;
         }
+
+        public async Task<Bill> GetBillById(int billId)
+        {
+            try
+            {
+                return await _context.Bills.Where(b => b.Id == billId).FirstOrDefaultAsync();
+            }catch(Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            return null;
+        }
+        public async Task<Bill> UpdateStatus(int billId, int status)
+        {
+            try
+            {
+                Bill bill = await GetBillById(billId);
+                if(bill != null)
+                {
+                    bill.Status = status;
+                    await _context.SaveChangesAsync();
+                    return bill;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            return null;
+        }
         public async Task<Bill> Update(Bill bill)
         {
             try

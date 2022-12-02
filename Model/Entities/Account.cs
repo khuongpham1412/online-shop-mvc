@@ -21,8 +21,6 @@ namespace Model.Entities
         [Required]
         [StringLength(50)]
         public string Password { get; set; }
-
-        [DefaultValue(StatusAccount.ACTIVE)]
-        public string Status { get; set; }
+        public int Status { get; set; }
     }
 }

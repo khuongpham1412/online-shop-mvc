@@ -30,9 +30,8 @@ namespace online_shop_mvc.Controllers
                 {
                     HttpContext.Session.SetString("USER_LOGIN", JsonConvert.SerializeObject(account));
                 }
-                
             }
-            return RedirectToAction("Index");
+            return RedirectToAction("Index", "Home");
         }
     }
 }

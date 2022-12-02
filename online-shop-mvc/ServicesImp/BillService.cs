@@ -37,7 +37,25 @@ namespace online_shop_mvc.ServicesImp
             throw new NotImplementedException();
         }
 
-        public Task<IList<Bill>> GetAllBill()
+        public async Task<IList<Bill>> GetAllBill()
+        {
+            try
+            {
+                return await _billRepo.GetAllBills();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            return null;
+        }
+
+        public Task<Bill> GetBillById(int billId)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<Bill> Update(Bill bill)
         {
             try
             {
@@ -50,11 +68,11 @@ namespace online_shop_mvc.ServicesImp
             return null;
         }
 
-        public Task<Bill> Update(Bill bill)
+        public async Task<Bill> UpdateStatus(int billId, int status)
         {
             try
             {
-
+                return await _billRepo.UpdateStatus(billId, status);
             }
             catch (Exception ex)
             {

@@ -30,8 +30,8 @@
     </nav>
     <!-- Navbar End -->
     <!-- Table Start -->
-<div class="container-fluid pt-4 px-4">
-    
+    <div class="container-fluid pt-4 px-4">
+
         <div class="col-12">
             <div class="bg-secondary rounded h-100 p-4">
                 <h6 class="mb-4">Quản Lý Hóa Đơn</h6>
@@ -39,35 +39,45 @@
                     <table class="table">
                         <thead>
                             <tr>
-                                <th scope="col">ID Hóa Đơn</th>
+                                <th scope="col">ID</th>
                                 <th scope="col">Tên Khách Hàng</th>
+                                <th scope="col">SĐT</th>
+                                <th scope="col">Địa Chỉ</th>
                                 <th scope="col">Ngày Đặt Hàng</th>
                                 <th scope="col">Tổng Tiền</th>
                                 <th scope="col">ID Nhân Viên</th>
-                                <th scope="col">Chi Tiết Đơn Hàng </th>
+                                <th scope="col">Chi Tiết</th>
                                 <th scope="col">Tình Trạng</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach(var item in Model){
+                            @foreach (var item in Model)
+                            {
                                 <tr>
-                                    <th scope="row">@item.OrderId</th>
+                                    <th scope="row">@item.BillId</th>
                                     <td>@item.CustomerName</td>
+                                    <td>@item.Phone</td>
+                                    <td>@item.Address</td>
                                     <td>@item.DateCreate</td>
-
                                     <td>@item.Total</td>
                                     <th>@item.EmployeeId</th>
-                                    <td><a asp-controller="Order" asp-action="OrderDetail" asp-route-id="@item.OrderId">Chi tiết</a> </td>
-                                    @if(item.Status == 1){
-                                        <td><button class="btn btn-success w-75">Xác Nhận</button></td>
-                                    }else{
-                                        <td><button class="btn btn-danger w-75">Chưa Xác Nhận</button></td>
+                                    <td><a asp-controller="Order" asp-action="OrderDetail" asp-route-id="@item.BillId">Chi tiết</a> </td>
+                                    @using (Html.BeginForm("HandleUpdateStatusBill", "Order", FormMethod.Get))
+                                    {
+                                        <input type="hidden" name="billid" value="@item.BillId" />
+                                        @if (item.Status == 1)
+                                        {
+                                            <td><button name="status" value="0" class="btn btn-success w-75">Xác Nhận</button></td>
+                                        }
+                                        else
+                                        {
+                                            <td><button name="status" value="1" class="btn btn-danger w-75">Chưa Xác Nhận</button></td>
+                                        }
                                     }
-                                    
                                 </tr>
                             }
-                            
-                            
+
+
                         </tbody>
                     </table>
                 </div>
@@ -76,39 +86,39 @@
     </div>
 </div>
 
-    <!-- Content End -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script type="text/javascript">
-        $(function () {
-            loadData();
-            function loadData() {
-                $.ajax({
-                    type: 'POST',
-                    url: '@Url.Action("handleLoadOrders","Order")',
-                    dataType: 'json',
-                    data: {},
-                    success: function (response) {
-                        console.log(response);
-                        var res = "";
-                        //$.each(response.data, function (index, value) {
-                        //    res += "<tr>"
-                        //        + "<th value='"+value.id+"' scope='row'>" + (index + 1) + "</th>"
-                        //        + "<td  id='name-"+value.id+"'>" + "name" + "</td>"
-                        //        + "<td><button type='button' class='btn btn-primary' value='" + value.id + "-" + "name" + "' data-toggle='modal' data-target='#ModalEdit'>"
-                        //        + "Edit"
-                        //        + "</button><button type='button' class='btn btn-primary btn-delete'  value='"+value.id+"'>Delete</button></td>"
-                        //        + "</tr>";
-                        //});
-                        //$("#data").append(res);
-                    },
-                    error: function () {
-                        console.error('ERR');
-                    }
-                })
-                return false;
-            }
-          
+<!-- Content End -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script type="text/javascript">
+    $(function () {
+        loadData();
+        function loadData() {
+            $.ajax({
+                type: 'POST',
+                url: '@Url.Action("handleLoadOrders","Order")',
+                dataType: 'json',
+                data: {},
+                success: function (response) {
+                    console.log(response);
+                    var res = "";
+                    //$.each(response.data, function (index, value) {
+                    //    res += "<tr>"
+                    //        + "<th value='"+value.id+"' scope='row'>" + (index + 1) + "</th>"
+                    //        + "<td  id='name-"+value.id+"'>" + "name" + "</td>"
+                    //        + "<td><button type='button' class='btn btn-primary' value='" + value.id + "-" + "name" + "' data-toggle='modal' data-target='#ModalEdit'>"
+                    //        + "Edit"
+                    //        + "</button><button type='button' class='btn btn-primary btn-delete'  value='"+value.id+"'>Delete</button></td>"
+                    //        + "</tr>";
+                    //});
+                    //$("#data").append(res);
+                },
+                error: function () {
+                    console.error('ERR');
+                }
+            })
+            return false;
+        }
 
-        })
-    </script>
+
+    })
+</script>
 

@@ -16,7 +16,7 @@ namespace Repository.Repo
         {
             try
             {
-                _onlineShopDbContext.Customers.Add(customer);
+                await _onlineShopDbContext.Customers.AddAsync(customer);
                 await _onlineShopDbContext.SaveChangesAsync();
                 return customer;
             }
@@ -52,6 +52,18 @@ namespace Repository.Repo
                     return customer;
                 }
             }catch(Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            return null;
+        }
+        public async Task<Customer> GetCustomerByAccountId(int id)
+        {
+            try
+            {
+                return await _onlineShopDbContext.Customers.Where(c => c.AccountId == id).FirstOrDefaultAsync();
+            }
+            catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
             }

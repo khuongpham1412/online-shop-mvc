@@ -5,6 +5,7 @@
     "\\online-shop-mvc\\Areas",
     "\\online-shop-mvc\\Areas\\Admin",
     "\\online-shop-mvc\\Areas\\Admin\\Controllers",
+    "\\online-shop-mvc\\Controllers",
     "\\online-shop-mvc\\ServicesImp",
     "\\online-shop-mvc\\Views",
     "\\online-shop-mvc\\Views\\Cart",

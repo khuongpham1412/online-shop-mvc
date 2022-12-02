@@ -7,6 +7,7 @@ using NuGet.Protocol;
 using online_shop_mvc.Models.Request;
 using online_shop_mvc.Services;
 using online_shop_mvc.ServicesImp;
+using System;
 using System.Collections.Immutable;
 using System.Linq;
 using Color = Model.Entities.Color;
@@ -58,10 +59,10 @@ namespace online_shop_mvc.Controllers
             if (Request.QueryString.HasValue)
             {
                 sizeID = Int32.Parse(Request.Query["sizeID"]);
-                
+
             }
 
-            if(productID > 0 && sizeID > 0)
+            if (productID > 0 && sizeID > 0)
             {
                 var colorsByProductId = (IList<ProductSizeColor>)await _productSizeColorService.GetColorByProductAndSize(productID, sizeID);
                 ViewBag.ColorsByProductId = colorsByProductId;
@@ -80,7 +81,7 @@ namespace online_shop_mvc.Controllers
                     ViewBag.SizesByProductId = sizesByProductId;
                 }
                 Product product = await _productService.GetProductById(id);
-                if(product != null)
+                if (product != null)
                 {
                     ViewBag.Product = product;
                 }
@@ -124,7 +125,7 @@ namespace online_shop_mvc.Controllers
             int productID = id;
             int sizeID = Int32.Parse(Request.Query["sizeID"]);
 
-            var colors = (IList<ProductSizeColor>) await _productSizeColorService.GetColorByProductAndSize(productID, sizeID);
+            var colors = (IList<ProductSizeColor>)await _productSizeColorService.GetColorByProductAndSize(productID, sizeID);
             /*if (colors != null)
             {
                 ViewBag["data"] = colors;
@@ -140,7 +141,7 @@ namespace online_shop_mvc.Controllers
         [Route("Product/LoadProductByPaging/{page:int}")]
         public async Task<JsonResult> LoadProductByPaging([FromQuery(Name = "page")] int page = 1)
         {
-            IList<Product> products = await _productService.GetAllProductsPaging(1, 5);
+            IList<Product> products = await _productService.GetAllProductsPaging(1, 6);
             return Json(new { Status = "success", Data = products });
         }
 
@@ -153,20 +154,20 @@ namespace online_shop_mvc.Controllers
             Console.WriteLine("Da vao");
             Console.WriteLine(search);
 
-            //var res = (from p in _onlineShopDbContext.ProductSizeColors
-            //           join ps in _onlineShopDbContext.Products
-            //           on p.ProductID equals ps.Id into g
-            //           where sizes.Contains(p.SizeId) && colors.Contains(p.ColorId) && search != null
-            //           //group ps by p.ProductID into g
-            //           select g.ToList()).AsEnumerable().Skip(0).Take(5).ToList();
-            //IList<Product> p1 = new List<Product>();
-            //foreach (var item in res)
-            //{
-            //    Console.WriteLine(item);
-            //    p1.Add(item[0]);
-            //}
+            var res = (from p in _onlineShopDbContext.ProductSizeColors
+                       join ps in _onlineShopDbContext.Products
+                       on p.ProductId equals ps.Id
+                       where sizes.Contains(p.SizeId) && colors.Contains(p.ColorId) && search != null
+                       group ps by p.ProductId into g
+                       select g.ToList()).AsEnumerable().Skip(0).Take(5).ToList();
+            IList<Product> p1 = new List<Product>();
+            foreach (var item in res)
+            {
+                Console.WriteLine(item);
+                p1.Add(item[0]);
+            }
 
-            return Json(new { Status = "success", Data = ""});
+            return Json(new { Status = "success", Data = "" });
         }
     }
 }

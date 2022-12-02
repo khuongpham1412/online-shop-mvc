@@ -19,6 +19,7 @@ builder.Services.AddScoped<IProductSizeColorService, ProductSizeColorService>();
 builder.Services.AddScoped<IAccountService, AccountService>();
 builder.Services.AddScoped<IBillService, BillService>();
 builder.Services.AddScoped<IBillDetailService, BillDetailService>();
+builder.Services.AddScoped<ICustomerService, CustomerService>();
 
 builder.Services.AddDistributedMemoryCache();
 

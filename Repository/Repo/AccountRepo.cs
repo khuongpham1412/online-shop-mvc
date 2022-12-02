@@ -22,7 +22,50 @@ namespace Repository.Repo
             }
             catch (Exception ex)
             {
+                Console.WriteLine(ex.Message);
+            }
+            return null;
+        }
+        public async Task<Account> UpdateStatus(int id, int status)
+        {
+            try
+            {
+                Account account = await GetAccountById(id);
+                if(account != null)
+                {
+                    account.Status = status;
+                    await _context.SaveChangesAsync();
+                    return account;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            return null;
+        }
 
+        public async Task<Account> GetAccountById(int id)
+        {
+            try
+            {
+                return await _context.Accounts.Where(a => a.Id == id).FirstOrDefaultAsync();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            return null;
+        }
+        public async Task<IList<Account>> GetAllAccounts()
+        {
+            try
+            {
+                return await _context.Accounts.ToListAsync();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
             }
             return null;
         }

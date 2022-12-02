@@ -12,9 +12,7 @@ namespace Model.Entities
     {
         [Key]
         public int Id { get; set; }
-
         public DateTime CreatedDate { get; set; }
-
         public int CustomerId { get; set; }
         public int? EmployeeId { get; set; }
         [Column(TypeName = "decimal(18,4)")]
