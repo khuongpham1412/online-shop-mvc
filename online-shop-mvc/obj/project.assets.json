@@ -22,6 +22,9 @@
           "buildMultiTargeting/AntDesign.props": {}
         }
       },
+      "chosen/1.2.0": {
+        "type": "package"
+      },
       "Humanizer.Core/2.8.26": {
         "type": "package",
         "compile": {
@@ -4216,6 +4219,20 @@
         "staticwebassets/less/upload/style/index.less",
         "staticwebassets/less/upload/style/patch.less",
         "staticwebassets/less/upload/style/rtl.less"
+      ]
+    },
+    "chosen/1.2.0": {
+      "sha512": "nrcF57kN5LRb/drcnK43W+cDKuAxDXhVlTBI4wOmm2eTjQW1/nRjV/G9zs+xavsgtquTH7CeJbYDbZZOsMrABw==",
+      "type": "package",
+      "path": "chosen/1.2.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "chosen.1.2.0.nupkg.sha512",
+        "chosen.nuspec",
+        "content/Content/chosen-sprite.png",
+        "content/Content/chosen-sprite@2x.png",
+        "content/Content/chosen.css"
       ]
     },
     "Humanizer.Core/2.8.26": {
@@ -10894,23 +10911,29 @@
       "Microsoft.EntityFrameworkCore.Design >= 6.0.9",
       "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 6.0.10",
       "Model >= 1.0.0",
-      "Repository >= 1.0.0"
+      "Repository >= 1.0.0",
+      "chosen >= 1.2.0"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Asus\\.nuget\\packages\\": {}
+    "C:\\Users\\justi\\.nuget\\packages\\": {},
+    "D:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\SGU\\MVC\\online-shop-mvc\\online-shop-mvc\\online-shop-mvc.csproj",
+      "projectUniqueName": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\online-shop-mvc.csproj",
       "projectName": "online-shop-mvc",
-      "projectPath": "D:\\SGU\\MVC\\online-shop-mvc\\online-shop-mvc\\online-shop-mvc.csproj",
-      "packagesPath": "C:\\Users\\Asus\\.nuget\\packages\\",
-      "outputPath": "D:\\SGU\\MVC\\online-shop-mvc\\online-shop-mvc\\obj\\",
+      "projectPath": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\online-shop-mvc.csproj",
+      "packagesPath": "C:\\Users\\justi\\.nuget\\packages\\",
+      "outputPath": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "D:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\Asus\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\justi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -10924,11 +10947,11 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "D:\\SGU\\MVC\\online-shop-mvc\\Model\\Model.csproj": {
-              "projectPath": "D:\\SGU\\MVC\\online-shop-mvc\\Model\\Model.csproj"
+            "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\Model\\Model.csproj": {
+              "projectPath": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\Model\\Model.csproj"
             },
-            "D:\\SGU\\MVC\\online-shop-mvc\\Repository\\Repository.csproj": {
-              "projectPath": "D:\\SGU\\MVC\\online-shop-mvc\\Repository\\Repository.csproj"
+            "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\Repository\\Repository.csproj": {
+              "projectPath": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\Repository\\Repository.csproj"
             }
           }
         }
@@ -10960,6 +10983,10 @@
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
             "target": "Package",
             "version": "[6.0.10, )"
+          },
+          "chosen": {
+            "target": "Package",
+            "version": "[1.2.0, )"
           }
         },
         "imports": [
@@ -10981,7 +11008,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
       }
     }
   }

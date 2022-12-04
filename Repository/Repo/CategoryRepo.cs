@@ -74,5 +74,19 @@ namespace Repository.Repo
             }
             return null;
         }
+
+        //public async Task<Category> GetCategoryById(int id)
+        //{
+        //    try
+        //    {
+        //        return await _onlineShopDbContext.Categories.FirstOrDefault();
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        Console.WriteLine(ex.Message);
+        //        return null;
+        //    }
+        //    return null;
+        //}
     }
 }

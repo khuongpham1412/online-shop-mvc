@@ -1,0 +1,1069 @@
+{
+  "Files": [
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\online-shop-mvc.bundle.scp.css",
+      "PackagePath": "staticwebassets\\online-shop-mvc.bundle.scp.css"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Admin\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\Admin\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Admin\\css\\style.css",
+      "PackagePath": "staticwebassets\\Admin\\css\\style.css"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Admin\\img\\testimonial-1.jpg",
+      "PackagePath": "staticwebassets\\Admin\\img\\testimonial-1.jpg"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Admin\\img\\testimonial-2.jpg",
+      "PackagePath": "staticwebassets\\Admin\\img\\testimonial-2.jpg"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Admin\\img\\user.jpg",
+      "PackagePath": "staticwebassets\\Admin\\img\\user.jpg"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Admin\\js\\main.js",
+      "PackagePath": "staticwebassets\\Admin\\js\\main.js"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Admin\\lib\\chart\\chart.min.js",
+      "PackagePath": "staticwebassets\\Admin\\lib\\chart\\chart.min.js"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Admin\\lib\\easing\\easing.js",
+      "PackagePath": "staticwebassets\\Admin\\lib\\easing\\easing.js"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Admin\\lib\\easing\\easing.min.js",
+      "PackagePath": "staticwebassets\\Admin\\lib\\easing\\easing.min.js"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Admin\\lib\\owlcarousel\\LICENSE",
+      "PackagePath": "staticwebassets\\Admin\\lib\\owlcarousel"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Admin\\lib\\owlcarousel\\assets\\ajax-loader.gif",
+      "PackagePath": "staticwebassets\\Admin\\lib\\owlcarousel\\assets\\ajax-loader.gif"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Admin\\lib\\owlcarousel\\assets\\owl.carousel.css",
+      "PackagePath": "staticwebassets\\Admin\\lib\\owlcarousel\\assets\\owl.carousel.css"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Admin\\lib\\owlcarousel\\assets\\owl.carousel.min.css",
+      "PackagePath": "staticwebassets\\Admin\\lib\\owlcarousel\\assets\\owl.carousel.min.css"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Admin\\lib\\owlcarousel\\assets\\owl.theme.default.css",
+      "PackagePath": "staticwebassets\\Admin\\lib\\owlcarousel\\assets\\owl.theme.default.css"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Admin\\lib\\owlcarousel\\assets\\owl.theme.default.min.css",
+      "PackagePath": "staticwebassets\\Admin\\lib\\owlcarousel\\assets\\owl.theme.default.min.css"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Admin\\lib\\owlcarousel\\assets\\owl.theme.green.css",
+      "PackagePath": "staticwebassets\\Admin\\lib\\owlcarousel\\assets\\owl.theme.green.css"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Admin\\lib\\owlcarousel\\assets\\owl.theme.green.min.css",
+      "PackagePath": "staticwebassets\\Admin\\lib\\owlcarousel\\assets\\owl.theme.green.min.css"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Admin\\lib\\owlcarousel\\assets\\owl.video.play.png",
+      "PackagePath": "staticwebassets\\Admin\\lib\\owlcarousel\\assets\\owl.video.play.png"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Admin\\lib\\owlcarousel\\owl.carousel.js",
+      "PackagePath": "staticwebassets\\Admin\\lib\\owlcarousel\\owl.carousel.js"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Admin\\lib\\owlcarousel\\owl.carousel.min.js",
+      "PackagePath": "staticwebassets\\Admin\\lib\\owlcarousel\\owl.carousel.min.js"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Admin\\lib\\tempusdominus\\css\\tempusdominus-bootstrap-4.css",
+      "PackagePath": "staticwebassets\\Admin\\lib\\tempusdominus\\css\\tempusdominus-bootstrap-4.css"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Admin\\lib\\tempusdominus\\css\\tempusdominus-bootstrap-4.min.css",
+      "PackagePath": "staticwebassets\\Admin\\lib\\tempusdominus\\css\\tempusdominus-bootstrap-4.min.css"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Admin\\lib\\tempusdominus\\js\\moment-timezone.min.js",
+      "PackagePath": "staticwebassets\\Admin\\lib\\tempusdominus\\js\\moment-timezone.min.js"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Admin\\lib\\tempusdominus\\js\\moment.min.js",
+      "PackagePath": "staticwebassets\\Admin\\lib\\tempusdominus\\js\\moment.min.js"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Admin\\lib\\tempusdominus\\js\\tempusdominus-bootstrap-4.js",
+      "PackagePath": "staticwebassets\\Admin\\lib\\tempusdominus\\js\\tempusdominus-bootstrap-4.js"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Admin\\lib\\tempusdominus\\js\\tempusdominus-bootstrap-4.min.js",
+      "PackagePath": "staticwebassets\\Admin\\lib\\tempusdominus\\js\\tempusdominus-bootstrap-4.min.js"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Admin\\lib\\waypoints\\links.php",
+      "PackagePath": "staticwebassets\\Admin\\lib\\waypoints\\links.php"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Admin\\lib\\waypoints\\waypoints.min.js",
+      "PackagePath": "staticwebassets\\Admin\\lib\\waypoints\\waypoints.min.js"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Admin\\scss\\bootstrap.scss",
+      "PackagePath": "staticwebassets\\Admin\\scss\\bootstrap.scss"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Admin\\scss\\bootstrap\\scss\\_accordion.scss",
+      "PackagePath": "staticwebassets\\Admin\\scss\\bootstrap\\scss\\_accordion.scss"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Admin\\scss\\bootstrap\\scss\\_alert.scss",
+      "PackagePath": "staticwebassets\\Admin\\scss\\bootstrap\\scss\\_alert.scss"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Admin\\scss\\bootstrap\\scss\\_badge.scss",
+      "PackagePath": "staticwebassets\\Admin\\scss\\bootstrap\\scss\\_badge.scss"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Admin\\scss\\bootstrap\\scss\\_breadcrumb.scss",
+      "PackagePath": "staticwebassets\\Admin\\scss\\bootstrap\\scss\\_breadcrumb.scss"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Admin\\scss\\bootstrap\\scss\\_button-group.scss",
+      "PackagePath": "staticwebassets\\Admin\\scss\\bootstrap\\scss\\_button-group.scss"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Admin\\scss\\bootstrap\\scss\\_buttons.scss",
+      "PackagePath": "staticwebassets\\Admin\\scss\\bootstrap\\scss\\_buttons.scss"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Admin\\scss\\bootstrap\\scss\\_card.scss",
+      "PackagePath": "staticwebassets\\Admin\\scss\\bootstrap\\scss\\_card.scss"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Admin\\scss\\bootstrap\\scss\\_carousel.scss",
+      "PackagePath": "staticwebassets\\Admin\\scss\\bootstrap\\scss\\_carousel.scss"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Admin\\scss\\bootstrap\\scss\\_close.scss",
+      "PackagePath": "staticwebassets\\Admin\\scss\\bootstrap\\scss\\_close.scss"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Admin\\scss\\bootstrap\\scss\\_containers.scss",
+      "PackagePath": "staticwebassets\\Admin\\scss\\bootstrap\\scss\\_containers.scss"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Admin\\scss\\bootstrap\\scss\\_dropdown.scss",
+      "PackagePath": "staticwebassets\\Admin\\scss\\bootstrap\\scss\\_dropdown.scss"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Admin\\scss\\bootstrap\\scss\\_forms.scss",
+      "PackagePath": "staticwebassets\\Admin\\scss\\bootstrap\\scss\\_forms.scss"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Admin\\scss\\bootstrap\\scss\\_functions.scss",
+      "PackagePath": "staticwebassets\\Admin\\scss\\bootstrap\\scss\\_functions.scss"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Admin\\scss\\bootstrap\\scss\\_grid.scss",
+      "PackagePath": "staticwebassets\\Admin\\scss\\bootstrap\\scss\\_grid.scss"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Admin\\scss\\bootstrap\\scss\\_helpers.scss",
+      "PackagePath": "staticwebassets\\Admin\\scss\\bootstrap\\scss\\_helpers.scss"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Admin\\scss\\bootstrap\\scss\\_images.scss",
+      "PackagePath": "staticwebassets\\Admin\\scss\\bootstrap\\scss\\_images.scss"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Admin\\scss\\bootstrap\\scss\\_list-group.scss",
+      "PackagePath": "staticwebassets\\Admin\\scss\\bootstrap\\scss\\_list-group.scss"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Admin\\scss\\bootstrap\\scss\\_mixins.scss",
+      "PackagePath": "staticwebassets\\Admin\\scss\\bootstrap\\scss\\_mixins.scss"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Admin\\scss\\bootstrap\\scss\\_modal.scss",
+      "PackagePath": "staticwebassets\\Admin\\scss\\bootstrap\\scss\\_modal.scss"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Admin\\scss\\bootstrap\\scss\\_nav.scss",
+      "PackagePath": "staticwebassets\\Admin\\scss\\bootstrap\\scss\\_nav.scss"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Admin\\scss\\bootstrap\\scss\\_navbar.scss",
+      "PackagePath": "staticwebassets\\Admin\\scss\\bootstrap\\scss\\_navbar.scss"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Admin\\scss\\bootstrap\\scss\\_offcanvas.scss",
+      "PackagePath": "staticwebassets\\Admin\\scss\\bootstrap\\scss\\_offcanvas.scss"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Admin\\scss\\bootstrap\\scss\\_pagination.scss",
+      "PackagePath": "staticwebassets\\Admin\\scss\\bootstrap\\scss\\_pagination.scss"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Admin\\scss\\bootstrap\\scss\\_popover.scss",
+      "PackagePath": "staticwebassets\\Admin\\scss\\bootstrap\\scss\\_popover.scss"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Admin\\scss\\bootstrap\\scss\\_progress.scss",
+      "PackagePath": "staticwebassets\\Admin\\scss\\bootstrap\\scss\\_progress.scss"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Admin\\scss\\bootstrap\\scss\\_reboot.scss",
+      "PackagePath": "staticwebassets\\Admin\\scss\\bootstrap\\scss\\_reboot.scss"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Admin\\scss\\bootstrap\\scss\\_root.scss",
+      "PackagePath": "staticwebassets\\Admin\\scss\\bootstrap\\scss\\_root.scss"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Admin\\scss\\bootstrap\\scss\\_spinners.scss",
+      "PackagePath": "staticwebassets\\Admin\\scss\\bootstrap\\scss\\_spinners.scss"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Admin\\scss\\bootstrap\\scss\\_tables.scss",
+      "PackagePath": "staticwebassets\\Admin\\scss\\bootstrap\\scss\\_tables.scss"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Admin\\scss\\bootstrap\\scss\\_toasts.scss",
+      "PackagePath": "staticwebassets\\Admin\\scss\\bootstrap\\scss\\_toasts.scss"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Admin\\scss\\bootstrap\\scss\\_tooltip.scss",
+      "PackagePath": "staticwebassets\\Admin\\scss\\bootstrap\\scss\\_tooltip.scss"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Admin\\scss\\bootstrap\\scss\\_transitions.scss",
+      "PackagePath": "staticwebassets\\Admin\\scss\\bootstrap\\scss\\_transitions.scss"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Admin\\scss\\bootstrap\\scss\\_type.scss",
+      "PackagePath": "staticwebassets\\Admin\\scss\\bootstrap\\scss\\_type.scss"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Admin\\scss\\bootstrap\\scss\\_utilities.scss",
+      "PackagePath": "staticwebassets\\Admin\\scss\\bootstrap\\scss\\_utilities.scss"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Admin\\scss\\bootstrap\\scss\\_variables.scss",
+      "PackagePath": "staticwebassets\\Admin\\scss\\bootstrap\\scss\\_variables.scss"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Admin\\scss\\bootstrap\\scss\\bootstrap-grid.scss",
+      "PackagePath": "staticwebassets\\Admin\\scss\\bootstrap\\scss\\bootstrap-grid.scss"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Admin\\scss\\bootstrap\\scss\\bootstrap-reboot.scss",
+      "PackagePath": "staticwebassets\\Admin\\scss\\bootstrap\\scss\\bootstrap-reboot.scss"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Admin\\scss\\bootstrap\\scss\\bootstrap-utilities.scss",
+      "PackagePath": "staticwebassets\\Admin\\scss\\bootstrap\\scss\\bootstrap-utilities.scss"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Admin\\scss\\bootstrap\\scss\\bootstrap.scss",
+      "PackagePath": "staticwebassets\\Admin\\scss\\bootstrap\\scss\\bootstrap.scss"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Admin\\scss\\bootstrap\\scss\\forms\\_floating-labels.scss",
+      "PackagePath": "staticwebassets\\Admin\\scss\\bootstrap\\scss\\forms\\_floating-labels.scss"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Admin\\scss\\bootstrap\\scss\\forms\\_form-check.scss",
+      "PackagePath": "staticwebassets\\Admin\\scss\\bootstrap\\scss\\forms\\_form-check.scss"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Admin\\scss\\bootstrap\\scss\\forms\\_form-control.scss",
+      "PackagePath": "staticwebassets\\Admin\\scss\\bootstrap\\scss\\forms\\_form-control.scss"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Admin\\scss\\bootstrap\\scss\\forms\\_form-range.scss",
+      "PackagePath": "staticwebassets\\Admin\\scss\\bootstrap\\scss\\forms\\_form-range.scss"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Admin\\scss\\bootstrap\\scss\\forms\\_form-select.scss",
+      "PackagePath": "staticwebassets\\Admin\\scss\\bootstrap\\scss\\forms\\_form-select.scss"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Admin\\scss\\bootstrap\\scss\\forms\\_form-text.scss",
+      "PackagePath": "staticwebassets\\Admin\\scss\\bootstrap\\scss\\forms\\_form-text.scss"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Admin\\scss\\bootstrap\\scss\\forms\\_input-group.scss",
+      "PackagePath": "staticwebassets\\Admin\\scss\\bootstrap\\scss\\forms\\_input-group.scss"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Admin\\scss\\bootstrap\\scss\\forms\\_labels.scss",
+      "PackagePath": "staticwebassets\\Admin\\scss\\bootstrap\\scss\\forms\\_labels.scss"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Admin\\scss\\bootstrap\\scss\\forms\\_validation.scss",
+      "PackagePath": "staticwebassets\\Admin\\scss\\bootstrap\\scss\\forms\\_validation.scss"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Admin\\scss\\bootstrap\\scss\\helpers\\_clearfix.scss",
+      "PackagePath": "staticwebassets\\Admin\\scss\\bootstrap\\scss\\helpers\\_clearfix.scss"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Admin\\scss\\bootstrap\\scss\\helpers\\_colored-links.scss",
+      "PackagePath": "staticwebassets\\Admin\\scss\\bootstrap\\scss\\helpers\\_colored-links.scss"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Admin\\scss\\bootstrap\\scss\\helpers\\_position.scss",
+      "PackagePath": "staticwebassets\\Admin\\scss\\bootstrap\\scss\\helpers\\_position.scss"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Admin\\scss\\bootstrap\\scss\\helpers\\_ratio.scss",
+      "PackagePath": "staticwebassets\\Admin\\scss\\bootstrap\\scss\\helpers\\_ratio.scss"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Admin\\scss\\bootstrap\\scss\\helpers\\_stretched-link.scss",
+      "PackagePath": "staticwebassets\\Admin\\scss\\bootstrap\\scss\\helpers\\_stretched-link.scss"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Admin\\scss\\bootstrap\\scss\\helpers\\_text-truncation.scss",
+      "PackagePath": "staticwebassets\\Admin\\scss\\bootstrap\\scss\\helpers\\_text-truncation.scss"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Admin\\scss\\bootstrap\\scss\\helpers\\_visually-hidden.scss",
+      "PackagePath": "staticwebassets\\Admin\\scss\\bootstrap\\scss\\helpers\\_visually-hidden.scss"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Admin\\scss\\bootstrap\\scss\\mixins\\_alert.scss",
+      "PackagePath": "staticwebassets\\Admin\\scss\\bootstrap\\scss\\mixins\\_alert.scss"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Admin\\scss\\bootstrap\\scss\\mixins\\_border-radius.scss",
+      "PackagePath": "staticwebassets\\Admin\\scss\\bootstrap\\scss\\mixins\\_border-radius.scss"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Admin\\scss\\bootstrap\\scss\\mixins\\_box-shadow.scss",
+      "PackagePath": "staticwebassets\\Admin\\scss\\bootstrap\\scss\\mixins\\_box-shadow.scss"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Admin\\scss\\bootstrap\\scss\\mixins\\_breakpoints.scss",
+      "PackagePath": "staticwebassets\\Admin\\scss\\bootstrap\\scss\\mixins\\_breakpoints.scss"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Admin\\scss\\bootstrap\\scss\\mixins\\_buttons.scss",
+      "PackagePath": "staticwebassets\\Admin\\scss\\bootstrap\\scss\\mixins\\_buttons.scss"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Admin\\scss\\bootstrap\\scss\\mixins\\_caret.scss",
+      "PackagePath": "staticwebassets\\Admin\\scss\\bootstrap\\scss\\mixins\\_caret.scss"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Admin\\scss\\bootstrap\\scss\\mixins\\_clearfix.scss",
+      "PackagePath": "staticwebassets\\Admin\\scss\\bootstrap\\scss\\mixins\\_clearfix.scss"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Admin\\scss\\bootstrap\\scss\\mixins\\_color-scheme.scss",
+      "PackagePath": "staticwebassets\\Admin\\scss\\bootstrap\\scss\\mixins\\_color-scheme.scss"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Admin\\scss\\bootstrap\\scss\\mixins\\_container.scss",
+      "PackagePath": "staticwebassets\\Admin\\scss\\bootstrap\\scss\\mixins\\_container.scss"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Admin\\scss\\bootstrap\\scss\\mixins\\_deprecate.scss",
+      "PackagePath": "staticwebassets\\Admin\\scss\\bootstrap\\scss\\mixins\\_deprecate.scss"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Admin\\scss\\bootstrap\\scss\\mixins\\_forms.scss",
+      "PackagePath": "staticwebassets\\Admin\\scss\\bootstrap\\scss\\mixins\\_forms.scss"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Admin\\scss\\bootstrap\\scss\\mixins\\_gradients.scss",
+      "PackagePath": "staticwebassets\\Admin\\scss\\bootstrap\\scss\\mixins\\_gradients.scss"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Admin\\scss\\bootstrap\\scss\\mixins\\_grid.scss",
+      "PackagePath": "staticwebassets\\Admin\\scss\\bootstrap\\scss\\mixins\\_grid.scss"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Admin\\scss\\bootstrap\\scss\\mixins\\_image.scss",
+      "PackagePath": "staticwebassets\\Admin\\scss\\bootstrap\\scss\\mixins\\_image.scss"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Admin\\scss\\bootstrap\\scss\\mixins\\_list-group.scss",
+      "PackagePath": "staticwebassets\\Admin\\scss\\bootstrap\\scss\\mixins\\_list-group.scss"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Admin\\scss\\bootstrap\\scss\\mixins\\_lists.scss",
+      "PackagePath": "staticwebassets\\Admin\\scss\\bootstrap\\scss\\mixins\\_lists.scss"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Admin\\scss\\bootstrap\\scss\\mixins\\_pagination.scss",
+      "PackagePath": "staticwebassets\\Admin\\scss\\bootstrap\\scss\\mixins\\_pagination.scss"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Admin\\scss\\bootstrap\\scss\\mixins\\_reset-text.scss",
+      "PackagePath": "staticwebassets\\Admin\\scss\\bootstrap\\scss\\mixins\\_reset-text.scss"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Admin\\scss\\bootstrap\\scss\\mixins\\_resize.scss",
+      "PackagePath": "staticwebassets\\Admin\\scss\\bootstrap\\scss\\mixins\\_resize.scss"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Admin\\scss\\bootstrap\\scss\\mixins\\_table-variants.scss",
+      "PackagePath": "staticwebassets\\Admin\\scss\\bootstrap\\scss\\mixins\\_table-variants.scss"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Admin\\scss\\bootstrap\\scss\\mixins\\_text-truncate.scss",
+      "PackagePath": "staticwebassets\\Admin\\scss\\bootstrap\\scss\\mixins\\_text-truncate.scss"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Admin\\scss\\bootstrap\\scss\\mixins\\_transition.scss",
+      "PackagePath": "staticwebassets\\Admin\\scss\\bootstrap\\scss\\mixins\\_transition.scss"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Admin\\scss\\bootstrap\\scss\\mixins\\_utilities.scss",
+      "PackagePath": "staticwebassets\\Admin\\scss\\bootstrap\\scss\\mixins\\_utilities.scss"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Admin\\scss\\bootstrap\\scss\\mixins\\_visually-hidden.scss",
+      "PackagePath": "staticwebassets\\Admin\\scss\\bootstrap\\scss\\mixins\\_visually-hidden.scss"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Admin\\scss\\bootstrap\\scss\\utilities\\_api.scss",
+      "PackagePath": "staticwebassets\\Admin\\scss\\bootstrap\\scss\\utilities\\_api.scss"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Admin\\scss\\bootstrap\\scss\\vendor\\_rfs.scss",
+      "PackagePath": "staticwebassets\\Admin\\scss\\bootstrap\\scss\\vendor\\_rfs.scss"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Assets\\Client\\one-piece-luffy-png.png",
+      "PackagePath": "staticwebassets\\Assets\\Client\\one-piece-luffy-png.png"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Assets\\Client\\product1.jpg",
+      "PackagePath": "staticwebassets\\Assets\\Client\\product1.jpg"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Assets\\Client\\product2.jpg",
+      "PackagePath": "staticwebassets\\Assets\\Client\\product2.jpg"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Client\\css\\bootstrap-grid.css",
+      "PackagePath": "staticwebassets\\Client\\css\\bootstrap-grid.css"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Client\\css\\bootstrap-grid.min.css",
+      "PackagePath": "staticwebassets\\Client\\css\\bootstrap-grid.min.css"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Client\\css\\bootstrap-reboot.css",
+      "PackagePath": "staticwebassets\\Client\\css\\bootstrap-reboot.css"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Client\\css\\bootstrap-reboot.min.css",
+      "PackagePath": "staticwebassets\\Client\\css\\bootstrap-reboot.min.css"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Client\\css\\bootstrap.css",
+      "PackagePath": "staticwebassets\\Client\\css\\bootstrap.css"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Client\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\Client\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Client\\css\\style-login.css",
+      "PackagePath": "staticwebassets\\Client\\css\\style-login.css"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Client\\css\\style.css",
+      "PackagePath": "staticwebassets\\Client\\css\\style.css"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Client\\css\\style.min.css",
+      "PackagePath": "staticwebassets\\Client\\css\\style.min.css"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Client\\img\\carousel-1.jpg",
+      "PackagePath": "staticwebassets\\Client\\img\\carousel-1.jpg"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Client\\img\\carousel-2.jpg",
+      "PackagePath": "staticwebassets\\Client\\img\\carousel-2.jpg"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Client\\img\\carousel-3.jpg",
+      "PackagePath": "staticwebassets\\Client\\img\\carousel-3.jpg"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Client\\img\\cat-1.jpg",
+      "PackagePath": "staticwebassets\\Client\\img\\cat-1.jpg"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Client\\img\\cat-2.jpg",
+      "PackagePath": "staticwebassets\\Client\\img\\cat-2.jpg"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Client\\img\\cat-3.jpg",
+      "PackagePath": "staticwebassets\\Client\\img\\cat-3.jpg"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Client\\img\\cat-4.jpg",
+      "PackagePath": "staticwebassets\\Client\\img\\cat-4.jpg"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Client\\img\\offer-1.jpg",
+      "PackagePath": "staticwebassets\\Client\\img\\offer-1.jpg"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Client\\img\\offer-2.jpg",
+      "PackagePath": "staticwebassets\\Client\\img\\offer-2.jpg"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Client\\img\\payments.png",
+      "PackagePath": "staticwebassets\\Client\\img\\payments.png"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Client\\img\\product-1.jpg",
+      "PackagePath": "staticwebassets\\Client\\img\\product-1.jpg"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Client\\img\\product-2.jpg",
+      "PackagePath": "staticwebassets\\Client\\img\\product-2.jpg"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Client\\img\\product-3.jpg",
+      "PackagePath": "staticwebassets\\Client\\img\\product-3.jpg"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Client\\img\\product-4.jpg",
+      "PackagePath": "staticwebassets\\Client\\img\\product-4.jpg"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Client\\img\\product-5.jpg",
+      "PackagePath": "staticwebassets\\Client\\img\\product-5.jpg"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Client\\img\\product-6.jpg",
+      "PackagePath": "staticwebassets\\Client\\img\\product-6.jpg"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Client\\img\\product-7.jpg",
+      "PackagePath": "staticwebassets\\Client\\img\\product-7.jpg"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Client\\img\\product-8.jpg",
+      "PackagePath": "staticwebassets\\Client\\img\\product-8.jpg"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Client\\img\\product-9.jpg",
+      "PackagePath": "staticwebassets\\Client\\img\\product-9.jpg"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Client\\img\\user.jpg",
+      "PackagePath": "staticwebassets\\Client\\img\\user.jpg"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Client\\img\\vendor-1.jpg",
+      "PackagePath": "staticwebassets\\Client\\img\\vendor-1.jpg"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Client\\img\\vendor-2.jpg",
+      "PackagePath": "staticwebassets\\Client\\img\\vendor-2.jpg"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Client\\img\\vendor-3.jpg",
+      "PackagePath": "staticwebassets\\Client\\img\\vendor-3.jpg"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Client\\img\\vendor-4.jpg",
+      "PackagePath": "staticwebassets\\Client\\img\\vendor-4.jpg"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Client\\img\\vendor-5.jpg",
+      "PackagePath": "staticwebassets\\Client\\img\\vendor-5.jpg"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Client\\img\\vendor-6.jpg",
+      "PackagePath": "staticwebassets\\Client\\img\\vendor-6.jpg"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Client\\img\\vendor-7.jpg",
+      "PackagePath": "staticwebassets\\Client\\img\\vendor-7.jpg"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Client\\img\\vendor-8.jpg",
+      "PackagePath": "staticwebassets\\Client\\img\\vendor-8.jpg"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Client\\js\\login.js",
+      "PackagePath": "staticwebassets\\Client\\js\\login.js"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Client\\js\\main.js",
+      "PackagePath": "staticwebassets\\Client\\js\\main.js"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Client\\lib\\animate\\animate.min.css",
+      "PackagePath": "staticwebassets\\Client\\lib\\animate\\animate.min.css"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Client\\lib\\easing\\easing.js",
+      "PackagePath": "staticwebassets\\Client\\lib\\easing\\easing.js"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Client\\lib\\easing\\easing.min.js",
+      "PackagePath": "staticwebassets\\Client\\lib\\easing\\easing.min.js"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Client\\lib\\owlcarousel\\LICENSE",
+      "PackagePath": "staticwebassets\\Client\\lib\\owlcarousel"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Client\\lib\\owlcarousel\\assets\\ajax-loader.gif",
+      "PackagePath": "staticwebassets\\Client\\lib\\owlcarousel\\assets\\ajax-loader.gif"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Client\\lib\\owlcarousel\\assets\\owl.carousel.css",
+      "PackagePath": "staticwebassets\\Client\\lib\\owlcarousel\\assets\\owl.carousel.css"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Client\\lib\\owlcarousel\\assets\\owl.carousel.min.css",
+      "PackagePath": "staticwebassets\\Client\\lib\\owlcarousel\\assets\\owl.carousel.min.css"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Client\\lib\\owlcarousel\\assets\\owl.theme.default.css",
+      "PackagePath": "staticwebassets\\Client\\lib\\owlcarousel\\assets\\owl.theme.default.css"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Client\\lib\\owlcarousel\\assets\\owl.theme.default.min.css",
+      "PackagePath": "staticwebassets\\Client\\lib\\owlcarousel\\assets\\owl.theme.default.min.css"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Client\\lib\\owlcarousel\\assets\\owl.theme.green.css",
+      "PackagePath": "staticwebassets\\Client\\lib\\owlcarousel\\assets\\owl.theme.green.css"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Client\\lib\\owlcarousel\\assets\\owl.theme.green.min.css",
+      "PackagePath": "staticwebassets\\Client\\lib\\owlcarousel\\assets\\owl.theme.green.min.css"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Client\\lib\\owlcarousel\\assets\\owl.video.play.png",
+      "PackagePath": "staticwebassets\\Client\\lib\\owlcarousel\\assets\\owl.video.play.png"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Client\\lib\\owlcarousel\\owl.carousel.js",
+      "PackagePath": "staticwebassets\\Client\\lib\\owlcarousel\\owl.carousel.js"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Client\\lib\\owlcarousel\\owl.carousel.min.js",
+      "PackagePath": "staticwebassets\\Client\\lib\\owlcarousel\\owl.carousel.min.js"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Client\\mail\\contact.js",
+      "PackagePath": "staticwebassets\\Client\\mail\\contact.js"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Client\\mail\\contact.php",
+      "PackagePath": "staticwebassets\\Client\\mail\\contact.php"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Client\\mail\\jqBootstrapValidation.min.js",
+      "PackagePath": "staticwebassets\\Client\\mail\\jqBootstrapValidation.min.js"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Client\\scss\\bootstrap\\scss\\_alert.scss",
+      "PackagePath": "staticwebassets\\Client\\scss\\bootstrap\\scss\\_alert.scss"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Client\\scss\\bootstrap\\scss\\_badge.scss",
+      "PackagePath": "staticwebassets\\Client\\scss\\bootstrap\\scss\\_badge.scss"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Client\\scss\\bootstrap\\scss\\_breadcrumb.scss",
+      "PackagePath": "staticwebassets\\Client\\scss\\bootstrap\\scss\\_breadcrumb.scss"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Client\\scss\\bootstrap\\scss\\_button-group.scss",
+      "PackagePath": "staticwebassets\\Client\\scss\\bootstrap\\scss\\_button-group.scss"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Client\\scss\\bootstrap\\scss\\_buttons.scss",
+      "PackagePath": "staticwebassets\\Client\\scss\\bootstrap\\scss\\_buttons.scss"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Client\\scss\\bootstrap\\scss\\_card.scss",
+      "PackagePath": "staticwebassets\\Client\\scss\\bootstrap\\scss\\_card.scss"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Client\\scss\\bootstrap\\scss\\_carousel.scss",
+      "PackagePath": "staticwebassets\\Client\\scss\\bootstrap\\scss\\_carousel.scss"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Client\\scss\\bootstrap\\scss\\_close.scss",
+      "PackagePath": "staticwebassets\\Client\\scss\\bootstrap\\scss\\_close.scss"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Client\\scss\\bootstrap\\scss\\_code.scss",
+      "PackagePath": "staticwebassets\\Client\\scss\\bootstrap\\scss\\_code.scss"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Client\\scss\\bootstrap\\scss\\_custom-forms.scss",
+      "PackagePath": "staticwebassets\\Client\\scss\\bootstrap\\scss\\_custom-forms.scss"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Client\\scss\\bootstrap\\scss\\_dropdown.scss",
+      "PackagePath": "staticwebassets\\Client\\scss\\bootstrap\\scss\\_dropdown.scss"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Client\\scss\\bootstrap\\scss\\_forms.scss",
+      "PackagePath": "staticwebassets\\Client\\scss\\bootstrap\\scss\\_forms.scss"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Client\\scss\\bootstrap\\scss\\_functions.scss",
+      "PackagePath": "staticwebassets\\Client\\scss\\bootstrap\\scss\\_functions.scss"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Client\\scss\\bootstrap\\scss\\_grid.scss",
+      "PackagePath": "staticwebassets\\Client\\scss\\bootstrap\\scss\\_grid.scss"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Client\\scss\\bootstrap\\scss\\_images.scss",
+      "PackagePath": "staticwebassets\\Client\\scss\\bootstrap\\scss\\_images.scss"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Client\\scss\\bootstrap\\scss\\_input-group.scss",
+      "PackagePath": "staticwebassets\\Client\\scss\\bootstrap\\scss\\_input-group.scss"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Client\\scss\\bootstrap\\scss\\_jumbotron.scss",
+      "PackagePath": "staticwebassets\\Client\\scss\\bootstrap\\scss\\_jumbotron.scss"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Client\\scss\\bootstrap\\scss\\_list-group.scss",
+      "PackagePath": "staticwebassets\\Client\\scss\\bootstrap\\scss\\_list-group.scss"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Client\\scss\\bootstrap\\scss\\_media.scss",
+      "PackagePath": "staticwebassets\\Client\\scss\\bootstrap\\scss\\_media.scss"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Client\\scss\\bootstrap\\scss\\_mixins.scss",
+      "PackagePath": "staticwebassets\\Client\\scss\\bootstrap\\scss\\_mixins.scss"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Client\\scss\\bootstrap\\scss\\_modal.scss",
+      "PackagePath": "staticwebassets\\Client\\scss\\bootstrap\\scss\\_modal.scss"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Client\\scss\\bootstrap\\scss\\_nav.scss",
+      "PackagePath": "staticwebassets\\Client\\scss\\bootstrap\\scss\\_nav.scss"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Client\\scss\\bootstrap\\scss\\_navbar.scss",
+      "PackagePath": "staticwebassets\\Client\\scss\\bootstrap\\scss\\_navbar.scss"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Client\\scss\\bootstrap\\scss\\_pagination.scss",
+      "PackagePath": "staticwebassets\\Client\\scss\\bootstrap\\scss\\_pagination.scss"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Client\\scss\\bootstrap\\scss\\_popover.scss",
+      "PackagePath": "staticwebassets\\Client\\scss\\bootstrap\\scss\\_popover.scss"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Client\\scss\\bootstrap\\scss\\_print.scss",
+      "PackagePath": "staticwebassets\\Client\\scss\\bootstrap\\scss\\_print.scss"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Client\\scss\\bootstrap\\scss\\_progress.scss",
+      "PackagePath": "staticwebassets\\Client\\scss\\bootstrap\\scss\\_progress.scss"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Client\\scss\\bootstrap\\scss\\_reboot.scss",
+      "PackagePath": "staticwebassets\\Client\\scss\\bootstrap\\scss\\_reboot.scss"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Client\\scss\\bootstrap\\scss\\_root.scss",
+      "PackagePath": "staticwebassets\\Client\\scss\\bootstrap\\scss\\_root.scss"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Client\\scss\\bootstrap\\scss\\_spinners.scss",
+      "PackagePath": "staticwebassets\\Client\\scss\\bootstrap\\scss\\_spinners.scss"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Client\\scss\\bootstrap\\scss\\_tables.scss",
+      "PackagePath": "staticwebassets\\Client\\scss\\bootstrap\\scss\\_tables.scss"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Client\\scss\\bootstrap\\scss\\_toasts.scss",
+      "PackagePath": "staticwebassets\\Client\\scss\\bootstrap\\scss\\_toasts.scss"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Client\\scss\\bootstrap\\scss\\_tooltip.scss",
+      "PackagePath": "staticwebassets\\Client\\scss\\bootstrap\\scss\\_tooltip.scss"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Client\\scss\\bootstrap\\scss\\_transitions.scss",
+      "PackagePath": "staticwebassets\\Client\\scss\\bootstrap\\scss\\_transitions.scss"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Client\\scss\\bootstrap\\scss\\_type.scss",
+      "PackagePath": "staticwebassets\\Client\\scss\\bootstrap\\scss\\_type.scss"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Client\\scss\\bootstrap\\scss\\_utilities.scss",
+      "PackagePath": "staticwebassets\\Client\\scss\\bootstrap\\scss\\_utilities.scss"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Client\\scss\\bootstrap\\scss\\_variables.scss",
+      "PackagePath": "staticwebassets\\Client\\scss\\bootstrap\\scss\\_variables.scss"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Client\\scss\\bootstrap\\scss\\bootstrap-grid.scss",
+      "PackagePath": "staticwebassets\\Client\\scss\\bootstrap\\scss\\bootstrap-grid.scss"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Client\\scss\\bootstrap\\scss\\bootstrap-reboot.scss",
+      "PackagePath": "staticwebassets\\Client\\scss\\bootstrap\\scss\\bootstrap-reboot.scss"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Client\\scss\\bootstrap\\scss\\bootstrap.scss",
+      "PackagePath": "staticwebassets\\Client\\scss\\bootstrap\\scss\\bootstrap.scss"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Client\\scss\\bootstrap\\scss\\mixins\\_alert.scss",
+      "PackagePath": "staticwebassets\\Client\\scss\\bootstrap\\scss\\mixins\\_alert.scss"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Client\\scss\\bootstrap\\scss\\mixins\\_background-variant.scss",
+      "PackagePath": "staticwebassets\\Client\\scss\\bootstrap\\scss\\mixins\\_background-variant.scss"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Client\\scss\\bootstrap\\scss\\mixins\\_badge.scss",
+      "PackagePath": "staticwebassets\\Client\\scss\\bootstrap\\scss\\mixins\\_badge.scss"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Client\\scss\\bootstrap\\scss\\mixins\\_border-radius.scss",
+      "PackagePath": "staticwebassets\\Client\\scss\\bootstrap\\scss\\mixins\\_border-radius.scss"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Client\\scss\\bootstrap\\scss\\mixins\\_box-shadow.scss",
+      "PackagePath": "staticwebassets\\Client\\scss\\bootstrap\\scss\\mixins\\_box-shadow.scss"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Client\\scss\\bootstrap\\scss\\mixins\\_breakpoints.scss",
+      "PackagePath": "staticwebassets\\Client\\scss\\bootstrap\\scss\\mixins\\_breakpoints.scss"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Client\\scss\\bootstrap\\scss\\mixins\\_buttons.scss",
+      "PackagePath": "staticwebassets\\Client\\scss\\bootstrap\\scss\\mixins\\_buttons.scss"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Client\\scss\\bootstrap\\scss\\mixins\\_caret.scss",
+      "PackagePath": "staticwebassets\\Client\\scss\\bootstrap\\scss\\mixins\\_caret.scss"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Client\\scss\\bootstrap\\scss\\mixins\\_clearfix.scss",
+      "PackagePath": "staticwebassets\\Client\\scss\\bootstrap\\scss\\mixins\\_clearfix.scss"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Client\\scss\\bootstrap\\scss\\mixins\\_deprecate.scss",
+      "PackagePath": "staticwebassets\\Client\\scss\\bootstrap\\scss\\mixins\\_deprecate.scss"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Client\\scss\\bootstrap\\scss\\mixins\\_float.scss",
+      "PackagePath": "staticwebassets\\Client\\scss\\bootstrap\\scss\\mixins\\_float.scss"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Client\\scss\\bootstrap\\scss\\mixins\\_forms.scss",
+      "PackagePath": "staticwebassets\\Client\\scss\\bootstrap\\scss\\mixins\\_forms.scss"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Client\\scss\\bootstrap\\scss\\mixins\\_gradients.scss",
+      "PackagePath": "staticwebassets\\Client\\scss\\bootstrap\\scss\\mixins\\_gradients.scss"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Client\\scss\\bootstrap\\scss\\mixins\\_grid-framework.scss",
+      "PackagePath": "staticwebassets\\Client\\scss\\bootstrap\\scss\\mixins\\_grid-framework.scss"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Client\\scss\\bootstrap\\scss\\mixins\\_grid.scss",
+      "PackagePath": "staticwebassets\\Client\\scss\\bootstrap\\scss\\mixins\\_grid.scss"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Client\\scss\\bootstrap\\scss\\mixins\\_hover.scss",
+      "PackagePath": "staticwebassets\\Client\\scss\\bootstrap\\scss\\mixins\\_hover.scss"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Client\\scss\\bootstrap\\scss\\mixins\\_image.scss",
+      "PackagePath": "staticwebassets\\Client\\scss\\bootstrap\\scss\\mixins\\_image.scss"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Client\\scss\\bootstrap\\scss\\mixins\\_list-group.scss",
+      "PackagePath": "staticwebassets\\Client\\scss\\bootstrap\\scss\\mixins\\_list-group.scss"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Client\\scss\\bootstrap\\scss\\mixins\\_lists.scss",
+      "PackagePath": "staticwebassets\\Client\\scss\\bootstrap\\scss\\mixins\\_lists.scss"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Client\\scss\\bootstrap\\scss\\mixins\\_nav-divider.scss",
+      "PackagePath": "staticwebassets\\Client\\scss\\bootstrap\\scss\\mixins\\_nav-divider.scss"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Client\\scss\\bootstrap\\scss\\mixins\\_pagination.scss",
+      "PackagePath": "staticwebassets\\Client\\scss\\bootstrap\\scss\\mixins\\_pagination.scss"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Client\\scss\\bootstrap\\scss\\mixins\\_reset-text.scss",
+      "PackagePath": "staticwebassets\\Client\\scss\\bootstrap\\scss\\mixins\\_reset-text.scss"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Client\\scss\\bootstrap\\scss\\mixins\\_resize.scss",
+      "PackagePath": "staticwebassets\\Client\\scss\\bootstrap\\scss\\mixins\\_resize.scss"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Client\\scss\\bootstrap\\scss\\mixins\\_screen-reader.scss",
+      "PackagePath": "staticwebassets\\Client\\scss\\bootstrap\\scss\\mixins\\_screen-reader.scss"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Client\\scss\\bootstrap\\scss\\mixins\\_size.scss",
+      "PackagePath": "staticwebassets\\Client\\scss\\bootstrap\\scss\\mixins\\_size.scss"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Client\\scss\\bootstrap\\scss\\mixins\\_table-row.scss",
+      "PackagePath": "staticwebassets\\Client\\scss\\bootstrap\\scss\\mixins\\_table-row.scss"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Client\\scss\\bootstrap\\scss\\mixins\\_text-emphasis.scss",
+      "PackagePath": "staticwebassets\\Client\\scss\\bootstrap\\scss\\mixins\\_text-emphasis.scss"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Client\\scss\\bootstrap\\scss\\mixins\\_text-hide.scss",
+      "PackagePath": "staticwebassets\\Client\\scss\\bootstrap\\scss\\mixins\\_text-hide.scss"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Client\\scss\\bootstrap\\scss\\mixins\\_text-truncate.scss",
+      "PackagePath": "staticwebassets\\Client\\scss\\bootstrap\\scss\\mixins\\_text-truncate.scss"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Client\\scss\\bootstrap\\scss\\mixins\\_transition.scss",
+      "PackagePath": "staticwebassets\\Client\\scss\\bootstrap\\scss\\mixins\\_transition.scss"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Client\\scss\\bootstrap\\scss\\mixins\\_visibility.scss",
+      "PackagePath": "staticwebassets\\Client\\scss\\bootstrap\\scss\\mixins\\_visibility.scss"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Client\\scss\\bootstrap\\scss\\utilities\\_align.scss",
+      "PackagePath": "staticwebassets\\Client\\scss\\bootstrap\\scss\\utilities\\_align.scss"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Client\\scss\\bootstrap\\scss\\utilities\\_background.scss",
+      "PackagePath": "staticwebassets\\Client\\scss\\bootstrap\\scss\\utilities\\_background.scss"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Client\\scss\\bootstrap\\scss\\utilities\\_borders.scss",
+      "PackagePath": "staticwebassets\\Client\\scss\\bootstrap\\scss\\utilities\\_borders.scss"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Client\\scss\\bootstrap\\scss\\utilities\\_clearfix.scss",
+      "PackagePath": "staticwebassets\\Client\\scss\\bootstrap\\scss\\utilities\\_clearfix.scss"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Client\\scss\\bootstrap\\scss\\utilities\\_display.scss",
+      "PackagePath": "staticwebassets\\Client\\scss\\bootstrap\\scss\\utilities\\_display.scss"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Client\\scss\\bootstrap\\scss\\utilities\\_embed.scss",
+      "PackagePath": "staticwebassets\\Client\\scss\\bootstrap\\scss\\utilities\\_embed.scss"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Client\\scss\\bootstrap\\scss\\utilities\\_flex.scss",
+      "PackagePath": "staticwebassets\\Client\\scss\\bootstrap\\scss\\utilities\\_flex.scss"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Client\\scss\\bootstrap\\scss\\utilities\\_float.scss",
+      "PackagePath": "staticwebassets\\Client\\scss\\bootstrap\\scss\\utilities\\_float.scss"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Client\\scss\\bootstrap\\scss\\utilities\\_interactions.scss",
+      "PackagePath": "staticwebassets\\Client\\scss\\bootstrap\\scss\\utilities\\_interactions.scss"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Client\\scss\\bootstrap\\scss\\utilities\\_overflow.scss",
+      "PackagePath": "staticwebassets\\Client\\scss\\bootstrap\\scss\\utilities\\_overflow.scss"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Client\\scss\\bootstrap\\scss\\utilities\\_position.scss",
+      "PackagePath": "staticwebassets\\Client\\scss\\bootstrap\\scss\\utilities\\_position.scss"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Client\\scss\\bootstrap\\scss\\utilities\\_screenreaders.scss",
+      "PackagePath": "staticwebassets\\Client\\scss\\bootstrap\\scss\\utilities\\_screenreaders.scss"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Client\\scss\\bootstrap\\scss\\utilities\\_shadows.scss",
+      "PackagePath": "staticwebassets\\Client\\scss\\bootstrap\\scss\\utilities\\_shadows.scss"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Client\\scss\\bootstrap\\scss\\utilities\\_sizing.scss",
+      "PackagePath": "staticwebassets\\Client\\scss\\bootstrap\\scss\\utilities\\_sizing.scss"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Client\\scss\\bootstrap\\scss\\utilities\\_spacing.scss",
+      "PackagePath": "staticwebassets\\Client\\scss\\bootstrap\\scss\\utilities\\_spacing.scss"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Client\\scss\\bootstrap\\scss\\utilities\\_stretched-link.scss",
+      "PackagePath": "staticwebassets\\Client\\scss\\bootstrap\\scss\\utilities\\_stretched-link.scss"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Client\\scss\\bootstrap\\scss\\utilities\\_text.scss",
+      "PackagePath": "staticwebassets\\Client\\scss\\bootstrap\\scss\\utilities\\_text.scss"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Client\\scss\\bootstrap\\scss\\utilities\\_visibility.scss",
+      "PackagePath": "staticwebassets\\Client\\scss\\bootstrap\\scss\\utilities\\_visibility.scss"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Client\\scss\\bootstrap\\scss\\vendor\\_rfs.scss",
+      "PackagePath": "staticwebassets\\Client\\scss\\bootstrap\\scss\\vendor\\_rfs.scss"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\Client\\scss\\style.scss",
+      "PackagePath": "staticwebassets\\Client\\scss\\style.scss"
+    },
+    {
+      "Id": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\online-shop-mvc\\wwwroot\\favicon.ico",
+      "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.build.online-shop-mvc.props",
+      "PackagePath": "build\\online-shop-mvc.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.buildMultiTargeting.online-shop-mvc.props",
+      "PackagePath": "buildMultiTargeting\\online-shop-mvc.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.buildTransitive.online-shop-mvc.props",
+      "PackagePath": "buildTransitive\\online-shop-mvc.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.online-shop-mvc.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

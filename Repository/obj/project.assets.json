@@ -1929,19 +1929,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Asus\\.nuget\\packages\\": {}
+    "C:\\Users\\justi\\.nuget\\packages\\": {},
+    "D:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\SGU\\MVC\\online-shop-mvc\\Repository\\Repository.csproj",
+      "projectUniqueName": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\Repository\\Repository.csproj",
       "projectName": "Repository",
-      "projectPath": "D:\\SGU\\MVC\\online-shop-mvc\\Repository\\Repository.csproj",
-      "packagesPath": "C:\\Users\\Asus\\.nuget\\packages\\",
-      "outputPath": "D:\\SGU\\MVC\\online-shop-mvc\\Repository\\obj\\",
+      "projectPath": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\Repository\\Repository.csproj",
+      "packagesPath": "C:\\Users\\justi\\.nuget\\packages\\",
+      "outputPath": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\Repository\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "D:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\Asus\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\justi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -1955,8 +1960,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "D:\\SGU\\MVC\\online-shop-mvc\\Model\\Model.csproj": {
-              "projectPath": "D:\\SGU\\MVC\\online-shop-mvc\\Model\\Model.csproj"
+            "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\Model\\Model.csproj": {
+              "projectPath": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\Model\\Model.csproj"
             }
           }
         }
@@ -1986,7 +1991,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
       }
     }
   }

@@ -1,0 +1,425 @@
+﻿@{
+    var categories = ViewBag.Categories;
+}
+<!-- Content Start -->
+<div class="content">
+    <!-- Navbar Start -->
+    <nav class="navbar navbar-expand bg-secondary navbar-dark sticky-top px-4 py-0">
+        <a href="index.html" class="navbar-brand d-flex d-lg-none me-4">
+            <h2 class="text-primary mb-0"><i class="fa fa-user-edit"></i></h2>
+        </a>
+        <a href="#" class="sidebar-toggler flex-shrink-0">
+            <i class="fa fa-bars"></i>
+        </a>
+        <form class="d-none d-md-flex ms-4">
+            <input class="form-control bg-dark border-0" type="search" placeholder="Search">
+        </form>
+        <div class="navbar-nav align-items-center ms-auto">
+            <div class="nav-item dropdown">
+                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
+                    <img class="rounded-circle me-lg-2" src="img/user.jpg" alt="" style="width: 40px; height: 40px;">
+                    <span class="d-none d-lg-inline-flex">John Doe</span>
+                </a>
+                <div class="dropdown-menu dropdown-menu-end bg-secondary border-0 rounded-0 rounded-bottom m-0">
+                    <a href="#" class="dropdown-item">Trang cá nhân</a>
+                    <a href="#" class="dropdown-item">Cài đặt</a>
+                    <a href="#" class="dropdown-item">Đăng xuất</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- Navbar End -->
+    <!-- Table Start -->
+    <div class="container-fluid pt-4 px-4">
+        <div class="row g-4">
+            <div class="col-12">
+                <div class="bg-secondary rounded h-100 p-4">
+                    <div class="d-flex align-items-center justify-content-between mb-4">
+                        <h6>Danh sách sản phẩm</h6>
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ModalAdd">
+                            Thêm sản phẩm
+                        </button>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Số thứ tự</th>
+                                    <th scope="col">Tên sản phẩm</th>
+                                    <th scope="col">Hình ảnh</th>
+                                    <th scope="col" style='padding-left: 100px'>Phân loại</th>
+                                    <th scope="col">Giá</th>
+                                    <th scope="col">Chỉnh sửa</th>
+                                </tr>
+                            </thead>
+                            <tbody id="data">
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="ModalAdd" tabindex="-1" role="dialog" aria-labelledby="ModalAdd" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle" style="color: black">Thêm Sản Phẩm</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="background: white; border: none;">
+                        <span aria-hidden="true">&times;</span>
+                    </button
+                    ]
+                    >
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-3">
+                            <label>*Tên sản phẩm:</label>
+                        </div>
+                        <div class="col-9">
+                            <input class="form-control w-75" style="background: white; color: black;" type="text" id="nameAdd" />
+                        </div>
+                    </div>
+                    <br />
+                    <div class="row">
+                        <div class="col-3">
+                            <label>Loại sản phẩm:</label>
+                        </div>
+                        <div class="col-9">
+                            <select class="form-select-lg w-75" style="background: white; color: black;" id="categoryAdd">
+                                @foreach(var category in categories)
+                                {
+                                <option value=@category.Id>@category.Name</option>
+                                }
+                            </select>
+                        </div>
+                     </div>
+                     <br />
+                     <div class="row">
+                        <div class="col-3">
+                            <label>Kích thước (Size):</label>
+                        </div>
+                        <div class="col-9">
+                            @Html.ListBox("lstChosenSizeAdd", ViewBag.SizesChosen as SelectList, new { style = "width:100%" })
+                        </div>
+                     </div> 
+                     <br />
+                     <div class="row">
+                        <div class="col-3">
+                            <label>Màu sắc (Color):</label>
+                        </div>
+                        <div class="col-9">
+                            @Html.ListBox("lstChosenColorAdd", ViewBag.ColorsChosen as SelectList, new {style = "width:100%" })
+                        </div>
+                     </div>
+                     <br />
+                     <div class="row">
+                        <div class="col-3">
+                            <label>Mô tả:</label>
+                        </div>
+                        <div class="col-9">
+                            <textarea id="discriptionAdd" rows="4" class="form-control w-75" style="background: white; color: black;"></textarea>
+                        </div>
+                     </div> 
+                      <br />
+                     <div class="row">
+                        <div class="col-3">
+                            <label>* Giá bán:</label>
+                        </div>
+                        <div class="col-9">
+                            <input class="form-control w-75" style="background: white; color: black;" type="text" id="priceSellAdd" />
+                        </div>
+                     </div> 
+                     <br />
+                     <div class="row">
+                        <div class="col-3">
+                            <label>Số lượng:</label>
+                        </div>
+                        <div class="col-9">
+                            <input class="form-control w-75" style="background: white; color: black;" type="text" id="QuantityAdd" />
+                        </div>
+                     </div> 
+                     <br />
+                     <div class="row">
+                        <div class="col-3">
+                            <label>Hình ảnh:</label>
+                        </div>
+                        <br />
+                        <div class="col-9">
+                           <input type="file" class="form-control w-75" name="iamge" onchange="readURL(this);" />
+                           <br />
+                           <img id="blah" src="#" alt="your image" style="max-width:100px; display: none"/>
+                        </div>
+                     </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
+                    <button type="button" class="btn btn-primary" id="saveAdd">Thêm</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <!-- Modal Edit -->
+    <div class="modal fade" id="ModalEdit" tabindex="-1" role="dialog" aria-labelledby="ModalEdit" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle" style="color: black">Chỉnh Sửa Loại</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="background: white; border: none;">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <input type="hidden" id="productId" />
+                <!--<div class="modal-body" id="cate">
+                    
+                </div>-->
+                 <div class="modal-body">
+                    <div class="row">
+                        <div class="col-3">
+                            <label>*Tên sản phẩm:</label>
+                        </div>
+                        <div class="col-9">
+                            <input class="form-control w-75" style="background: white; color: black;" type="text" id="nameEdit" />
+                        </div>
+                    </div>
+                    <br />
+                    <div class="row">
+                        <div class="col-3">
+                            <label>Loại sản phẩm:</label>
+                        </div>
+                        <div class="col-9">
+                            <select class="form-select-lg w-75" style="background: white; color: black;" id="categoryEdit">
+                                @foreach(var category in categories)
+                                {
+                                <option value=@category.Id>@category.Name</option>
+                                }
+                            </select>
+                        </div>
+                     </div>
+                     <br />
+                     <div class="row">
+                        <div class="col-3">
+                            <label>Kích thước (Size):</label>
+                        </div>
+                        <div class="col-9">
+                            @Html.ListBox("lstChosenSizeEdit", ViewBag.SizesChosen as SelectList, new { style = "width:100%" })
+                        </div>
+                     </div> 
+                     <br />
+                     <div class="row">
+                        <div class="col-3">
+                            <label>Màu sắc (Color):</label>
+                        </div>
+                        <div class="col-9">
+                            @Html.ListBox("lstChosenColorEdit", ViewBag.ColorsChosen as SelectList, new {style = "width:100%" })
+                        </div>
+                     </div>
+                     <br />
+                     <div class="row">
+                        <div class="col-3">
+                            <label>Mô tả:</label>
+                        </div>
+                        <div class="col-9">
+                            <textarea id="discriptionEdit" rows="4" class="form-control w-75" style="background: white; color: black;"></textarea>
+                        </div>
+                     </div> 
+                      <br />
+                     <div class="row">
+                        <div class="col-3">
+                            <label>* Giá bán:</label>
+                        </div>
+                        <div class="col-9">
+                            <input class="form-control w-75" style="background: white; color: black;" type="text" id="priceSellEdit" />
+                        </div>
+                     </div>
+                     <br />
+                     <div class="row">
+                        <div class="col-3">
+                            <label>Số lượng:</label>
+                        </div>
+                        <div class="col-9">
+                            <input class="form-control w-75" style="background: white; color: black;" type="text" id="QuantityEdit" />
+                        </div>
+                     </div> 
+                     <br />
+                     <div class="row">
+                        <div class="col-3">
+                            <label>Hình ảnh:</label>
+                        </div>
+                        <br />
+                        <div class="col-9">
+                           <input type="file" class="form-control w-75" name="iamge" onchange="readURL(this);" />
+                           <br />
+                           <img id="blah" src="#" alt="your image" style="max-width:100px; display: none"/>
+                        </div>
+                     </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" id="saveEdit">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Table End -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+        $("#lstChosenSizeAdd").chosen({
+            placeholder_text_multiple: "Chọn size",
+            width:"75%"
+        });
+        $("#lstChosenColorAdd").chosen({
+            placeholder_text_multiple: "Chọn màu",
+            width:"75%"
+        });
+
+        $("#lstChosenSizeEdit").chosen({
+            placeholder_text_multiple: "Chọn size",
+            width:"75%"
+        });
+        $("#lstChosenColorEdit").chosen({
+            placeholder_text_multiple: "Chọn màu",
+            width:"75%"
+        });
+       });
+
+       function readURL(input) {
+           document.getElementById('blah').style.display = 'block';
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+                reader.onload = function (e) {
+                    $('#blah')
+                        .attr('src', e.target.result);
+                };
+
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+
+        $(function () {
+            loadData();
+            function loadData() {
+                $.ajax({
+                    type: 'POST',
+                    url: '@Url.Action("handleLoadProducts","Product")',
+                    dataType: 'json',
+                    data: {},
+                    success: function (response) {
+                        var res = "";
+                        $.each(response.data, function (index, value) {
+                                var categoryName = "";
+                            if(value.categoryID === 1){
+                                categoryName = "Áo";
+                            }
+                            else if(value.categoryID === 2){
+                                categoryName = "Quần";
+                            }
+                            res += "<tr>"
+                                + "<th value='"+value.id+"' scope='row'>" + (index + 1) + "</th>"
+                                + "<td>" + value.name + "</td>"
+                                + "<td style='width:100px'><img style='width:100%' src='" + value.image + "' /></td>"
+                                + "<td style='padding-left: 100px'>" + categoryName + "</td>"
+                                + "<td>" + value.price + "</td>"
+                                + "<td><button type='button' class='btn btn-primary' value='" + value.id + "' data-toggle='modal' data-target='#ModalEdit'>"
+                                + "Edit"
+                                + "</button><button type='button' class='btn btn-primary btn-delete' style='margin-left: 20px'  value='"+value.id+"'>Delete</button></td>"
+                                + "</tr>";
+                        });
+                        $("#data").append(res);
+                    },
+                    error: function () {
+                        console.error('ERR');
+                    }
+                })  
+                return false;
+            }
+            $('#data').on('click','td button', function () {
+               var id =  $(this).val();
+               $('#productId').val(id);
+               $.ajax({
+                   type: 'POST',
+                   url: '@Url.Action("viewToEdit", "Product")',
+                   dataType: 'json',
+                   data: {
+                       productId: id
+                   },
+                   success: function(response){
+                       console.log(response)
+                   }
+               })
+            });
+            $('#saveEdit').on('click', function(){
+                var id = $('#productId').val();
+                console.log(id);
+                var name = $('#cate').val();
+                var data = {"Id":id,"Name":name};
+                $.ajax({
+                    type: 'POST',
+                    url: '@Url.Action("handleEditCategory","Category")',
+                    dataType: 'json',
+                    data: {data:data},
+                    success: function (response) {
+                        $("#name-"+response.data.id).html(response.data.name);
+                    },
+                    error: function () {
+                        console.error('ERR');
+                    }
+                })
+                return false;
+            })
+
+            $('#saveAdd').on('click', function(){
+                var name = $('#nameAdd').val();
+                var categoryId = $('#categoryAdd').val();
+                var sizeId = $('#lstChosenSize').val();
+                var colorId = $('#lstChosenColor').val();
+                var description = $('#discriptionAưdd').val();
+                var priceIn = $('#priceInAdd').val();
+                var priceSell = $('#priceSellAdd').val();
+                var priceSale = $('#priceSale').val();
+                var image = 'abc';
+                var data = {
+                     "Name": "test",
+                     "CategoryId": 1,
+                     "SizeId" :[1],
+                     "ColorId" :[1,2],
+                     "Quantity": 10,
+                     "Price": 120,
+                     "Description" : "sus",
+                     "Image":"image test"
+                }
+                $.ajax({
+                    type: 'POST',
+                    url: '@Url.Action("handleAddProduct","Product")',
+                    dataType: 'json',
+                    data: {data:data},
+                    success: function (response) {
+                        var res = "<tr>"
+                                + "<th value='"+response.data.id+"' scope='row'>" + (54654) + "</th>"
+                                + "<td  id='name-"+response.data.id+"'>" + response.data.name + "</td>"
+                                + "<td><button type='button' class='btn btn-primary' value='" + response.data.id + "-" + response.data.name + "' data-toggle='modal' data-target='#ModalEdit'>"
+                                + "Edit"
+                                + "</button><button type='button' class='btn btn-primary btn-delete'  value='"+response.data.id+"'>Delete</button></td>"
+                                + "</tr>";
+                       
+                        $("#data").append(res);
+                    },
+                    error: function () {
+                        console.error('ERR');
+                    }
+                })
+                return false;
+            })
+            
+            $('#data').on('click', '.btn-delete', function () {
+                console.log($(this).val());
+            });
+
+        })
+    </script>

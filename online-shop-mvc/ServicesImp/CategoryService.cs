@@ -39,6 +39,27 @@ namespace online_shop_mvc.ServicesImp
             return null;
         }
 
+        public Task<Category> GetCategoryById(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        //public async Task<Category> GetCategoryById(int id)
+        //{
+        //    try
+        //    {
+        //        Category category = await _categoryRepo.GetCategoryById(id);
+        //        if (category != null)
+        //        {
+        //            return category;
+        //        }
+        //    }
+        //    catch(Exception e)
+        //    {
+        //        return null;
+        //    }
+        //}
+
         public async Task<Category> Update(Category category)
         {
             try

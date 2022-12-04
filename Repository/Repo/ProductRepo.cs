@@ -34,6 +34,8 @@ namespace Repository.Repo
             {
                 _onlineShopDbContext.Products.Add(product);
                 await _onlineShopDbContext.SaveChangesAsync();
+                
+
                 return product;
             }
             catch (Exception ex)
@@ -126,5 +128,18 @@ namespace Repository.Repo
             }
             return null;
         }
+
+        //public async Task<int> GetLatestProductId()
+        //{
+        //    try
+        //    {
+        //        return await _onlineShopDbContext.Products.OrderByDescending()
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        Console.WriteLine(ex.Message);
+        //    }
+        //    return null;
+        //}
     }
 }

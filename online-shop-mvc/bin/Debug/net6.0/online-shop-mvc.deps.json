@@ -13,7 +13,8 @@
           "Microsoft.EntityFrameworkCore.Design": "6.0.9",
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "6.0.10",
           "Model": "1.0.0",
-          "Repository": "1.0.0"
+          "Repository": "1.0.0",
+          "chosen": "1.2.0"
         },
         "runtime": {
           "online-shop-mvc.dll": {}
@@ -32,6 +33,7 @@
           }
         }
       },
+      "chosen/1.2.0": {},
       "Humanizer.Core/2.8.26": {
         "runtime": {
           "lib/netstandard2.0/Humanizer.dll": {
@@ -2378,6 +2380,13 @@
       "sha512": "sha512-JXaYcNsQXxu+XMUOGlRaTGVph+xnyZwZ34Yg4/js5b8PAhqaN2u9o28FVNy3Oiwo/F9pqyJPI4EORMMRp+MKqw==",
       "path": "antdesign/0.12.6",
       "hashPath": "antdesign.0.12.6.nupkg.sha512"
+    },
+    "chosen/1.2.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-nrcF57kN5LRb/drcnK43W+cDKuAxDXhVlTBI4wOmm2eTjQW1/nRjV/G9zs+xavsgtquTH7CeJbYDbZZOsMrABw==",
+      "path": "chosen/1.2.0",
+      "hashPath": "chosen.1.2.0.nupkg.sha512"
     },
     "Humanizer.Core/2.8.26": {
       "type": "package",

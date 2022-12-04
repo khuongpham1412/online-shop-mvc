@@ -8,5 +8,6 @@ namespace online_shop_mvc.Services
         public Task<Category> Update(Category category);
         public Task<bool> Delete(Category category);
         public Task<IList<Category>> GetAllCategories();
+        public Task<Category> GetCategoryById(int id);
     }
 }

@@ -2014,19 +2014,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Asus\\.nuget\\packages\\": {}
+    "C:\\Users\\justi\\.nuget\\packages\\": {},
+    "D:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\SGU\\MVC\\online-shop-mvc\\Model\\Model.csproj",
+      "projectUniqueName": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\Model\\Model.csproj",
       "projectName": "Model",
-      "projectPath": "D:\\SGU\\MVC\\online-shop-mvc\\Model\\Model.csproj",
-      "packagesPath": "C:\\Users\\Asus\\.nuget\\packages\\",
-      "outputPath": "D:\\SGU\\MVC\\online-shop-mvc\\Model\\obj\\",
+      "projectPath": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\Model\\Model.csproj",
+      "packagesPath": "C:\\Users\\justi\\.nuget\\packages\\",
+      "outputPath": "D:\\ShoolProject\\LayerStructure\\online-shop-mvc\\Model\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "D:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\Asus\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\justi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -2089,7 +2094,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
       }
     }
   }

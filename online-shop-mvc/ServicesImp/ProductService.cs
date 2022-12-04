@@ -83,6 +83,18 @@ namespace online_shop_mvc.ServicesImp
             return -1;
         }
 
+        public Task<int> GetLatestProductId()
+        {
+            try {
+                return null;
+            }
+            catch(Exception e)
+            {
+
+            }
+            return null;
+        }
+
         public async Task<Product> GetProductById(int id)
         {
             try

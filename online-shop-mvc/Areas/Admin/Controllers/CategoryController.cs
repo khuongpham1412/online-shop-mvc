@@ -43,7 +43,7 @@ namespace online_shop_mvc.Areas.Admin.Controllers
             }
 
             return Json(new { Status = "Fail", Data = "null" });
-        }
+        } 
 
         [HttpPost]
         public async Task<JsonResult> handleAddCategory(Category data)
